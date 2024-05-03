@@ -1,10 +1,10 @@
-ARG PYTHON_TAG="3.8-slim"
-FROM python:$PYTHON_TAG
-ARG APP_TAG="0.7.2"
+FROM python:3.11
 WORKDIR /app
+RUN pip3 freeze -l > requirements.txt
+RUN pip3 install -r requirements.txt
+RUN "ls -la"
+COPY requirements.txt requirements.txt
+COPY . .
+CMD ["python3", "main.py", "--tcp 10.1.1.88","-f tristar.csv"]
+#run cd modpoll && python3 main.py --tcp 10.1.1.88 -f tristar.csv
 
-RUN pip3 install modpoll[serial]==$APP_TAG
-
-COPY docker-entrypoint.sh .
-ENTRYPOINT ["sh", "./docker-entrypoint.sh"]
-CMD ["modpoll", "--version"]

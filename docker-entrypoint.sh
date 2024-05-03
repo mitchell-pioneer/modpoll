@@ -1,4 +1,3 @@
-#!/bin/ash
+#!/bin/bash
 set -e
-
 exec "$@"

@@ -85,10 +85,13 @@ def app(name="modpoll"):
             if event_exit.is_set():
                 break
             if args.mqtt_host:
+                timestamp = None
+                onchange = False
                 if args.timestamp:
-                    modbus_publish(timestamp=now)
-                else:
-                    modbus_publish()
+                    timestamp = now
+                if args.mqtt_onchange:
+                    onchange = True
+                modbus_publish(timestamp,onchange)
             if args.export:
                 if args.timestamp:
                     modbus_export(args.export, timestamp=now)

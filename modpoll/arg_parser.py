@@ -161,4 +161,9 @@ def get_parser():
         choices=["default", "ascii", "binary", "rtu", "socket"],
         help="The type of framer for modbus message. Use default framer if not specified.",
     )
+    parser.add_argument(
+        "--mqtt-onchange",
+        action="store_true",
+        help="Publish to MQTT when values change"
+    )
     return parser

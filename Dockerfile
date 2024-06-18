@@ -1,4 +1,4 @@
-FROM python:3.11
+FROM python:3.11-alpine
 WORKDIR /app
 RUN pip3 freeze -l > requirements.txt
 RUN pip3 install -r requirements.txt

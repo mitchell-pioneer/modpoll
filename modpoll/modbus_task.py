@@ -19,7 +19,6 @@ master = None
 deviceList = []
 event_exit = None
 
-
 class Device:
     def __init__(self, device_name: str, device_id: int):
         self.name = device_name
@@ -216,7 +215,7 @@ class Poller:
 
 class Reference:
     def __init__(
-        self, device, ref_name: str, address: int, dtype: str, rw: str, unit, scale
+        self, device, ref_name: str, address: int, dtype: str, rw: str, unit, scale,range
     ):
         self.device = device
         self.name = ref_name
@@ -262,6 +261,7 @@ class Reference:
         self.scale = scale
         self.val = None
         self.last_val = None
+        self.range = range
 
     def check_sanity(self, reference, size):
         if self.address not in range(reference, size + reference):
@@ -361,11 +361,16 @@ def parse_config(csv_reader):
                     scale = float(row[6])
                 except Exception:
                     scale = None
+                try:
+                    range = 0.0
+                    range = float(row[7])
+                except Exception:
+                    range = None
                 if not current_device or not current_poller:
                     log.debug(f"No device/poller for reference {ref_name}.")
                     continue
                 ref = Reference(
-                    current_poller.device, ref_name, address, dtype, rw, unit, scale
+                    current_poller.device, ref_name, address, dtype, rw, unit, scale, range
                 )
                 if ref in current_poller.readableReferences:
                     log.warning(f"Reference {ref.name} is already added, ignoring it.")
@@ -551,8 +556,29 @@ def modbus_publish(timestamp=None, on_change=False):
         log.debug(f"Publishing data for device: {dev.name} ...")
         payload = {}
         for ref in dev.references.values():
-            if on_change and ref.val == ref.last_val:
-                continue
+            match ref.dtype.tolower():
+                case "float16" | "float32" | "uint16" | "int16" | "uint32" | "int32":
+                    badval = not ref.last_val is None
+                    if on_change and math.isnan(ref.val):
+                        continue
+                    if badval and on_change and ref.last_val > 0.0 and ref.range > 0.0:
+                        high = ref.last_val * (1+ref.range)
+                        low = ref.last_val * (-1-ref.range)
+                        if on_change and not (ref.val > high or ref.val < low):
+                            log.debug(f"Outside Limits:  variable={ref.name.rjust(20, ' ')} val={ref.val} last={ref.last_val} within limits {high}:{low}")
+                            continue
+                        log.info(f"Change Detected:[{ref.name.ljust(30, ' ')}] val={ref.val} last={ref.last_val} outside of {high}:{low}")
+                    else:
+                        if on_change and ref.val == ref.last_val:
+                            continue
+
+                case "bool8" | "bool16":
+                    if on_change and ref.val == ref.last_val:
+                        continue
+                case _:
+                    if on_change and ref.val == ref.last_val:
+                        continue
+
             if ref.unit:
                 payload[f"{ref.name}|{ref.unit}"] = ref.val
             else:

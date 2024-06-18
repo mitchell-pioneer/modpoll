@@ -152,7 +152,7 @@ def mqttc_publish(topic, msg, qos=0, retain=False):
         log.debug(
             f"publishing MQTT topic: {topic}, msg: {msg}, qos: {qos}, RC: {pubinfo.rc}"
         )
-        log.info(f"published message to topic: {topic}")
+        log.debug(f"published message to topic: {topic}")
         return pubinfo
     except MQTTException as ex:
         log.error(f"Error publishing MQTT topic: {topic}, msg: {msg}, qos: {qos}")

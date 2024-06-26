@@ -7,7 +7,6 @@ import sys
 import threading
 from datetime import timezone
 
-
 from modpoll.arg_parser import get_parser
 from modpoll.modbus_task import (
     modbus_close,

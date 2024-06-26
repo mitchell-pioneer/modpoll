@@ -1,2 +1,11 @@
-[InternetShortcut]
-URL=ssh://dev.local/home/mbalsam/modpoldef/modpoll.service
+[Unit]
+Description=modpoll
+After=multi-user.target
+
+[Service]
+Type=simple
+Restart=always
+ExecStart=/usr/bin/bash /home/mbalsam/modpoll/run-modpoll.sh
+
+[Install]
+WantedBy=multi-user.target

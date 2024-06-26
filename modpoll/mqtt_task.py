@@ -85,6 +85,7 @@ def mqttc_setup(config):
             clientid = args.mqtt_clientid
         global mqttc
         mqttc = mqtt.Client(
+            mqtt.CallbackAPIVersion.VERSION1,
             clientid,
             clean_session=(args.mqtt_qos == 0),
             userdata={"qos": args.mqtt_qos},

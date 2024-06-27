@@ -259,8 +259,8 @@ class Reference:
         self.rw = rw.lower()
         self.unit = unit
         self.scale = scale
-        self.val = None
-        self.last_val = None
+        self.val = 0.0
+        self.last_val = -9999       # incase of onchange, send all values first time
         self.hrange = hrange
         self.lrange = lrange
 

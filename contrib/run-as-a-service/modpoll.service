@@ -1,6 +1,7 @@
 [Unit]
 Description=modpoll
 After=multi-user.target
+User=pi
 
 [Service]
 Type=simple

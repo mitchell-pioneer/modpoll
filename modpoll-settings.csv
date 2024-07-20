@@ -1,0 +1,65 @@
+device,MSChargeControler,1,,
+poll,holding_register,1,123,BE_BE
+ref,Charge Current,16,float16,r,,0.1,0.1
+ref,Array Current,17,float16,r,,0.1,0.1
+ref,Battery Terminal Voltage,18,float16,r,,0.1,0.1
+ref,Array Voltage,19,float16,r,,0.1,0.1
+ref,Load Voltage,20,float16,r,,0.1,0.1
+ref,Battery Current net,21,float16,r,,0.1,0.1
+ref,Load Current,22,float16,r,,0.1,0.1
+ref,Battery Sense Voltage,23,float16,r,,0.1,0.1
+ref,Battery Voltage slow filter,24,float16,r,,0.1,0.1
+ref,Battery Current net slow filter,25,float16,r,,0.1,0.1
+ref,Heatsink Temperature,26,float16,r,,0.1,0.1
+ref,Battery Temperature,27,float16,r,,0.1,0.1
+ref,Ambient Temperature,28,float16,r,,0.1,0.1
+ref,Remote Temperature Sensor Temperature,29,float16,r,,0.1,0.1
+ref,Phase U Inductor Temperature,30,float16,r,,0.1,0.1
+ref,Phase V Inductor Temperature,31,float16,r,,0.1,0.1
+ref,Phase W Inductor Temperature,32,float16,r,,0.1,0.1
+ref,Charge State,33,int16,r,,0.1,0.1
+ref,Array Fault Bitfield,34,int16,r,,0.1,0.1
+ref,Battery Voltage Slow Filter,35,float16,r,,0.1,0.1
+ref,Battery Regulator Reference Voltage,36,float16,r,,0.1,0.1
+ref,Battery Regulator Slave Voltage,37,float16,r,,0.1,0.1
+ref,Ah Charge Resettable HI,38,int16,r,,0.1,0.1
+ref,Ah Charge Resettable LO,39,int16,r,,0.1,0.1
+ref,Ah Charge Total HI,40,int16,r,,0.1,0.1
+ref,Ah Charge Total LO,41,int16,r,,0.1,0.1
+ref,kWh Charge Resettable,42,int16,r,,0.1,0.1
+ref,kWh Charge Total,43,int16,r,,0.1,0.1
+ref,Battery Temp foldback 100% output limit,44,float16,r,,0.1,0.1
+ref,Battery Temp foldback 0% output limit,45,float16,r,,0.1,0.1
+ref,Load State,46,int16,r,,0.1,0.1
+ref,Load Fault Bitfield,47,int16,r,,0.1,0.1
+ref,Load Current Compensated LVD Voltage,48,float16,r,,0.1,0.1
+ref,Load HVD Voltage,49,float16,r,,0.1,0.1
+ref,Ah Load resettable HI,50,int16,r,,0.1,0.1
+ref,Ah Load resettable LO,51,int16,r,,0.1,0.1
+ref,Ah Load Total HI,52,int16,r,,0.1,0.1
+ref,Ah Load Total LO,53,int16,r,,0.1,0.1
+ref,Hourmeter HI,54,int16,r,,0.1,0.1
+ref,Hourmeter LO,55,int16,r,,0.1,0.1
+ref,Alarm Bitfield HI,56,int16,r,,0.1,0.1
+ref,Alarm Bitfield LO,57,int16,r,,0.1,0.1
+ref,DIP Switch Settings,58,int16,r,,0.1,0.1
+ref,SOC LED State,59,int16,r,,0.1,0.1
+ref,Charger Output Power,60,float16,r,,0.1,0.1
+ref,Array Vmp,61,float16,r,,0.1,0.1
+ref,Array Max Output Power,62,float16,r,,0.1,0.1
+ref,Array Voc,63,float16,r,,0.1,0.1
+ref,Array Target Voltage,64,float16,r,,0.1,0.1
+ref,Minimum Battery Voltage (Daily),65,float16,r,,0.1,0.1
+ref,Maximum Battery Voltage (Daily),66,float16,r,,0.1,0.1
+ref,Ah Charge (Daily),67,float16,r,,0.1,0.1
+ref,Ah Load (Daily),68,float16,r,,0.1,0.1
+ref,Array Fault Bitfield,69,int16,r,,0.1,0.1
+ref,Load Fault Bitfield,70,int16,r,,0.1,0.1
+ref,Alarm Bitfield HI,71,int16,r,,0.1,0.1
+ref,Alarm Bitfield LO,72,int16,r,,0.1,0.1
+ref,Time in Absorption,73,int16,r,,0.1,0.1
+ref,Time in Equalization,74,int16,r,,0.1,0.1
+ref,Time in Float,75,int16,r,,0.1,0.1
+ref,Max Array Voltage,76,float16,r,,0.1,0.1
+ref,Charge Status LED Status,77,int16,r,,0.1,0.1
+ref,In Lighting Mode,78,int16,r,,0.1,0.1

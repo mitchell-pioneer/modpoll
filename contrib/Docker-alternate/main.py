@@ -78,7 +78,7 @@ def app(name="modpoll"):
             else:
                 elapsed = round(now - last_check, 6)
             last_check = now
-            log.info(
+            log.debug(
                 f" ====== modpoll polling at rate:{args.rate}s, actual:{elapsed}s ======"
             )
             modbus_poll()

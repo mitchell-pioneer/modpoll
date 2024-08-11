@@ -16,7 +16,7 @@ def get_parser():
     parser.add_argument(
         "-f",
         "--config",
-        required=True,
+        #required=True,
         help="A local path or URL of Modbus configuration file. Required!",
     )
     parser.add_argument(
@@ -166,4 +166,17 @@ def get_parser():
         action="store_true",
         help="Publish to MQTT when values change"
     )
+    parser.add_argument(
+        "--runEnv",
+        type=open,
+        action=LoadFromFile,
+        help="Use and .env file for commandline options"
+    )
     return parser
+
+class LoadFromFile (argparse.Action):
+    # https://stackoverflow.com/questions/27433316/how-to-get-argparse-to-read-arguments-from-a-file-with-an-option-rather-than-pre
+    def __call__ (self, parser, namespace, values, option_string = None):
+        with values as f:
+            # parse arguments in the file and store them in the target namespace
+            parser.parse_args(f.read().split(), namespace)

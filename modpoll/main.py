@@ -7,6 +7,8 @@ import sys
 import threading
 from datetime import timezone
 
+import argparse
+
 
 from modpoll.arg_parser import get_parser
 from modpoll.modbus_task import (
@@ -44,7 +46,6 @@ def app(name="modpoll"):
 
     # parse args
     args = get_parser().parse_args()
-
     # get logger
     logging.basicConfig(level=args.loglevel, format=LOG_SIMPLE)
     global log
@@ -79,7 +80,7 @@ def app(name="modpoll"):
             else:
                 elapsed = round(now - last_check, 6)
             last_check = now
-            log.info(
+            log.debug(
                 f" ====== modpoll polling at rate:{args.rate}s, actual:{elapsed}s ======"
             )
             modbus_poll()
@@ -125,6 +126,6 @@ def app(name="modpoll"):
     modbus_close()
     mqttc_close()
 
-
 if __name__ == "__main__":
     app()
+

@@ -571,9 +571,11 @@ def modbus_publish(timestamp=None, on_change=False):
                         high = ref.last_val * (1+ref.hrange)
                         low = ref.last_val * (-1-ref.lrange)
                         if on_change and not (ref.val > high or ref.val < low):
-                            log.debug(f"Outside Limits:  variable={ref.name.rjust(20, ' ')} val={ref.val} last={ref.last_val} within limits {high}:{low}")
+                            if not args.daemon:
+                                log.debug(f"Outside Limits:  variable={ref.name.rjust(20, ' ')} val={ref.val} last={ref.last_val} within limits {high}:{low}")
                             continue
-                        log.info(f"Change Detected:[{ref.name.ljust(30, ' ')}] val={ref.val} last={ref.last_val} outside of {high}:{low}")
+                        if not args.daemon:
+                            log.info(f"Change Detected:[{ref.name.ljust(30, ' ')}] val={ref.val} last={ref.last_val} outside of {high}:{low}")
                     else:
                         if on_change and ref.val == ref.last_val:
                             continue

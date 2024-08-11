@@ -1,11 +1,12 @@
 [Unit]
 Description=modpoll
 After=multi-user.target
+User=pi
 
 [Service]
 Type=simple
 Restart=always
-ExecStart=/usr/bin/bash /home/mbalsam/modpoll/run-modpoll.sh
+ExecStart=/usr/bin/bash /opt/modpoll/run-modpoll.sh
 
 [Install]
 WantedBy=multi-user.target

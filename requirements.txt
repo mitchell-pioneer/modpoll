@@ -1,0 +1,5 @@
+importlib_metadata==8.0.0
+paho_mqtt==2.1.0
+prettytable==3.10.0
+pymodbus==3.6.8
+Requests==2.32.3

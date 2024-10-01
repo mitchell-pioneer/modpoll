@@ -1,0 +1,287 @@
+[
+  {
+    "Page": 0,
+    "Desc": "Communications status information",
+    "Rw": "Read only"
+  },
+  {
+    "Page": 1,
+    "Desc": "Communications configuration",
+    "Rw": "Read/write and\twrite\tonly"
+  },
+  {
+    "Page": 2,
+    "Desc": "Modem configuration",
+    "Rw": "Read/write"
+  },
+  {
+    "Page": 3,
+    "Desc": "Generating set status information",
+    "Rw": "Read only"
+  },
+  {
+    "Page": 4,
+    "Desc": "Basic instrumentation",
+    "Rw": "Read only"
+  },
+  {
+    "Page": 5,
+    "Desc": "Extended instrumentation",
+    "Rw": "Read only"
+  },
+  {
+    "Page": 6,
+    "Desc": "Derived Instrumentation",
+    "Rw": "Read only"
+  },
+  {
+    "Page": 7,
+    "Desc": "Accumulated Instrumentation",
+    "Rw": "Read/write"
+  },
+  {
+    "Page": 8,
+    "Desc": "????",
+    "Rw": "Read only"
+  },
+  {
+    "Page": 9,
+    "Desc": "Total Harmonic Distortion information",
+    "Rw": "Read\tonly"
+  },
+  {
+    "Page": 10,
+    "Desc": "Reserved",
+    "Rw": ""
+  },
+  {
+    "Page": 11,
+    "Desc": "Diagnostic – general",
+    "Rw": "Read only"
+  },
+  {
+    "Page": 12,
+    "Desc": "Diagnostic – digital inputs",
+    "Rw": "Read only"
+  },
+  {
+    "Page": 13,
+    "Desc": "Diagnostic – digital outputs",
+    "Rw": "Read only and\tread\twrite"
+  },
+  {
+    "Page": 14,
+    "Desc": "Diagnostic – LEDs",
+    "Rw": "Read only and read write"
+  },
+  {
+    "Page": 15,
+    "Desc": "Diagnostic – Reserved",
+    "Rw": ""
+  },
+  {
+    "Page": 16,
+    "Desc": "Control registers",
+    "Rw": "Read only and write only"
+  },
+  {
+    "Page": 17,
+    "Desc": "J1939 active diagnostic trouble codes in d\tecoded\tformat",
+    "Rw": "Read only"
+  },
+  {
+    "Page": 18,
+    "Desc": "J1939 active diagnostic trouble codes in r\taw for\tmat",
+    "Rw": "Read only"
+  },
+  {
+    "Page": 19,
+    "Desc": "Reserved",
+    "Rw": ""
+  },
+  {
+    "Page": 20,
+    "Desc": "Various strings",
+    "Rw": "Read only"
+  },
+  {
+    "Page": 24,
+    "Desc": "Identity strings",
+    "Rw": "Read/write"
+  },
+  {
+    "Page": 26,
+    "Desc": "State machine name strings",
+    "Rw": "Read only"
+  },
+  {
+    "Page": 28,
+    "Desc": "State machine state strings",
+    "Rw": "Read only"
+  },
+  {
+    "Page": "29-31",
+    "Desc": "Reserved",
+    "Rw": ""
+  },
+  {
+    "Page": "32-95",
+    "Desc": "Alarm strings (Old alarm system)",
+    "Rw": "Read o\tnly"
+  },
+  {
+    "Page": "32-36",
+    "Desc": "2131 Expansion module name strings",
+    "Rw": "Read\tonly"
+  },
+  {
+    "Page": "37-40",
+    "Desc": "2133 Expansion module name strings",
+    "Rw": "Read\tonly"
+  },
+  {
+    "Page": "41-43",
+    "Desc": "2152 Expansion module name strings",
+    "Rw": "Read\tonly"
+  },
+  {
+    "Page": "44-48",
+    "Desc": "2131 Expansion module digital alarm str\tings",
+    "Rw": "R\tead only"
+  },
+  {
+    "Page": "49-58",
+    "Desc": "2131 Expansion module analogue alarm st\trings",
+    "Rw": "Read only"
+  },
+  {
+    "Page": "59-66",
+    "Desc": "2133 Expansion module analogue alarm st\trings",
+    "Rw": "Read only"
+  },
+  {
+    "Page": 142,
+    "Desc": "ECU Trouble Codes",
+    "Rw": "Read only"
+  },
+  {
+    "Page": "143-149",
+    "Desc": "ECU Trouble Code short description st\tring",
+    "Rw": "Read only"
+  },
+  {
+    "Page": 152,
+    "Desc": "User calibration of expansion module anal\togue i\tnputs",
+    "Rw": "Read/write"
+  },
+  {
+    "Page": 153,
+    "Desc": "Unnamed alarm conditions",
+    "Rw": "Read only"
+  },
+  {
+    "Page": 154,
+    "Desc": "Named Alarm Conditions",
+    "Rw": "Read only"
+  },
+  {
+    "Page": 156,
+    "Desc": "Expansion module enable status",
+    "Rw": "Read only"
+  },
+  {
+    "Page": 158,
+    "Desc": "Expansion module communications status",
+    "Rw": "Re\tad onl\ty"
+  },
+  {
+    "Page": 160,
+    "Desc": "Unnamed input function",
+    "Rw": "Read only"
+  },
+  {
+    "Page": "166-169",
+    "Desc": "User configurable pages",
+    "Rw": "Read only"
+  },
+  {
+    "Page": 170,
+    "Desc": "Unnamed input status",
+    "Rw": "Read only"
+  },
+  {
+    "Page": 171,
+    "Desc": "Unnamed input status continued",
+    "Rw": "Read only"
+  },
+  {
+    "Page": 180,
+    "Desc": "Unnamed output sources & polarities",
+    "Rw": "Read\tonly"
+  },
+  {
+    "Page": 181,
+    "Desc": "Unnamed output sources & polarities conti\tnued",
+    "Rw": "R\tead only"
+  },
+  {
+    "Page": 182,
+    "Desc": "Virtual output sources & polarities",
+    "Rw": "Read\tonly"
+  },
+  {
+    "Page": 183,
+    "Desc": "Configurable output sources & polarities",
+    "Rw": "Read o\tnly"
+  },
+  {
+    "Page": 184,
+    "Desc": "Analogue output sources, types and value\ts",
+    "Rw": "Rea\td only"
+  },
+  {
+    "Page": 190,
+    "Desc": "Unnamed output status",
+    "Rw": "Read only"
+  },
+  {
+    "Page": 191,
+    "Desc": "Virtual output status",
+    "Rw": "Read only"
+  },
+  {
+    "Page": 192,
+    "Desc": "Configurable output status",
+    "Rw": "Read only"
+  },
+  {
+    "Page": 193,
+    "Desc": "Remote control sources",
+    "Rw": "Read/write"
+  },
+  {
+    "Page": "200-239",
+    "Desc": "Unnamed alarm strings",
+    "Rw": "Read only"
+  },
+  {
+    "Page": "240-246",
+    "Desc": "Analogue Input Name Strings",
+    "Rw": "Read only"
+  },
+  {
+    "Page": 250,
+    "Desc": "Misc strings",
+    "Rw": "Read only"
+  },
+  {
+    "Page": "251-255",
+    "Desc": "Reserved",
+    "Rw": ""
+  },
+  {
+    "Page": "",
+    "Desc": "",
+    "Rw": ""
+  }
+]

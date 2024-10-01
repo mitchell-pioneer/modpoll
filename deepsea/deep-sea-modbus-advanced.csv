@@ -1,0 +1,183 @@
+﻿0,Coolant pressure 1,0,10000,1,Kpa,16
+1,Coolant pressure 2,0,10000,1,Kpa,16
+2,Fuel pressure 1,0,10000,1,Kpa,16
+3,Fuel pressure 2,0,10000,1,Kpa,16
+4,Turbo pressure 1,0,10000,1,Kpa,16
+5,Turbo pressure 2,0,10000,1,Kpa,16
+6,Inlet manifold temperature 1,-50,10000,1,Degrees C,16 S
+7,Inlet manifold temperature 2,-50,10000,1,Degrees C,16 S
+8,Exhaust temperature 1,-50,10000,1,Degrees C,16 S
+9,Exhaust temperature 2,-50,10000,1,Degrees C,16 S
+10-11,Fuel consumption,0,10000,0.01,L/hour,32
+12,Water in Fuel,,,,,16
+13,CAN BIT data,,,,,16
+14,Atmospheric pressure,0,10000,1,Kpa,16
+15,Fuel temperature,-50,10000,1,Degrees C,16 S
+16-17,Fuel level (Units) <8xxx phase 2>,0,"999,999,999",1,Litre/Imp Gal/US Gal,32
+18,Selected units for fuel level <8xxx phase 2>,0,2,,,16
+19-47,Reserved,,,,,
+48,Auxiliary sender 1 category,0,3,,,16
+49,Auxiliary sender 1 value,See table below,,,,16 S
+50,Auxiliary sender 2 category,0,3,,,16
+51,Auxiliary sender 2 value,See table below,,,,16 S
+52,Auxiliary sender 3 category,0,3,,,16
+53,Auxiliary sender 3 value,See table below,,,,16 S
+54,Auxiliary sender 4 category,0,3,,,16
+55,Auxiliary sender 4 value,See table below,,,,16 S
+56-63,Reserved,,,,,
+64-65,Exhaust after treatment fuel used,0,2105,1,Litres,32 U
+66,After treatment temperature T1,0,1734,1,Degrees  C,16 S
+67,After treatment temperature T3,0,1734,1,Degrees  C,16 S
+68-69,Engine reference torque ,0,6425,1,Nm,32U
+70-71,Engine percentage torque,-125,125,1,%,32S
+72-73,Engine demand torque,-125,125,1,%,32S
+74,Percentage load at speed,0,250,1,%,16 U
+75,Accelerator position,0,100,1,%,16 U
+76,Nominal friction percentage torque,-125,125,1,%,16 S
+77,Oil level,0,100,1,%,16 U
+78,Crank case pressure,-25000,25000,0.01,kPa,16 S
+79,Coolant level,0,100,1,%,16 U
+80,Injector Rail 1 pressure,0,2509,0.01,Mpa,16 U
+81,Injector Rail 2 pressure,0,2509,0.01,Mpa,16 U
+82,Engine EGR flow,0,3212,1,kg/h,16 U
+83,Pre filter oil pressure,0,1000,1,kPa,16 U
+84-85,Instant break power,0,3212,1,kW,32 U
+86 -101,Exhaust gas port 1-16 temperature,-273,1734,1,Degrees C,16 S
+102,Intercooler temperature,-40,210,1,Degrees C,16 S
+103,Turbo oil temperature,-273,1734,1,Degrees C,16 S
+104,ECU temperature,-273,1734,1,Degrees C,16 S
+105,Fan speed,0,8031,1,rpm,16 U
+106-107,Total engine revolutions,0,4211,0.001,,32 U
+108,Air inlet pressure,0,500,1,kPa,16 U
+109,Air filter differential pressure,0,125,0.1,kPa,16 U
+110,Air trap inlet pressure,0,125,1,kPa,16 U
+111,Turbo pressure 3,0,8031,1,kPa,16 U
+112,Turbo pressure 4,0,8031,1,kPa,16 U
+113,Inlet manifold temperature 3,-40,210,1,Degrees C,16 S
+114,Inlet manifold temperature 4,-40,210,1,Degrees C,16 S
+115,Inlet manifold temperature 5,-40,210,1,Degrees C,16 S
+116,Inlet manifold temperature 6,-40,210,1,Degrees C,16 S
+117-118,Trip fuel ,0,2105,1,Litres,32 U
+119,Electrical potential,,,0.1,V,16 U
+120,PGI Engine type,,,,,16 U
+121,PGI Engine version number ,,,,,16 U
+122,DPTC filter lamp command,0,7,See table,,16 U
+123,Exhaust system high temperature lamp,0,7,,,16 U
+124,DPTC Action regeneration forced,0,7,See table,,16 U
+125,Shutdown wait to start ,,,,,16 U
+126,Shutdown protection,,,,,16 U
+127,Shutdown Approaching ,,,,,16 U
+128,Engine operating state,0,15,See table,,16 U
+129,Shutdown coolant override,,,,,16 U
+130,Battle short override,,,,,16 U
+131,Module engine hours,,,,,16 U
+132,Module oil pressure,,,,,16 U
+133,Module coolant temperature,,,,,16 U
+134,Module engine RPM,,,,,16 U
+135,Module charge alternator,,,,,16 U
+136,Module speed feed,,,,,16 U
+137,Frequency adjust,,,,,16 U
+138,Engine operating state,,,,,16 U
+139,Engine alarm warning,,,,,16 U
+140,Engine alarm shutdown,,,,,16 U
+141,Engine alarm electrical trip,,,,,16 U
+142,CAN amber stop lamp,,,,,16 U
+143,CAN amber lamp flash,,,,,16 U
+144,CAN Red stop lamp,,,,,16 U
+145,CAN red lamp flash,,,,,16 U
+146,CAN protect lamp,,,,,16 U
+147,CAN protect lamp flash,,,,,16 U
+148,Malfunction Lamp,,,,,16 U
+149,Malfunction lamp flash,,,,,16 U
+150,Electrical potential,,,,,16 U
+151,Battery potential,,,0.1,V,16 U
+152,Charging potential,,,0.1,V,16 U
+153,Charge alternator current,,,1,A,16 U
+154,Battery current,,,1,A,16 S
+155,Engine torque mode,,,,,16 U
+156,Engine starter mode,,,,,16 U
+157,CAN CI status,,,,,16 U
+158,Demand speed,,,,,16 U
+159,Speed up,,,,,16 U
+160,Speed down,,,,,16 U
+161,Speed fail,,,,,16 U
+162,Current SD source,,,,,16 U
+163,Feedback SD CAN,,,,,16 U
+164,Feedback SD analogue,,,,,16 U
+165,Failure codes,,,,,16 U
+166,Actual droop,,,,,16 U
+167,Start status,,,,,16 U
+168,Protection override status,,,,,16 U
+169,MTU running state,,,,,16 U
+170,Cylinder cut off,,,,,16 U
+171,Load gen status,,,,,16 U
+172,Extended stop status,,,,,16 U
+173,Current operating mode,,,,,16 U
+174,MTU required torque,,,,,16 U
+175,Trip average fuel,,,0.01,L/hour,16 U
+176,ECU rated power,,,1,kW,16 U
+177,ECU rated speed,,,1,RPM,16 U
+178,ECU idle speed,,,1,RPM,16 U
+179,ECU desired speed,,,1,RPM,16 U
+180,ECU preheat status,,,,,16 U
+181,Manifold pressure,,,1,kPa,16 U
+182,Intercooler level,,,1,%,16 U
+183,CAN link status,,,,,16U
+184,Auto DPF Regeneration Inhibit,,,,,16U
+185,DPTC Active Regeneration Inhibit Switch (received from engine) SPN 3703,,,,,16U
+186,Soot Load,0,,1,%,16U
+187,Ash Load,0,,1,%,16U
+188-189,Reserved,,,,,
+190,LCD Temperature,-100,200,1,Degrees C,16S
+191,DEF Tank Level,,,,%,16U
+192,DEF Tank Temperature ,,,,Degrees C,16S
+193,DEF Level Status,,,,,16U
+194,DEF Consumption ,,,,L/hour,16U
+195,Aftertreatment Status Reason ,,,,,16U
+196,Aftertreatment Status Severity,,,,,16U
+197,Time left until action needed,,,,s,16U
+198,Time until Torque Reduction ,,,,s,16U
+199,Time until Speed Reduction ,,,,s,16U
+200,EGR Pressure ,,,,kPa,16U
+201,EGR Temperature ,,,,Degrees C,16S
+202,Ambient Air Temperature ,,,,Degrees C,16S
+203,Air Intake Temperature ,,,,Degrees C,16S
+204,DEF Lamps – SCR Inducement,0,15,,See table below,16U
+205,DEF Lamps – DEF Level Low,0,15,,See table below,16U
+206,Generator high-resolution frequency,0,70,0.01,Hz,16
+207,Mains high-resolution frequency,0,70,0.01,Hz,16
+208,Bus high-resolution frequency,0,70,0.01,Hz,16
+209,Bus 2 high-resolution frequency,0,70,0.01,Hz,16
+210,Oil Pressure,-100,10000,1,kPa,16 S
+211,CAN Alternate engine speed selected,0,1,0,,16
+212-213,Generator Excitation Field Current,,,,A,32U
+214-215,Generator Excitation Field Voltage,,,,V,32U
+216,Generator Output Voltage Bias Percentage,,,,%,16U
+217-220,Exhaust gas port 17-20 temperature,-273,1734,1,Degrees C,16 S
+221,Instant Fuel Rate,,,,,16U
+222,DPTC Filter Status,,,,,16U
+223,DPTC Active Regeneration Inhibit,,,,,16U
+224,DPTC Active Regeneration Inhibit ET,,,,,16U
+225,DEF Tank Status,,,,,16U
+226,Gas Fuel Pressure,,,,,16U
+227,Throttle Position 1,,,,,16U
+228,Throttle Position 2,,,,,16U
+229-230,DC Charger Current,"-2,500,000.00","2,500,000.00",0.1,A,32S
+231,Trip Average Fuel Efficiency,0,10,0.01,kW Hour/L,16U
+232,Instantaneous Fuel Efficiency,0,10,0.01,kW Hour/L,16U
+233,Fuel Distance (in mm),0,3000,1,mm,16S
+234,Unimplemented,,,,,
+235,Bus zero sequence voltage angle,-360,360,0.1,Degrees,16S
+236,Bus positive sequence voltage angle,-360,360,0.1,Degrees,16S
+237,Bus negative sequence voltage angle,-360,360,0.1,Degrees,16S
+238-239,Bus zero sequence voltage magnitude,0,"30,000",0.1,V,32
+240-241,Bus positive sequence voltage magnitude,0,"30,000",0.1,V,32
+242-243,Bus negative sequence voltage magnitude,0,"30,000",0.1,V,32
+244,Fuel level (signed value),,,1,%,16S
+245,Gen zero sequence voltage angle,-360,360,0.1,Degrees,16S
+246,Gen positive sequence voltage angle,-360,360,0.1,Degrees,16S
+247,Gen negative sequence voltage angle,-360,360,0.1,Degrees,16S
+248-249,Gen zero sequence voltage magnitude,0,"30,000",0.1,V,32
+250-251,Gen positive sequence voltage magnitude,0,"30,000",0.1,V,32
+252-253,Gen negative sequence voltage magnitude,0,"30,000",0.1,V,32
+254-255,Manual Run Time Remaining (E400 v4.0),0,"432,000 (12h)",0.1,Seconds,32

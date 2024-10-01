@@ -1,0 +1,149 @@
+﻿offset,name,min,max,scale,unit,sign
+0,Oil pressure,0,10000,1,Kpa,16
+1,Coolant temperature,-50,200,1,Degrees C,16 S
+2,Oil temperature,-50,200,1,Degrees C,16 S
+3,Fuel level,0,130,1,%,16
+4,Charge alternator voltage,0,40,0.1,V,16
+5,Engine Battery voltage,0,40,0.1,V,16
+6,Engine speed,0,6000,1,RPM,16
+7,Generator frequency,0,70,0.1,Hz,16
+9-Aug,Generator L1-N voltage,0,"18,000",0.1,V,32
+11-Oct,Generator L2-N voltage,0,"18,000",0.1,V,32
+13-Dec,Generator L3-N voltage,0,"18,000",0.1,V,32
+14-15,Generator L1-L2 voltage,0,"30,000",0.1,V,32
+16-17,Generator L2-L3 voltage,0,"30,000",0.1,V,32
+18-19,Generator L3-L1 voltage,0,"30,000",0.1,V,32
+20-21,Generator L1 current,0,"99,999.90",0.1,A,32
+22-23,Generator L2 current,0,"99,999.90",0.1,A,32
+24-25,Generator L3 current,0,"99,999.90",0.1,A,32
+26-27,Generator earth current,0,"99,999.90",0.1,A,32
+28-29,Generator L1 watts,"-99,999,999","99,999,999",1,W,32 S
+30-31,Generator L2 watts,"-99,999,999","99,999,999",1,W,32 S
+32-33,Generator L3 watts,"-99,999,999","99,999,999",1,W,32 S
+34,Generator current lag/lead,-180,180,1,degrees,16 S
+35,Mains frequency,0,70,0.1,Hz,16
+36-37,Mains L1-N voltage,0,"18,000",0.1,V,32
+38-39,Mains L2-N voltage,0,"18,000",0.1,V,32
+40-41,Mains L3-N voltage,0,"18,000",0.1,V,32
+42-43,Mains L1-L2 voltage,0,"30,000",0.1,V,32
+44-45,Mains L2-L3 voltage,0,"30,000",0.1,V,32
+46-47,Mains L3-L1 voltage,0,"30,000",0.1,V,32
+48,Mains voltage phase lag/lead,-180,180,1,degrees,16 S
+49,Generator phase rotation,0,3,,,16
+50,Mains phase rotation,0,3,,,16
+51,Mains current lag/lead,-180,180,1,degrees,16 S
+52-53,Mains L1 current,0,"99,999.90",0.1,A,32
+54-55,Mains L2 current,0,"99,999.90",0.1,A,32
+56-57,Mains L3 current,0,"99,999.90",0.1,A,32
+58-59,Mains earth current,0,"99,999.90",0.1,A,32
+60-61,Mains L1 watts,"-99,999,999","99,999,999",1,W,32 S
+62-63,Mains L2 watts,"-99,999,999","99,999,999",1,W,32 S
+64-65,Mains L3 watts,"-99,999,999","99,999,999",1,W,32 S
+66,Bus current lag/lead,-180,180,1,degrees,16 S
+67,Bus frequency,0,70,0.1,Hz,16
+68-69,Bus L1-N voltage,0,"18,000",0.1,V,32
+70-71,Bus L2-N voltage,0,"18,000",0.1,V,32
+72-73,Bus L3-N voltage,0,"18,000",0.1,V,32
+74-75,Bus L1-L2 voltage,0,"30,000",0.1,V,32
+76-77,Bus L2-L3 voltage,0,"30,000",0.1,V,32
+78-79,Bus L3-L1 voltage,0,"30,000",0.1,V,32
+80-81,Bus L1 current,0,"99,999.90",0.1,A,32
+82-83,Bus L2 current,0,"99,999.90",0.1,A,32
+84-85,Bus L3 current,0,"99,999.90",0.1,A,32
+86-87,Bus earth current,0,"99,999.90",0.1,A,32
+88-89,Bus L1 watts,"-999,999,999","999,999,999",1,W,32 S
+90-91,Bus L2 watts,"-999,999,999","999,999,999",1,W,32 S
+92-93,Bus L3 watts,"-999,999,999","999,999,999",1,W,32 S
+94,Bus phase rotation,0,3,,,16
+95,Bus 2 frequency,0,70,0.1,Hz,16
+96-97,Bus 2 L1-N voltage,0,"18,000",0.1,V,32
+98-99,Bus 2 L2-N voltage,0,"18,000",0.1,V,32
+100-101,Bus 2 L3-N voltage,0,"18,000",0.1,V,32
+102-103,Bus 2 L1-L2 voltage,0,"30,000",0.1,V,32
+104-105,Bus 2 L2-L3 voltage,0,"30,000",0.1,V,32
+106-107,Bus 2 L3-L1 voltage,0,"30,000",0.1,V,32
+108-109,Bus 2 L1 current,0,"99,999.90",0.1,A,32
+110-111,Bus 2 L2 current,0,"99,999.90",0.1,A,32
+112-113,Bus 2 L3 current,0,"99,999.90",0.1,A,32
+114-115,Bus 2 earth current,0,"99,999.90",0.1,A,32
+116-117,Bus 2 L1 watts,"-999,999,999","999,999,999",1,W,32 S
+118-119,Bus 2 L2 watts,"-999,999,999","999,999,999",1,W,32 S
+120-121,Bus 2 L3 watts,"-999,999,999","999,999,999",1,W,32 S
+122,Bus 2 phase rotation,0,3,,,16
+123,Bus 2 current lag/lead,-180,180,1,degrees,16 S
+124,S1 frequency,0,70,0.1,Hz,16
+125-126,S1 L1-N voltage,0,"18,000",0.1,V,32
+127-128,S1 L2-N voltage,0,"18,000",0.1,V,32
+129-130,S1 L3-N voltage,0,"18,000",0.1,V,32
+131-132,S1 L1-L2 voltage,0,"30,000",0.1,V,32
+133-134,S1 L2-L3 voltage,0,"30,000",0.1,V,32
+135-136,S1 L3-L1 voltage,0,"30,000",0.1,V,32
+137-138,S1 L1 current,0,"99,999.90",0.1,A,32
+139-140,S1 L2 current,0,"99,999.90",0.1,A,32
+141-142,S1 L3 current,0,"99,999.90",0.1,A,32
+143-144,S1 earth current,0,"99,999.90",0.1,A,32
+145-146,S1 L1 watts,"-99,999,999","99,999,999",1,W,32 S
+147-148,S1 L2 watts,"-99,999,999","99,999,999",1,W,32 S
+149-150,S1 L3 watts,"-99,999,999","99,999,999",1,W,32 S
+151,S1 current lag/lead,-180,180,1,degrees,16 S
+152,S2 frequency,0,70,0.1,Hz,16
+153-154,S2 L1-N voltage,0,"18,000",0.1,V,32
+155-156,S2 L2-N voltage,0,"18,000",0.1,V,32
+157-158,S2 L3-N voltage,0,"18,000",0.1,V,32
+159-160,S2 L1-L2 voltage,0,"30,000",0.1,V,32
+161-162,S2 L2-L3 voltage,0,"30,000",0.1,V,32
+163-164,S2 L3-L1 voltage,0,"30,000",0.1,V,32
+165-166,S2 L1 current,0,"99,999.90",0.1,A,32
+167-168,S2 L2 current,0,"99,999.90",0.1,A,32
+169-170,S2 L3 current,0,"99,999.90",0.1,A,32
+171-172,S2 earth current,0,"99,999.90",0.1,A,32
+173-174,S2 L1 watts,"-99,999,999","99,999,999",1,W,32 S
+175-176,S2 L2 watts,"-99,999,999","99,999,999",1,W,32 S
+177-178,S2 L3 watts,"-99,999,999","99,999,999",1,W,32 S
+179,S2 current lag/lead,-180,180,1,degrees,16 S
+180-181,Load L1 current,0,"99,999.90",0.1,A,32
+182-183,Load L2 current,0,"99,999.90",0.1,A,32
+184-185,Load L3 current,0,"99,999.90",0.1,A,32
+186-187,Load L1 watts,"-99,999,999","99,999,999",1,W,32 S
+188-189,Load L2 watts,"-99,999,999","99,999,999",1,W,32 S
+190-191,Load L3 watts,"-99,999,999","99,999,999",1,W,32 S
+192,Load current lag/lead,-180,180,1,degrees,16 S
+193,S1 phase rotation,0,3,,,16
+194,S2 phase rotation,0,3,,,16
+195,Governor output,-100,100,0.1,%,16S
+196,AVR output,-100,100,0.1,%,16S
+197,DC Plant Battery Charge State,0,100,0.1,%,16
+198,DC Plant Battery Discharge State,0,100,0.1,%,16
+199,DC Voltage,0,75,0.1,V,16
+200-201,DC Shunt 1 Current,"-1,250,000.00","1,250,000.00",0.1,A,32S
+202-203,DC Shunt 2 Current,"-1,250,000.00","1,250,000.00",0.1,A,32S
+204-205,DC Load Current,"-2,500,000.00","2,500,000.00",0.1,A,32S
+206-207,DC Plant Battery Current,"-2,500,000.00","2,500,000.00",0.1,A,32S
+208-209,DC Total Current,"-2,500,000.00","2,500,000.00",0.1,A,32S
+210-211,DC Plant Battery Cycles,0,99999,,,32
+212-213,DC Charger Watts,"-99,999,999","99,999,999",1,W,32 S
+214-215,DC Plant Battery Watts,"-99,999,999","99,999,999",1,W,32 S
+216-217,DC Load Watts,"-99,999,999","99,999,999",1,W,32 S
+218-219,DC Total Watts,"-99,999,999","99,999,999",1,W,32 S
+220,DC Charge Mode,0,2,,,16
+221,DC Plant Battery temperature,-50,200,1,Degrees C,16 S
+222,DC Battery Cycle State,0,2,,,16
+223,Mains zero sequence voltage angle,-360,360,0.1,Degrees,16S
+224,Mains positive sequence voltage angle,-360,360,0.1,Degrees,16S
+225,Mains negative sequence voltage angle,-360,360,0.1,Degrees,16S
+226-227,Mains zero sequence voltage magnitude,0,"30,000",0.1,V,32
+228-229,Mains positive sequence voltage magnitude,0,"30,000",0.1,V,32
+230-231,Mains negative sequence voltage magnitude,0,"30,000",0.1,V,32
+232-233,Battery Charger Output Current,0,"50,000",1,mA,32S
+234-235,Battery Charger Output Voltage,0,"100,000",1,mV,32S
+236-237,Battery Open Circuit Voltage,0,"100,000",1,mV,32S
+238-239,Load  L1-N voltage (8661),0,"18,000",0.1,V,32
+240-241,Load  L2-N voltage (8661),0,"18,000",0.1,V,32
+242-243,Load  L3-N voltage (8661),0,"18,000",0.1,V,32
+244-245,Load  L1-L2 voltage (8661),0,"30,000",0.1,V,32
+246-247,Load  L2-L3 voltage (8661),0,"30,000",0.1,V,32
+248-249,Load  L3-L1 voltage (8661),0,"30,000",0.1,V,32
+250,Load frequency,0,70,0.1,Hz,16
+251,Load phase rotation,0,3,,,16
+252-253,Battery Charger Auxiliary Voltage,0,"100,000",1,mV,32S
+254-255,Battery Charger Auxiliary Current,0,"50,000",1,mV,32S

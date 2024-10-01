@@ -1,0 +1,7 @@
+﻿Register offset,Name,Minimum value,Maximum value,Scaling factor,Units,Bits/ sign
+0,Manufacturer code,0,65534,1,,16
+1,Model number,0,65534,1,,16
+3-Feb,Serial number,0,999999999,1,,32
+4,Control mode,0,65535,1,,16
+5,Control mode selection (330/331/334/335),0,65535,1,,16
+,,,,,,

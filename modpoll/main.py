@@ -7,7 +7,8 @@ import sys
 import threading
 from datetime import timezone
 
-import argparse
+from deepsea.DeepSeaModBusCalculator import DeepSeaModBusCalculator
+#import argparse
 
 
 from modpoll.arg_parser import get_parser
@@ -40,6 +41,10 @@ def get_utc_time():
 
 
 def app(name="modpoll"):
+    # ds = DeepSeaModBusCalculator()
+    # op = ds.getModbusSetting(ds.BasicPageName,'Oil pressure')
+    # bv = ds.getModbusSetting(ds.BasicPageName,'Engine Battery voltage')
+    # ss, i = ds.getModbusSection(ds.BasicPageName,'Engine Battery voltage')
     print("\nmodpoll - A New Command-line Tool for Modbus and MQTT\n", flush=True)
 
     signal.signal(signal.SIGINT, _signal_handler)

@@ -1,0 +1,34 @@
+device,MSChargeControler,1,,
+poll,holding_register,1024,60,BE_BE
+ref,Coolant temperature,1025,int16,r,,1,0.1,0.2
+ref,Oil pressure,1024,int16,r,,1,0.1,0.2
+ref,Battery Voltage,1029,int16,r,,1,0.1,0.2
+ref,EngineSpeed,1030,uint16,r,,1,0.1,0.2
+ref,GenFrequency,1031,uint16,r,,1,0.1,0.2
+ref,GenL1-N-V,1033,uint16,r,,1,0.1,0.2
+ref,GenL2-N-V,1035,uint16,r,,1,0.1,0.2
+ref,GenL3-N-V,1037,uint16,r,,1,0.1,0.2
+ref,GenL1-l2-V,1039,uint16,r,,1,0.1,0.2
+ref,GenL2-l3-V,1041,uint16,r,,1,0.1,0.2
+ref,GenL3-l1-V,1043,uint16,r,,1,0.1,0.2
+ref,Engine Speed,1030,uint16,r,,1,0.1,0.2
+ref,Gen Frequency,1031,uint16,r,,1,0.1,0.2
+poll,holding_register,1792,10,BE_BE
+ref,LocalTime,1792,uint32,r,,1,0.1,0.2
+poll,holding_register,2048,10,BE_BE
+ref,emergencyStop,2048,uint16,r,,1,0.1,0.2
+#
+#
+#poll,holding_register,1280,15,BE_BE
+#ref,c1t,1280,uint16,r,,1,0.1,0.2
+#ref,load l3 current,1208,int16,r,,1,0.1,0.2
+#poll,holding_register,1204,15,BE_BE
+#ref,load l1 current,1204,int16,r,,1,0.1,0.2
+#ref,load l2 current,1206,int16,r,,1,0.1,0.2
+#ref,load l3 current,1208,int16,r,,1,0.1,0.2
+#ref,VoltsAB,1038,int32,r,,1,0.1,0.2
+#ref,Genl1current,1044,int16,r,,1,0.1,0.2
+#ref,Oil temp,1026,int16,r,,1,0.1,0.2
+#ref,Fuel level,1030,uint16,r,,1,0.1,0.2
+#poll,holding_register,768,10,BE_BE
+#ref,ManfCode,768,uint16,r,,1,0.1,0.2

@@ -1,0 +1,55 @@
+﻿offset,Name,min,max,scale,unit,sign
+0,Current time since 1/1/70,0,4.29 x109,1,Seconds,32
+2,Time to next engine maintenance,-2.14 x109,2.14 x109,1,Seconds,32S
+4,Time of next engine maintenance since 1/1/70,0,4.29 x109,1,Seconds,32
+6,Engine run time,0,4.29 x109,1,Seconds,32
+8,Generator positive KW hours,0,4.29 x109,0.1,KW hour,32
+10,Generator negative KW hours,0,4.29 x109,0.1,KW hour,32
+12,Generator KVA hours,0,4.29 x109,0.1,KVA hour,32
+14,Generator KVAr hours,0,4.29 x109,0.1,KVAr hour,32
+16,Number of starts,0,99999,,,32
+18,Mains positive KW hours,0,4.29 x109,0.1,KW hour,32
+20,Mains negative KW hours,0,4.29 x109,0.1,KW hour,32
+22,Mains KVA hours,0,4.29 x109,0.1,KVA hour,32
+24,Mains KVAr hours,0,4.29 x109,0.1,KVAr hour,32
+26,Bus positive KW hours,0,4.29 x109,0.1,KW hour,32
+28,Bus negative KW hours,0,4.29 x109,0.1,KW hour,32
+30,Bus KVA hours,0,4.29 x109,0.1,KVA hour,32
+32,Bus KVAr hours,0,4.29 x109,0.1,KVAr hour,32
+34,Fuel used,0,4.29 x109,1,Litre,32
+36,Maximum positive mains R.O.C.O.F.,0,10,0.01,Hz/s,32
+38,Maximum negative mains R.O.C.O.F.,0,10,0.01,Hz/s,32
+40,Maximum positive mains vector shift,0,360,0.1,Degrees,32
+42,Maximum negative mains vector shift,0,360,0.1,Degrees,32
+44,Time to next engine maintenance alarm 1,-2.14 x109,2.14 x109,1,Seconds,32S
+46,Time of next engine maintenance alarm 1 since 1/1/70,0,4.29 x109,1,Seconds,32
+48,Time to next engine maintenance alarm 2,-2.14 x109,2.14 x109,1,Seconds,32S
+50,Time of next engine maintenance alarm 2 since 1/1/70,0,4.29 x109,1,Seconds,32
+52,Time to next engine maintenance alarm 3,-2.14 x109,2.14 x109,1,Seconds,32S
+54,Time of next engine maintenance alarm 3 since 1/1/70,0,4.29 x109,1,Seconds,32
+56,Time to next plant battery maintenance,-2.14 x109,2.14 x109,1,Seconds,32S
+58,Time of next plant battery maintenance since 1/1/70,0,4.29 x109,1,Seconds,32
+60,Cycles to next plant battery maintenance,0,4.29 x109,1,Numeric,32
+62,Capacity remaining to next plant battery maintenance,0,4.29 x109,1,Percentage,32
+64,Time to next plant battery maintenance alarm 1,-2.14 x109,2.14 x109,1,Seconds,32S
+66,Time of next plant battery maintenance alarm 1 since 1/1/70,0,4.29 x109,1,Seconds,32
+68,Cycles to next plant battery maintenance alarm 1,0,4.29 x109,1,Numeric,32
+70,Capacity remaining to next plant battery maintenance alarm 1,0,4.29 x109,1,Percentage,32
+72,Time to next plant battery maintenance alarm 2,-2.14 x109,2.14 x109,1,Seconds,32S
+74,Time of next plant battery maintenance alarm 2 since 1/1/70,0,4.29 x109,1,Seconds,32
+76,Cycles to next plant battery maintenance alarm 2,0,4.29 x109,1,Numeric,32
+78,Capacity remaining to next plant battery maintenance alarm 2,0,4.29 x109,1,Percentage,32
+80,Time to next plant battery maintenance alarm 3,-2.14 x109,2.14 x109,1,Seconds,32S
+82,Time of next plant battery maintenance alarm 3 since 1/1/70,0,4.29 x109,1,Seconds,32
+84,Cycles to next plant battery maintenance alarm 3,0,4.29 x109,1,Numeric,32
+85,Capacity remaining to next plant battery maintenance alarm 3,0,4.29 x109,1,Percentage,32
+88,Plant Battery Run Time,0,4.29 x109,1,Seconds,32
+90,Plant Battery Cycles,0,99999,,,32
+92,Plant Battery Charge State,0,100,0.1,%,16
+94,Load kWh,0,4.29 x109,0.1,kW hour,32
+96,Battery charging kWh,0,4.29 x109,0.1,kW hour,32
+98,Battery discharging kWh,0,4.29 x109,0.1,kW hour,32
+100,Fuel Efficiency KWh/L (accumulated),0,65535,0.01,kW hour/L,16
+101,Fault Ride Through event count,0,65500,1,Event,16
+102,Engine run time for load demand,0,4.29 x109,1,Seconds,32
+,,,,,,

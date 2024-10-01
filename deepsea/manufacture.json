@@ -1,0 +1,65 @@
+[
+  {
+    "offset": 0,
+    "name": "Manufacturer code",
+    "min": 0,
+    "max": 65534,
+    "scale": 1,
+    "unit": "",
+    "sign": 16
+  },
+  {
+    "offset": 1,
+    "name": "Model number",
+    "min": 0,
+    "max": 65534,
+    "scale": 1,
+    "unit": "",
+    "sign": 16
+  },
+  {
+    "offset": 2,
+    "name": "Serial number Low",
+    "min": 0,
+    "max": 999999999,
+    "scale": 1,
+    "unit": "",
+    "sign": 32
+  },
+  {
+    "offset": 3,
+    "name": "Serial number High",
+    "min": 0,
+    "max": 999999999,
+    "scale": 1,
+    "unit": "",
+    "sign": 32
+  },
+  {
+    "offset": 4,
+    "name": "Control mode",
+    "min": 0,
+    "max": 65535,
+    "scale": 1,
+    "unit": "",
+    "sign": 16
+  },
+  {
+    "offset": 5,
+    "name": "Control mode selection (330/331/334/335)",
+    "min": 0,
+    "max": 65535,
+    "scale": 1,
+    "unit": "",
+    "sign": 16
+  },
+  {
+    "offset": "",
+    "name": "",
+    "min": "",
+    "max": "",
+    "scale": "",
+    "unit": "",
+    "sign": ""
+  }
+]

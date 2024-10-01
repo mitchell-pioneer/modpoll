@@ -1,0 +1,1649 @@
+[
+  {
+    "offset": 0,
+    "name": "Coolant pressure 1",
+    "min": 0,
+    "max": 10000,
+    "scale": 1,
+    "unit": "Kpa",
+    "sign": 16
+  },
+  {
+    "offset": 1,
+    "name": "Coolant pressure 2",
+    "min": 0,
+    "max": 10000,
+    "scale": 1,
+    "unit": "Kpa",
+    "sign": 16
+  },
+  {
+    "offset": 2,
+    "name": "Fuel pressure 1",
+    "min": 0,
+    "max": 10000,
+    "scale": 1,
+    "unit": "Kpa",
+    "sign": 16
+  },
+  {
+    "offset": 3,
+    "name": "Fuel pressure 2",
+    "min": 0,
+    "max": 10000,
+    "scale": 1,
+    "unit": "Kpa",
+    "sign": 16
+  },
+  {
+    "offset": 4,
+    "name": "Turbo pressure 1",
+    "min": 0,
+    "max": 10000,
+    "scale": 1,
+    "unit": "Kpa",
+    "sign": 16
+  },
+  {
+    "offset": 5,
+    "name": "Turbo pressure 2",
+    "min": 0,
+    "max": 10000,
+    "scale": 1,
+    "unit": "Kpa",
+    "sign": 16
+  },
+  {
+    "offset": 6,
+    "name": "Inlet manifold temperature 1",
+    "min": -50,
+    "max": 10000,
+    "scale": 1,
+    "unit": "Degrees C",
+    "sign": "16 S"
+  },
+  {
+    "offset": 7,
+    "name": "Inlet manifold temperature 2",
+    "min": -50,
+    "max": 10000,
+    "scale": 1,
+    "unit": "Degrees C",
+    "sign": "16 S"
+  },
+  {
+    "offset": 8,
+    "name": "Exhaust temperature 1",
+    "min": -50,
+    "max": 10000,
+    "scale": 1,
+    "unit": "Degrees C",
+    "sign": "16 S"
+  },
+  {
+    "offset": 9,
+    "name": "Exhaust temperature 2",
+    "min": -50,
+    "max": 10000,
+    "scale": 1,
+    "unit": "Degrees C",
+    "sign": "16 S"
+  },
+  {
+    "offset": "10-11",
+    "name": "Fuel consumption",
+    "min": 0,
+    "max": 10000,
+    "scale": 0.01,
+    "unit": "L/hour",
+    "sign": 32
+  },
+  {
+    "offset": 12,
+    "name": "Water in Fuel",
+    "min": "",
+    "max": "",
+    "scale": "",
+    "unit": "",
+    "sign": 16
+  },
+  {
+    "offset": 13,
+    "name": "CAN BIT data",
+    "min": "",
+    "max": "",
+    "scale": "",
+    "unit": "",
+    "sign": 16
+  },
+  {
+    "offset": 14,
+    "name": "Atmospheric pressure",
+    "min": 0,
+    "max": 10000,
+    "scale": 1,
+    "unit": "Kpa",
+    "sign": 16
+  },
+  {
+    "offset": 15,
+    "name": "Fuel temperature",
+    "min": -50,
+    "max": 10000,
+    "scale": 1,
+    "unit": "Degrees C",
+    "sign": "16 S"
+  },
+  {
+    "offset": "16-17",
+    "name": "Fuel level (Units) <8xxx phase 2>",
+    "min": 0,
+    "max": "999,999,999",
+    "scale": 1,
+    "unit": "Litre/Imp Gal/US Gal",
+    "sign": 32
+  },
+  {
+    "offset": 18,
+    "name": "Selected units for fuel level <8xxx phase 2>",
+    "min": 0,
+    "max": 2,
+    "scale": "",
+    "unit": "",
+    "sign": 16
+  },
+  {
+    "offset": "19-47",
+    "name": "Reserved",
+    "min": "",
+    "max": "",
+    "scale": "",
+    "unit": "",
+    "sign": ""
+  },
+  {
+    "offset": 48,
+    "name": "Auxiliary sender 1 category",
+    "min": 0,
+    "max": 3,
+    "scale": "",
+    "unit": "",
+    "sign": 16
+  },
+  {
+    "offset": 49,
+    "name": "Auxiliary sender 1 value",
+    "min": "See table below",
+    "max": "",
+    "scale": "",
+    "unit": "",
+    "sign": "16 S"
+  },
+  {
+    "offset": 50,
+    "name": "Auxiliary sender 2 category",
+    "min": 0,
+    "max": 3,
+    "scale": "",
+    "unit": "",
+    "sign": 16
+  },
+  {
+    "offset": 51,
+    "name": "Auxiliary sender 2 value",
+    "min": "See table below",
+    "max": "",
+    "scale": "",
+    "unit": "",
+    "sign": "16 S"
+  },
+  {
+    "offset": 52,
+    "name": "Auxiliary sender 3 category",
+    "min": 0,
+    "max": 3,
+    "scale": "",
+    "unit": "",
+    "sign": 16
+  },
+  {
+    "offset": 53,
+    "name": "Auxiliary sender 3 value",
+    "min": "See table below",
+    "max": "",
+    "scale": "",
+    "unit": "",
+    "sign": "16 S"
+  },
+  {
+    "offset": 54,
+    "name": "Auxiliary sender 4 category",
+    "min": 0,
+    "max": 3,
+    "scale": "",
+    "unit": "",
+    "sign": 16
+  },
+  {
+    "offset": 55,
+    "name": "Auxiliary sender 4 value",
+    "min": "See table below",
+    "max": "",
+    "scale": "",
+    "unit": "",
+    "sign": "16 S"
+  },
+  {
+    "offset": "56-63",
+    "name": "Reserved",
+    "min": "",
+    "max": "",
+    "scale": "",
+    "unit": "",
+    "sign": ""
+  },
+  {
+    "offset": "64-65",
+    "name": "Exhaust after treatment fuel used",
+    "min": 0,
+    "max": 2105,
+    "scale": 1,
+    "unit": "Litres",
+    "sign": "32 U"
+  },
+  {
+    "offset": 66,
+    "name": "After treatment temperature T1",
+    "min": 0,
+    "max": 1734,
+    "scale": 1,
+    "unit": "Degrees  C",
+    "sign": "16 S"
+  },
+  {
+    "offset": 67,
+    "name": "After treatment temperature T3",
+    "min": 0,
+    "max": 1734,
+    "scale": 1,
+    "unit": "Degrees  C",
+    "sign": "16 S"
+  },
+  {
+    "offset": "68-69",
+    "name": "Engine reference torque",
+    "min": 0,
+    "max": 6425,
+    "scale": 1,
+    "unit": "Nm",
+    "sign": "32U"
+  },
+  {
+    "offset": "70-71",
+    "name": "Engine percentage torque",
+    "min": -125,
+    "max": 125,
+    "scale": 1,
+    "unit": "%",
+    "sign": "32S"
+  },
+  {
+    "offset": "72-73",
+    "name": "Engine demand torque",
+    "min": -125,
+    "max": 125,
+    "scale": 1,
+    "unit": "%",
+    "sign": "32S"
+  },
+  {
+    "offset": 74,
+    "name": "Percentage load at speed",
+    "min": 0,
+    "max": 250,
+    "scale": 1,
+    "unit": "%",
+    "sign": "16 U"
+  },
+  {
+    "offset": 75,
+    "name": "Accelerator position",
+    "min": 0,
+    "max": 100,
+    "scale": 1,
+    "unit": "%",
+    "sign": "16 U"
+  },
+  {
+    "offset": 76,
+    "name": "Nominal friction percentage torque",
+    "min": -125,
+    "max": 125,
+    "scale": 1,
+    "unit": "%",
+    "sign": "16 S"
+  },
+  {
+    "offset": 77,
+    "name": "Oil level",
+    "min": 0,
+    "max": 100,
+    "scale": 1,
+    "unit": "%",
+    "sign": "16 U"
+  },
+  {
+    "offset": 78,
+    "name": "Crank case pressure",
+    "min": -25000,
+    "max": 25000,
+    "scale": 0.01,
+    "unit": "kPa",
+    "sign": "16 S"
+  },
+  {
+    "offset": 79,
+    "name": "Coolant level",
+    "min": 0,
+    "max": 100,
+    "scale": 1,
+    "unit": "%",
+    "sign": "16 U"
+  },
+  {
+    "offset": 80,
+    "name": "Injector Rail 1 pressure",
+    "min": 0,
+    "max": 2509,
+    "scale": 0.01,
+    "unit": "Mpa",
+    "sign": "16 U"
+  },
+  {
+    "offset": 81,
+    "name": "Injector Rail 2 pressure",
+    "min": 0,
+    "max": 2509,
+    "scale": 0.01,
+    "unit": "Mpa",
+    "sign": "16 U"
+  },
+  {
+    "offset": 82,
+    "name": "Engine EGR flow",
+    "min": 0,
+    "max": 3212,
+    "scale": 1,
+    "unit": "kg/h",
+    "sign": "16 U"
+  },
+  {
+    "offset": 83,
+    "name": "Pre filter oil pressure",
+    "min": 0,
+    "max": 1000,
+    "scale": 1,
+    "unit": "kPa",
+    "sign": "16 U"
+  },
+  {
+    "offset": "84-85",
+    "name": "Instant break power",
+    "min": 0,
+    "max": 3212,
+    "scale": 1,
+    "unit": "kW",
+    "sign": "32 U"
+  },
+  {
+    "offset": "86 -101",
+    "name": "Exhaust gas port 1-16 temperature",
+    "min": -273,
+    "max": 1734,
+    "scale": 1,
+    "unit": "Degrees C",
+    "sign": "16 S"
+  },
+  {
+    "offset": 102,
+    "name": "Intercooler temperature",
+    "min": -40,
+    "max": 210,
+    "scale": 1,
+    "unit": "Degrees C",
+    "sign": "16 S"
+  },
+  {
+    "offset": 103,
+    "name": "Turbo oil temperature",
+    "min": -273,
+    "max": 1734,
+    "scale": 1,
+    "unit": "Degrees C",
+    "sign": "16 S"
+  },
+  {
+    "offset": 104,
+    "name": "ECU temperature",
+    "min": -273,
+    "max": 1734,
+    "scale": 1,
+    "unit": "Degrees C",
+    "sign": "16 S"
+  },
+  {
+    "offset": 105,
+    "name": "Fan speed",
+    "min": 0,
+    "max": 8031,
+    "scale": 1,
+    "unit": "rpm",
+    "sign": "16 U"
+  },
+  {
+    "offset": "106-107",
+    "name": "Total engine revolutions",
+    "min": 0,
+    "max": 4211,
+    "scale": 0.001,
+    "unit": "",
+    "sign": "32 U"
+  },
+  {
+    "offset": 108,
+    "name": "Air inlet pressure",
+    "min": 0,
+    "max": 500,
+    "scale": 1,
+    "unit": "kPa",
+    "sign": "16 U"
+  },
+  {
+    "offset": 109,
+    "name": "Air filter differential pressure",
+    "min": 0,
+    "max": 125,
+    "scale": 0.1,
+    "unit": "kPa",
+    "sign": "16 U"
+  },
+  {
+    "offset": 110,
+    "name": "Air trap inlet pressure",
+    "min": 0,
+    "max": 125,
+    "scale": 1,
+    "unit": "kPa",
+    "sign": "16 U"
+  },
+  {
+    "offset": 111,
+    "name": "Turbo pressure 3",
+    "min": 0,
+    "max": 8031,
+    "scale": 1,
+    "unit": "kPa",
+    "sign": "16 U"
+  },
+  {
+    "offset": 112,
+    "name": "Turbo pressure 4",
+    "min": 0,
+    "max": 8031,
+    "scale": 1,
+    "unit": "kPa",
+    "sign": "16 U"
+  },
+  {
+    "offset": 113,
+    "name": "Inlet manifold temperature 3",
+    "min": -40,
+    "max": 210,
+    "scale": 1,
+    "unit": "Degrees C",
+    "sign": "16 S"
+  },
+  {
+    "offset": 114,
+    "name": "Inlet manifold temperature 4",
+    "min": -40,
+    "max": 210,
+    "scale": 1,
+    "unit": "Degrees C",
+    "sign": "16 S"
+  },
+  {
+    "offset": 115,
+    "name": "Inlet manifold temperature 5",
+    "min": -40,
+    "max": 210,
+    "scale": 1,
+    "unit": "Degrees C",
+    "sign": "16 S"
+  },
+  {
+    "offset": 116,
+    "name": "Inlet manifold temperature 6",
+    "min": -40,
+    "max": 210,
+    "scale": 1,
+    "unit": "Degrees C",
+    "sign": "16 S"
+  },
+  {
+    "offset": "117-118",
+    "name": "Trip fuel",
+    "min": 0,
+    "max": 2105,
+    "scale": 1,
+    "unit": "Litres",
+    "sign": "32 U"
+  },
+  {
+    "offset": 119,
+    "name": "Electrical potential",
+    "min": "",
+    "max": "",
+    "scale": 0.1,
+    "unit": "V",
+    "sign": "16 U"
+  },
+  {
+    "offset": 120,
+    "name": "PGI Engine type",
+    "min": "",
+    "max": "",
+    "scale": "",
+    "unit": "",
+    "sign": "16 U"
+  },
+  {
+    "offset": 121,
+    "name": "PGI Engine version number",
+    "min": "",
+    "max": "",
+    "scale": "",
+    "unit": "",
+    "sign": "16 U"
+  },
+  {
+    "offset": 122,
+    "name": "DPTC filter lamp command",
+    "min": 0,
+    "max": 7,
+    "scale": "See table",
+    "unit": "",
+    "sign": "16 U"
+  },
+  {
+    "offset": 123,
+    "name": "Exhaust system high temperature lamp",
+    "min": 0,
+    "max": 7,
+    "scale": "",
+    "unit": "",
+    "sign": "16 U"
+  },
+  {
+    "offset": 124,
+    "name": "DPTC Action regeneration forced",
+    "min": 0,
+    "max": 7,
+    "scale": "See table",
+    "unit": "",
+    "sign": "16 U"
+  },
+  {
+    "offset": 125,
+    "name": "Shutdown wait to start",
+    "min": "",
+    "max": "",
+    "scale": "",
+    "unit": "",
+    "sign": "16 U"
+  },
+  {
+    "offset": 126,
+    "name": "Shutdown protection",
+    "min": "",
+    "max": "",
+    "scale": "",
+    "unit": "",
+    "sign": "16 U"
+  },
+  {
+    "offset": 127,
+    "name": "Shutdown Approaching",
+    "min": "",
+    "max": "",
+    "scale": "",
+    "unit": "",
+    "sign": "16 U"
+  },
+  {
+    "offset": 128,
+    "name": "Engine operating state",
+    "min": 0,
+    "max": 15,
+    "scale": "See table",
+    "unit": "",
+    "sign": "16 U"
+  },
+  {
+    "offset": 129,
+    "name": "Shutdown coolant override",
+    "min": "",
+    "max": "",
+    "scale": "",
+    "unit": "",
+    "sign": "16 U"
+  },
+  {
+    "offset": 130,
+    "name": "Battle short override",
+    "min": "",
+    "max": "",
+    "scale": "",
+    "unit": "",
+    "sign": "16 U"
+  },
+  {
+    "offset": 131,
+    "name": "Module engine hours",
+    "min": "",
+    "max": "",
+    "scale": "",
+    "unit": "",
+    "sign": "16 U"
+  },
+  {
+    "offset": 132,
+    "name": "Module oil pressure",
+    "min": "",
+    "max": "",
+    "scale": "",
+    "unit": "",
+    "sign": "16 U"
+  },
+  {
+    "offset": 133,
+    "name": "Module coolant temperature",
+    "min": "",
+    "max": "",
+    "scale": "",
+    "unit": "",
+    "sign": "16 U"
+  },
+  {
+    "offset": 134,
+    "name": "Module engine RPM",
+    "min": "",
+    "max": "",
+    "scale": "",
+    "unit": "",
+    "sign": "16 U"
+  },
+  {
+    "offset": 135,
+    "name": "Module charge alternator",
+    "min": "",
+    "max": "",
+    "scale": "",
+    "unit": "",
+    "sign": "16 U"
+  },
+  {
+    "offset": 136,
+    "name": "Module speed feed",
+    "min": "",
+    "max": "",
+    "scale": "",
+    "unit": "",
+    "sign": "16 U"
+  },
+  {
+    "offset": 137,
+    "name": "Frequency adjust",
+    "min": "",
+    "max": "",
+    "scale": "",
+    "unit": "",
+    "sign": "16 U"
+  },
+  {
+    "offset": 138,
+    "name": "Engine operating state",
+    "min": "",
+    "max": "",
+    "scale": "",
+    "unit": "",
+    "sign": "16 U"
+  },
+  {
+    "offset": 139,
+    "name": "Engine alarm warning",
+    "min": "",
+    "max": "",
+    "scale": "",
+    "unit": "",
+    "sign": "16 U"
+  },
+  {
+    "offset": 140,
+    "name": "Engine alarm shutdown",
+    "min": "",
+    "max": "",
+    "scale": "",
+    "unit": "",
+    "sign": "16 U"
+  },
+  {
+    "offset": 141,
+    "name": "Engine alarm electrical trip",
+    "min": "",
+    "max": "",
+    "scale": "",
+    "unit": "",
+    "sign": "16 U"
+  },
+  {
+    "offset": 142,
+    "name": "CAN amber stop lamp",
+    "min": "",
+    "max": "",
+    "scale": "",
+    "unit": "",
+    "sign": "16 U"
+  },
+  {
+    "offset": 143,
+    "name": "CAN amber lamp flash",
+    "min": "",
+    "max": "",
+    "scale": "",
+    "unit": "",
+    "sign": "16 U"
+  },
+  {
+    "offset": 144,
+    "name": "CAN Red stop lamp",
+    "min": "",
+    "max": "",
+    "scale": "",
+    "unit": "",
+    "sign": "16 U"
+  },
+  {
+    "offset": 145,
+    "name": "CAN red lamp flash",
+    "min": "",
+    "max": "",
+    "scale": "",
+    "unit": "",
+    "sign": "16 U"
+  },
+  {
+    "offset": 146,
+    "name": "CAN protect lamp",
+    "min": "",
+    "max": "",
+    "scale": "",
+    "unit": "",
+    "sign": "16 U"
+  },
+  {
+    "offset": 147,
+    "name": "CAN protect lamp flash",
+    "min": "",
+    "max": "",
+    "scale": "",
+    "unit": "",
+    "sign": "16 U"
+  },
+  {
+    "offset": 148,
+    "name": "Malfunction Lamp",
+    "min": "",
+    "max": "",
+    "scale": "",
+    "unit": "",
+    "sign": "16 U"
+  },
+  {
+    "offset": 149,
+    "name": "Malfunction lamp flash",
+    "min": "",
+    "max": "",
+    "scale": "",
+    "unit": "",
+    "sign": "16 U"
+  },
+  {
+    "offset": 150,
+    "name": "Electrical potential",
+    "min": "",
+    "max": "",
+    "scale": "",
+    "unit": "",
+    "sign": "16 U"
+  },
+  {
+    "offset": 151,
+    "name": "Battery potential",
+    "min": "",
+    "max": "",
+    "scale": 0.1,
+    "unit": "V",
+    "sign": "16 U"
+  },
+  {
+    "offset": 152,
+    "name": "Charging potential",
+    "min": "",
+    "max": "",
+    "scale": 0.1,
+    "unit": "V",
+    "sign": "16 U"
+  },
+  {
+    "offset": 153,
+    "name": "Charge alternator current",
+    "min": "",
+    "max": "",
+    "scale": 1,
+    "unit": "A",
+    "sign": "16 U"
+  },
+  {
+    "offset": 154,
+    "name": "Battery current",
+    "min": "",
+    "max": "",
+    "scale": 1,
+    "unit": "A",
+    "sign": "16 S"
+  },
+  {
+    "offset": 155,
+    "name": "Engine torque mode",
+    "min": "",
+    "max": "",
+    "scale": "",
+    "unit": "",
+    "sign": "16 U"
+  },
+  {
+    "offset": 156,
+    "name": "Engine starter mode",
+    "min": "",
+    "max": "",
+    "scale": "",
+    "unit": "",
+    "sign": "16 U"
+  },
+  {
+    "offset": 157,
+    "name": "CAN CI status",
+    "min": "",
+    "max": "",
+    "scale": "",
+    "unit": "",
+    "sign": "16 U"
+  },
+  {
+    "offset": 158,
+    "name": "Demand speed",
+    "min": "",
+    "max": "",
+    "scale": "",
+    "unit": "",
+    "sign": "16 U"
+  },
+  {
+    "offset": 159,
+    "name": "Speed up",
+    "min": "",
+    "max": "",
+    "scale": "",
+    "unit": "",
+    "sign": "16 U"
+  },
+  {
+    "offset": 160,
+    "name": "Speed down",
+    "min": "",
+    "max": "",
+    "scale": "",
+    "unit": "",
+    "sign": "16 U"
+  },
+  {
+    "offset": 161,
+    "name": "Speed fail",
+    "min": "",
+    "max": "",
+    "scale": "",
+    "unit": "",
+    "sign": "16 U"
+  },
+  {
+    "offset": 162,
+    "name": "Current SD source",
+    "min": "",
+    "max": "",
+    "scale": "",
+    "unit": "",
+    "sign": "16 U"
+  },
+  {
+    "offset": 163,
+    "name": "Feedback SD CAN",
+    "min": "",
+    "max": "",
+    "scale": "",
+    "unit": "",
+    "sign": "16 U"
+  },
+  {
+    "offset": 164,
+    "name": "Feedback SD analogue",
+    "min": "",
+    "max": "",
+    "scale": "",
+    "unit": "",
+    "sign": "16 U"
+  },
+  {
+    "offset": 165,
+    "name": "Failure codes",
+    "min": "",
+    "max": "",
+    "scale": "",
+    "unit": "",
+    "sign": "16 U"
+  },
+  {
+    "offset": 166,
+    "name": "Actual droop",
+    "min": "",
+    "max": "",
+    "scale": "",
+    "unit": "",
+    "sign": "16 U"
+  },
+  {
+    "offset": 167,
+    "name": "Start status",
+    "min": "",
+    "max": "",
+    "scale": "",
+    "unit": "",
+    "sign": "16 U"
+  },
+  {
+    "offset": 168,
+    "name": "Protection override status",
+    "min": "",
+    "max": "",
+    "scale": "",
+    "unit": "",
+    "sign": "16 U"
+  },
+  {
+    "offset": 169,
+    "name": "MTU running state",
+    "min": "",
+    "max": "",
+    "scale": "",
+    "unit": "",
+    "sign": "16 U"
+  },
+  {
+    "offset": 170,
+    "name": "Cylinder cut off",
+    "min": "",
+    "max": "",
+    "scale": "",
+    "unit": "",
+    "sign": "16 U"
+  },
+  {
+    "offset": 171,
+    "name": "Load gen status",
+    "min": "",
+    "max": "",
+    "scale": "",
+    "unit": "",
+    "sign": "16 U"
+  },
+  {
+    "offset": 172,
+    "name": "Extended stop status",
+    "min": "",
+    "max": "",
+    "scale": "",
+    "unit": "",
+    "sign": "16 U"
+  },
+  {
+    "offset": 173,
+    "name": "Current operating mode",
+    "min": "",
+    "max": "",
+    "scale": "",
+    "unit": "",
+    "sign": "16 U"
+  },
+  {
+    "offset": 174,
+    "name": "MTU required torque",
+    "min": "",
+    "max": "",
+    "scale": "",
+    "unit": "",
+    "sign": "16 U"
+  },
+  {
+    "offset": 175,
+    "name": "Trip average fuel",
+    "min": "",
+    "max": "",
+    "scale": 0.01,
+    "unit": "L/hour",
+    "sign": "16 U"
+  },
+  {
+    "offset": 176,
+    "name": "ECU rated power",
+    "min": "",
+    "max": "",
+    "scale": 1,
+    "unit": "kW",
+    "sign": "16 U"
+  },
+  {
+    "offset": 177,
+    "name": "ECU rated speed",
+    "min": "",
+    "max": "",
+    "scale": 1,
+    "unit": "RPM",
+    "sign": "16 U"
+  },
+  {
+    "offset": 178,
+    "name": "ECU idle speed",
+    "min": "",
+    "max": "",
+    "scale": 1,
+    "unit": "RPM",
+    "sign": "16 U"
+  },
+  {
+    "offset": 179,
+    "name": "ECU desired speed",
+    "min": "",
+    "max": "",
+    "scale": 1,
+    "unit": "RPM",
+    "sign": "16 U"
+  },
+  {
+    "offset": 180,
+    "name": "ECU preheat status",
+    "min": "",
+    "max": "",
+    "scale": "",
+    "unit": "",
+    "sign": "16 U"
+  },
+  {
+    "offset": 181,
+    "name": "Manifold pressure",
+    "min": "",
+    "max": "",
+    "scale": 1,
+    "unit": "kPa",
+    "sign": "16 U"
+  },
+  {
+    "offset": 182,
+    "name": "Intercooler level",
+    "min": "",
+    "max": "",
+    "scale": 1,
+    "unit": "%",
+    "sign": "16 U"
+  },
+  {
+    "offset": 183,
+    "name": "CAN link status",
+    "min": "",
+    "max": "",
+    "scale": "",
+    "unit": "",
+    "sign": "16U"
+  },
+  {
+    "offset": 184,
+    "name": "Auto DPF Regeneration Inhibit",
+    "min": "",
+    "max": "",
+    "scale": "",
+    "unit": "",
+    "sign": "16U"
+  },
+  {
+    "offset": 185,
+    "name": "DPTC Active Regeneration Inhibit Switch (received from engine) SPN 3703",
+    "min": "",
+    "max": "",
+    "scale": "",
+    "unit": "",
+    "sign": "16U"
+  },
+  {
+    "offset": 186,
+    "name": "Soot Load",
+    "min": 0,
+    "max": "",
+    "scale": 1,
+    "unit": "%",
+    "sign": "16U"
+  },
+  {
+    "offset": 187,
+    "name": "Ash Load",
+    "min": 0,
+    "max": "",
+    "scale": 1,
+    "unit": "%",
+    "sign": "16U"
+  },
+  {
+    "offset": "188-189",
+    "name": "Reserved",
+    "min": "",
+    "max": "",
+    "scale": "",
+    "unit": "",
+    "sign": ""
+  },
+  {
+    "offset": 190,
+    "name": "LCD Temperature",
+    "min": -100,
+    "max": 200,
+    "scale": 1,
+    "unit": "Degrees C",
+    "sign": "16S"
+  },
+  {
+    "offset": 191,
+    "name": "DEF Tank Level",
+    "min": "",
+    "max": "",
+    "scale": "",
+    "unit": "%",
+    "sign": "16U"
+  },
+  {
+    "offset": 192,
+    "name": "DEF Tank Temperature",
+    "min": "",
+    "max": "",
+    "scale": "",
+    "unit": "Degrees C",
+    "sign": "16S"
+  },
+  {
+    "offset": 193,
+    "name": "DEF Level Status",
+    "min": "",
+    "max": "",
+    "scale": "",
+    "unit": "",
+    "sign": "16U"
+  },
+  {
+    "offset": 194,
+    "name": "DEF Consumption",
+    "min": "",
+    "max": "",
+    "scale": "",
+    "unit": "L/hour",
+    "sign": "16U"
+  },
+  {
+    "offset": 195,
+    "name": "Aftertreatment Status Reason",
+    "min": "",
+    "max": "",
+    "scale": "",
+    "unit": "",
+    "sign": "16U"
+  },
+  {
+    "offset": 196,
+    "name": "Aftertreatment Status Severity",
+    "min": "",
+    "max": "",
+    "scale": "",
+    "unit": "",
+    "sign": "16U"
+  },
+  {
+    "offset": 197,
+    "name": "Time left until action needed",
+    "min": "",
+    "max": "",
+    "scale": "",
+    "unit": "s",
+    "sign": "16U"
+  },
+  {
+    "offset": 198,
+    "name": "Time until Torque Reduction",
+    "min": "",
+    "max": "",
+    "scale": "",
+    "unit": "s",
+    "sign": "16U"
+  },
+  {
+    "offset": 199,
+    "name": "Time until Speed Reduction",
+    "min": "",
+    "max": "",
+    "scale": "",
+    "unit": "s",
+    "sign": "16U"
+  },
+  {
+    "offset": 200,
+    "name": "EGR Pressure",
+    "min": "",
+    "max": "",
+    "scale": "",
+    "unit": "kPa",
+    "sign": "16U"
+  },
+  {
+    "offset": 201,
+    "name": "EGR Temperature",
+    "min": "",
+    "max": "",
+    "scale": "",
+    "unit": "Degrees C",
+    "sign": "16S"
+  },
+  {
+    "offset": 202,
+    "name": "Ambient Air Temperature",
+    "min": "",
+    "max": "",
+    "scale": "",
+    "unit": "Degrees C",
+    "sign": "16S"
+  },
+  {
+    "offset": 203,
+    "name": "Air Intake Temperature",
+    "min": "",
+    "max": "",
+    "scale": "",
+    "unit": "Degrees C",
+    "sign": "16S"
+  },
+  {
+    "offset": 204,
+    "name": "DEF Lamps – SCR Inducement",
+    "min": 0,
+    "max": 15,
+    "scale": "",
+    "unit": "See table below",
+    "sign": "16U"
+  },
+  {
+    "offset": 205,
+    "name": "DEF Lamps – DEF Level Low",
+    "min": 0,
+    "max": 15,
+    "scale": "",
+    "unit": "See table below",
+    "sign": "16U"
+  },
+  {
+    "offset": 206,
+    "name": "Generator high-resolution frequency",
+    "min": 0,
+    "max": 70,
+    "scale": 0.01,
+    "unit": "Hz",
+    "sign": 16
+  },
+  {
+    "offset": 207,
+    "name": "Mains high-resolution frequency",
+    "min": 0,
+    "max": 70,
+    "scale": 0.01,
+    "unit": "Hz",
+    "sign": 16
+  },
+  {
+    "offset": 208,
+    "name": "Bus high-resolution frequency",
+    "min": 0,
+    "max": 70,
+    "scale": 0.01,
+    "unit": "Hz",
+    "sign": 16
+  },
+  {
+    "offset": 209,
+    "name": "Bus 2 high-resolution frequency",
+    "min": 0,
+    "max": 70,
+    "scale": 0.01,
+    "unit": "Hz",
+    "sign": 16
+  },
+  {
+    "offset": 210,
+    "name": "Oil Pressure",
+    "min": -100,
+    "max": 10000,
+    "scale": 1,
+    "unit": "kPa",
+    "sign": "16 S"
+  },
+  {
+    "offset": 211,
+    "name": "CAN Alternate engine speed selected",
+    "min": 0,
+    "max": 1,
+    "scale": 0,
+    "unit": "",
+    "sign": 16
+  },
+  {
+    "offset": "212-213",
+    "name": "Generator Excitation Field Current",
+    "min": "",
+    "max": "",
+    "scale": "",
+    "unit": "A",
+    "sign": "32U"
+  },
+  {
+    "offset": "214-215",
+    "name": "Generator Excitation Field Voltage",
+    "min": "",
+    "max": "",
+    "scale": "",
+    "unit": "V",
+    "sign": "32U"
+  },
+  {
+    "offset": 216,
+    "name": "Generator Output Voltage Bias Percentage",
+    "min": "",
+    "max": "",
+    "scale": "",
+    "unit": "%",
+    "sign": "16U"
+  },
+  {
+    "offset": "217-220",
+    "name": "Exhaust gas port 17-20 temperature",
+    "min": -273,
+    "max": 1734,
+    "scale": 1,
+    "unit": "Degrees C",
+    "sign": "16 S"
+  },
+  {
+    "offset": 221,
+    "name": "Instant Fuel Rate",
+    "min": "",
+    "max": "",
+    "scale": "",
+    "unit": "",
+    "sign": "16U"
+  },
+  {
+    "offset": 222,
+    "name": "DPTC Filter Status",
+    "min": "",
+    "max": "",
+    "scale": "",
+    "unit": "",
+    "sign": "16U"
+  },
+  {
+    "offset": 223,
+    "name": "DPTC Active Regeneration Inhibit",
+    "min": "",
+    "max": "",
+    "scale": "",
+    "unit": "",
+    "sign": "16U"
+  },
+  {
+    "offset": 224,
+    "name": "DPTC Active Regeneration Inhibit ET",
+    "min": "",
+    "max": "",
+    "scale": "",
+    "unit": "",
+    "sign": "16U"
+  },
+  {
+    "offset": 225,
+    "name": "DEF Tank Status",
+    "min": "",
+    "max": "",
+    "scale": "",
+    "unit": "",
+    "sign": "16U"
+  },
+  {
+    "offset": 226,
+    "name": "Gas Fuel Pressure",
+    "min": "",
+    "max": "",
+    "scale": "",
+    "unit": "",
+    "sign": "16U"
+  },
+  {
+    "offset": 227,
+    "name": "Throttle Position 1",
+    "min": "",
+    "max": "",
+    "scale": "",
+    "unit": "",
+    "sign": "16U"
+  },
+  {
+    "offset": 228,
+    "name": "Throttle Position 2",
+    "min": "",
+    "max": "",
+    "scale": "",
+    "unit": "",
+    "sign": "16U"
+  },
+  {
+    "offset": "229-230",
+    "name": "DC Charger Current",
+    "min": "-2,500,000.00",
+    "max": "2,500,000.00",
+    "scale": 0.1,
+    "unit": "A",
+    "sign": "32S"
+  },
+  {
+    "offset": 231,
+    "name": "Trip Average Fuel Efficiency",
+    "min": 0,
+    "max": 10,
+    "scale": 0.01,
+    "unit": "kW Hour/L",
+    "sign": "16U"
+  },
+  {
+    "offset": 232,
+    "name": "Instantaneous Fuel Efficiency",
+    "min": 0,
+    "max": 10,
+    "scale": 0.01,
+    "unit": "kW Hour/L",
+    "sign": "16U"
+  },
+  {
+    "offset": 233,
+    "name": "Fuel Distance (in mm)",
+    "min": 0,
+    "max": 3000,
+    "scale": 1,
+    "unit": "mm",
+    "sign": "16S"
+  },
+  {
+    "offset": 234,
+    "name": "Unimplemented",
+    "min": "",
+    "max": "",
+    "scale": "",
+    "unit": "",
+    "sign": ""
+  },
+  {
+    "offset": 235,
+    "name": "Bus zero sequence voltage angle",
+    "min": -360,
+    "max": 360,
+    "scale": 0.1,
+    "unit": "Degrees",
+    "sign": "16S"
+  },
+  {
+    "offset": 236,
+    "name": "Bus positive sequence voltage angle",
+    "min": -360,
+    "max": 360,
+    "scale": 0.1,
+    "unit": "Degrees",
+    "sign": "16S"
+  },
+  {
+    "offset": 237,
+    "name": "Bus negative sequence voltage angle",
+    "min": -360,
+    "max": 360,
+    "scale": 0.1,
+    "unit": "Degrees",
+    "sign": "16S"
+  },
+  {
+    "offset": "238-239",
+    "name": "Bus zero sequence voltage magnitude",
+    "min": 0,
+    "max": "30,000",
+    "scale": 0.1,
+    "unit": "V",
+    "sign": 32
+  },
+  {
+    "offset": "240-241",
+    "name": "Bus positive sequence voltage magnitude",
+    "min": 0,
+    "max": "30,000",
+    "scale": 0.1,
+    "unit": "V",
+    "sign": 32
+  },
+  {
+    "offset": "242-243",
+    "name": "Bus negative sequence voltage magnitude",
+    "min": 0,
+    "max": "30,000",
+    "scale": 0.1,
+    "unit": "V",
+    "sign": 32
+  },
+  {
+    "offset": 244,
+    "name": "Fuel level (signed value)",
+    "min": "",
+    "max": "",
+    "scale": 1,
+    "unit": "%",
+    "sign": "16S"
+  },
+  {
+    "offset": 245,
+    "name": "Gen zero sequence voltage angle",
+    "min": -360,
+    "max": 360,
+    "scale": 0.1,
+    "unit": "Degrees",
+    "sign": "16S"
+  },
+  {
+    "offset": 246,
+    "name": "Gen positive sequence voltage angle",
+    "min": -360,
+    "max": 360,
+    "scale": 0.1,
+    "unit": "Degrees",
+    "sign": "16S"
+  },
+  {
+    "offset": 247,
+    "name": "Gen negative sequence voltage angle",
+    "min": -360,
+    "max": 360,
+    "scale": 0.1,
+    "unit": "Degrees",
+    "sign": "16S"
+  },
+  {
+    "offset": "248-249",
+    "name": "Gen zero sequence voltage magnitude",
+    "min": 0,
+    "max": "30,000",
+    "scale": 0.1,
+    "unit": "V",
+    "sign": 32
+  },
+  {
+    "offset": "250-251",
+    "name": "Gen positive sequence voltage magnitude",
+    "min": 0,
+    "max": "30,000",
+    "scale": 0.1,
+    "unit": "V",
+    "sign": 32
+  },
+  {
+    "offset": "252-253",
+    "name": "Gen negative sequence voltage magnitude",
+    "min": 0,
+    "max": "30,000",
+    "scale": 0.1,
+    "unit": "V",
+    "sign": 32
+  },
+  {
+    "offset": "254-255",
+    "name": "Manual Run Time Remaining (E400 v4.0)",
+    "min": 0,
+    "max": "432,000 (12h)",
+    "scale": 0.1,
+    "unit": "Seconds",
+    "sign": 32
+  }
+]

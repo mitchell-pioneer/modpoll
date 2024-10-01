@@ -5,7 +5,7 @@ from . import __version__
 
 def get_parser():
     parser = argparse.ArgumentParser(
-        description=f"modpoll v{__version__} - A New Command-line Tool for Modbus and MQTT"
+        description=f"modpoll v{__version__}- A New Command-line Tool for Modbus and MQTT"
     )
     parser.add_argument(
         "-v",

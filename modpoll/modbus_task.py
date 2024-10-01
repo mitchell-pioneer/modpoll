@@ -11,6 +11,7 @@ from pymodbus.constants import Endian
 from pymodbus.exceptions import ModbusException
 from pymodbus.payload import BinaryPayloadDecoder
 
+from deepsea.DeepSeaModBusCalculator import DeepSeaModBusCalculator
 from modpoll.mqtt_task import mqttc_publish
 
 args = None
@@ -18,6 +19,7 @@ log = None
 master = None
 deviceList = []
 event_exit = None
+deepsea = DeepSeaModBusCalculator()
 
 class Device:
     def __init__(self, device_name: str, device_id: int):
@@ -37,10 +39,10 @@ class Device:
         self.references[ref.name].last_val = ref.last_val
         self.references[ref.name].val = ref.val
 
-
 class Poller:
     def __init__(
         self, device, function_code: int, start_address: int, size: int, endian: str
+
     ):
         self.device = device
         self.fc = function_code
@@ -57,6 +59,8 @@ class Poller:
         try:
             result = None
             data = None
+
+            # parser the register type
             if self.fc == 1:
                 result = master.read_coils(
                     self.start_address, self.size, slave=self.device.devid
@@ -89,6 +93,8 @@ class Poller:
                 )
                 log.debug(result)
                 return
+
+            # parse the byte format
             if "BE_BE" == self.endian.upper():
                 if self.fc == 1 or self.fc == 2:
                     decoder = BinaryPayloadDecoder.fromCoils(data, byteorder=Endian.BIG)
@@ -121,6 +127,8 @@ class Poller:
                     decoder = BinaryPayloadDecoder.fromRegisters(
                         data, byteorder=Endian.BIG, wordorder=Endian.LITTLE
                     )
+
+            # parse the
             cur_ref = self.start_address
             for ref in self.readableReferences:
                 if self.fc == 1 or self.fc == 2:
@@ -212,7 +220,6 @@ class Poller:
                     f"start_address: {self.start_address}, size: {self.size})."
                 )
 
-
 class Reference:
     def __init__(
         self, device, ref_name: str, address: int, dtype: str, rw: str, unit, scale,hrange,lrange
@@ -260,7 +267,7 @@ class Reference:
         self.unit = unit
         self.scale = scale
         self.val = None
-        self.last_val = None
+        self.last_val = -9999
         self.hrange = hrange
         self.lrange = lrange
 
@@ -290,9 +297,12 @@ class Reference:
 def parse_config(csv_reader):
     current_device = None
     current_poller = None
+    pageName = ""
     try:
         for row in csv_reader:
             if not row or len(row) == 0:
+                continue
+            if row[0].startswith('#'):
                 continue
             if "device" in row[0].lower():
                 device_name = row[1]
@@ -301,8 +311,16 @@ def parse_config(csv_reader):
                 deviceList.append(current_device)
             elif "poll" in row[0].lower():
                 fc = row[1].lower()
-                start_address = int(row[2])
-                size = int(row[3])
+
+                if(row[2].startswith('dsPage')):        # is this a deepsea page refrerence
+                    ptype = row[2].split('!')[1]
+                    start_address,ss  = deepsea.getPageStartAddress(ptype)
+                    size = ss
+                    pageName = ptype
+                else:
+                    start_address = int(row[2])
+                    size = int(row[3])
+
                 endian = row[4]
                 current_poller = None
                 if not current_device:
@@ -341,9 +359,7 @@ def parse_config(csv_reader):
                 else:
                     log.warning(f"Unknown function code ({fc}) ignoring poller.")
                     continue
-                current_poller = Poller(
-                    current_device, function_code, start_address, size, endian
-                )
+                current_poller = Poller(current_device, function_code, start_address, size, endian)
                 current_device.pollerList.append(current_poller)
                 log.info(
                     f"Add poller (start_address={current_poller.start_address}, size={current_poller.size}) "
@@ -351,7 +367,12 @@ def parse_config(csv_reader):
                 )
             elif "ref" in row[0].lower():
                 ref_name = row[1].replace(" ", "_")
-                address = int(row[2])
+                if(row[1].startswith("dsElement")):  # if this a deepsea element refrence
+                    dsarg = row[1].split("!")
+                    mbs = deepsea.getModbusSetting(pageName, dsarg[1])
+                    address = mbs
+                else:
+                    address = int(row[2])
                 dtype = row[3].lower()
                 rw = row[4] or "r"
                 try:
@@ -375,9 +396,9 @@ def parse_config(csv_reader):
                 if not current_device or not current_poller:
                     log.debug(f"No device/poller for reference {ref_name}.")
                     continue
-                ref = Reference(
-                    current_poller.device, ref_name, address, dtype, rw, unit, scale, hrange,lrange
-                )
+
+                # build the Refrerence and add to Poller
+                ref = Reference(current_poller.device, ref_name, address, dtype, rw, unit, scale, hrange, lrange)
                 if ref in current_poller.readableReferences:
                     log.warning(f"Reference {ref.name} is already added, ignoring it.")
                     continue
@@ -392,20 +413,22 @@ def parse_config(csv_reader):
                     current_poller.add_readable_reference(ref)
                 current_device.add_reference_mapping(ref)
                 log.debug(f"Add reference {ref.name} to device {current_device.name}")
-    except Exception:
-        log.error("Failed to parse the config file. Exiting.")
+    except Exception as e:
+        log.error("Failed to parse the config file. Exiting.|")
         exit(1)
 
 
 def load_config(file):
     try:
         with requests.Session() as s:
+            # were loading  the configuration as a url
             response = s.get(file)
             decoded_content = response.content.decode("utf-8")
             csv_reader = csv.reader(decoded_content.splitlines(), delimiter=",")
             parse_config(csv_reader)
     except requests.RequestException:
         with open(file, "r") as f:
+            # were loading  the configuration as local file
             f.seek(0)
             csv_reader = csv.reader(f)
             parse_config(csv_reader)

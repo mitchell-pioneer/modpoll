@@ -1,0 +1,4 @@
+device,MSChargeControler,1,,
+poll,holding_register,dsPage!Basic instrumentation!,0,BE_BE
+ref,dsElement!Engine Battery voltage!,16,float16,r,,0.1,0.1
+ref,dsElement!Engine Battery voltage!,16,float16,r,,0.1,0.1

@@ -1,0 +1,479 @@
+[
+    {
+      "offset": 0,
+      "name": "Current time since 1/1/70",
+      "min": 0,
+      "max": "4.29 x109",
+      "scale": 1,
+      "unit": "Seconds",
+      "sign": 32
+    },
+    {
+      "offset": 2,
+      "name": "Time to next engine maintenance",
+      "min": "-2.14 x109",
+      "max": "2.14 x109",
+      "scale": 1,
+      "unit": "Seconds",
+      "sign": "32S"
+    },
+    {
+      "offset": 4,
+      "name": "Time of next engine maintenance since 1/1/70",
+      "min": 0,
+      "max": "4.29 x109",
+      "scale": 1,
+      "unit": "Seconds",
+      "sign": 32
+    },
+    {
+      "offset": 6,
+      "name": "Engine run time",
+      "min": 0,
+      "max": "4.29 x109",
+      "scale": 1,
+      "unit": "Seconds",
+      "sign": 32
+    },
+    {
+      "offset": 8,
+      "name": "Generator positive KW hours",
+      "min": 0,
+      "max": "4.29 x109",
+      "scale": 0.1,
+      "unit": "KW hour",
+      "sign": 32
+    },
+    {
+      "offset": 10,
+      "name": "Generator negative KW hours",
+      "min": 0,
+      "max": "4.29 x109",
+      "scale": 0.1,
+      "unit": "KW hour",
+      "sign": 32
+    },
+    {
+      "offset": 12,
+      "name": "Generator KVA hours",
+      "min": 0,
+      "max": "4.29 x109",
+      "scale": 0.1,
+      "unit": "KVA hour",
+      "sign": 32
+    },
+    {
+      "offset": 14,
+      "name": "Generator KVAr hours",
+      "min": 0,
+      "max": "4.29 x109",
+      "scale": 0.1,
+      "unit": "KVAr hour",
+      "sign": 32
+    },
+    {
+      "offset": 16,
+      "name": "Number of starts",
+      "min": 0,
+      "max": 99999,
+      "scale": "",
+      "unit": "",
+      "sign": 32
+    },
+    {
+      "offset": 18,
+      "name": "Mains positive KW hours",
+      "min": 0,
+      "max": "4.29 x109",
+      "scale": 0.1,
+      "unit": "KW hour",
+      "sign": 32
+    },
+    {
+      "offset": 20,
+      "name": "Mains negative KW hours",
+      "min": 0,
+      "max": "4.29 x109",
+      "scale": 0.1,
+      "unit": "KW hour",
+      "sign": 32
+    },
+    {
+      "offset": 22,
+      "name": "Mains KVA hours",
+      "min": 0,
+      "max": "4.29 x109",
+      "scale": 0.1,
+      "unit": "KVA hour",
+      "sign": 32
+    },
+    {
+      "offset": 24,
+      "name": "Mains KVAr hours",
+      "min": 0,
+      "max": "4.29 x109",
+      "scale": 0.1,
+      "unit": "KVAr hour",
+      "sign": 32
+    },
+    {
+      "offset": 26,
+      "name": "Bus positive KW hours",
+      "min": 0,
+      "max": "4.29 x109",
+      "scale": 0.1,
+      "unit": "KW hour",
+      "sign": 32
+    },
+    {
+      "offset": 28,
+      "name": "Bus negative KW hours",
+      "min": 0,
+      "max": "4.29 x109",
+      "scale": 0.1,
+      "unit": "KW hour",
+      "sign": 32
+    },
+    {
+      "offset": 30,
+      "name": "Bus KVA hours",
+      "min": 0,
+      "max": "4.29 x109",
+      "scale": 0.1,
+      "unit": "KVA hour",
+      "sign": 32
+    },
+    {
+      "offset": 32,
+      "name": "Bus KVAr hours",
+      "min": 0,
+      "max": "4.29 x109",
+      "scale": 0.1,
+      "unit": "KVAr hour",
+      "sign": 32
+    },
+    {
+      "offset": 34,
+      "name": "Fuel used",
+      "min": 0,
+      "max": "4.29 x109",
+      "scale": 1,
+      "unit": "Litre",
+      "sign": 32
+    },
+    {
+      "offset": 36,
+      "name": "Maximum positive mains R.O.C.O.F.",
+      "min": 0,
+      "max": 10,
+      "scale": 0.01,
+      "unit": "Hz/s",
+      "sign": 32
+    },
+    {
+      "offset": 38,
+      "name": "Maximum negative mains R.O.C.O.F.",
+      "min": 0,
+      "max": 10,
+      "scale": 0.01,
+      "unit": "Hz/s",
+      "sign": 32
+    },
+    {
+      "offset": 40,
+      "name": "Maximum positive mains vector shift",
+      "min": 0,
+      "max": 360,
+      "scale": 0.1,
+      "unit": "Degrees",
+      "sign": 32
+    },
+    {
+      "offset": 42,
+      "name": "Maximum negative mains vector shift",
+      "min": 0,
+      "max": 360,
+      "scale": 0.1,
+      "unit": "Degrees",
+      "sign": 32
+    },
+    {
+      "offset": 44,
+      "name": "Time to next engine maintenance alarm 1",
+      "min": "-2.14 x109",
+      "max": "2.14 x109",
+      "scale": 1,
+      "unit": "Seconds",
+      "sign": "32S"
+    },
+    {
+      "offset": 46,
+      "name": "Time of next engine maintenance alarm 1 since 1/1/70",
+      "min": 0,
+      "max": "4.29 x109",
+      "scale": 1,
+      "unit": "Seconds",
+      "sign": 32
+    },
+    {
+      "offset": 48,
+      "name": "Time to next engine maintenance alarm 2",
+      "min": "-2.14 x109",
+      "max": "2.14 x109",
+      "scale": 1,
+      "unit": "Seconds",
+      "sign": "32S"
+    },
+    {
+      "offset": 50,
+      "name": "Time of next engine maintenance alarm 2 since 1/1/70",
+      "min": 0,
+      "max": "4.29 x109",
+      "scale": 1,
+      "unit": "Seconds",
+      "sign": 32
+    },
+    {
+      "offset": 52,
+      "name": "Time to next engine maintenance alarm 3",
+      "min": "-2.14 x109",
+      "max": "2.14 x109",
+      "scale": 1,
+      "unit": "Seconds",
+      "sign": "32S"
+    },
+    {
+      "offset": 54,
+      "name": "Time of next engine maintenance alarm 3 since 1/1/70",
+      "min": 0,
+      "max": "4.29 x109",
+      "scale": 1,
+      "unit": "Seconds",
+      "sign": 32
+    },
+    {
+      "offset": 56,
+      "name": "Time to next plant battery maintenance",
+      "min": "-2.14 x109",
+      "max": "2.14 x109",
+      "scale": 1,
+      "unit": "Seconds",
+      "sign": "32S"
+    },
+    {
+      "offset": 58,
+      "name": "Time of next plant battery maintenance since 1/1/70",
+      "min": 0,
+      "max": "4.29 x109",
+      "scale": 1,
+      "unit": "Seconds",
+      "sign": 32
+    },
+    {
+      "offset": 60,
+      "name": "Cycles to next plant battery maintenance",
+      "min": 0,
+      "max": "4.29 x109",
+      "scale": 1,
+      "unit": "Numeric",
+      "sign": 32
+    },
+    {
+      "offset": 62,
+      "name": "Capacity remaining to next plant battery maintenance",
+      "min": 0,
+      "max": "4.29 x109",
+      "scale": 1,
+      "unit": "Percentage",
+      "sign": 32
+    },
+    {
+      "offset": 64,
+      "name": "Time to next plant battery maintenance alarm 1",
+      "min": "-2.14 x109",
+      "max": "2.14 x109",
+      "scale": 1,
+      "unit": "Seconds",
+      "sign": "32S"
+    },
+    {
+      "offset": 66,
+      "name": "Time of next plant battery maintenance alarm 1 since 1/1/70",
+      "min": 0,
+      "max": "4.29 x109",
+      "scale": 1,
+      "unit": "Seconds",
+      "sign": 32
+    },
+    {
+      "offset": 68,
+      "name": "Cycles to next plant battery maintenance alarm 1",
+      "min": 0,
+      "max": "4.29 x109",
+      "scale": 1,
+      "unit": "Numeric",
+      "sign": 32
+    },
+    {
+      "offset": 70,
+      "name": "Capacity remaining to next plant battery maintenance alarm 1",
+      "min": 0,
+      "max": "4.29 x109",
+      "scale": 1,
+      "unit": "Percentage",
+      "sign": 32
+    },
+    {
+      "offset": 72,
+      "name": "Time to next plant battery maintenance alarm 2",
+      "min": "-2.14 x109",
+      "max": "2.14 x109",
+      "scale": 1,
+      "unit": "Seconds",
+      "sign": "32S"
+    },
+    {
+      "offset": 74,
+      "name": "Time of next plant battery maintenance alarm 2 since 1/1/70",
+      "min": 0,
+      "max": "4.29 x109",
+      "scale": 1,
+      "unit": "Seconds",
+      "sign": 32
+    },
+    {
+      "offset": 76,
+      "name": "Cycles to next plant battery maintenance alarm 2",
+      "min": 0,
+      "max": "4.29 x109",
+      "scale": 1,
+      "unit": "Numeric",
+      "sign": 32
+    },
+    {
+      "offset": 78,
+      "name": "Capacity remaining to next plant battery maintenance alarm 2",
+      "min": 0,
+      "max": "4.29 x109",
+      "scale": 1,
+      "unit": "Percentage",
+      "sign": 32
+    },
+    {
+      "offset": 80,
+      "name": "Time to next plant battery maintenance alarm 3",
+      "min": "-2.14 x109",
+      "max": "2.14 x109",
+      "scale": 1,
+      "unit": "Seconds",
+      "sign": "32S"
+    },
+    {
+      "offset": 82,
+      "name": "Time of next plant battery maintenance alarm 3 since 1/1/70",
+      "min": 0,
+      "max": "4.29 x109",
+      "scale": 1,
+      "unit": "Seconds",
+      "sign": 32
+    },
+    {
+      "offset": 84,
+      "name": "Cycles to next plant battery maintenance alarm 3",
+      "min": 0,
+      "max": "4.29 x109",
+      "scale": 1,
+      "unit": "Numeric",
+      "sign": 32
+    },
+    {
+      "offset": 85,
+      "name": "Capacity remaining to next plant battery maintenance alarm 3",
+      "min": 0,
+      "max": "4.29 x109",
+      "scale": 1,
+      "unit": "Percentage",
+      "sign": 32
+    },
+    {
+      "offset": 88,
+      "name": "Plant Battery Run Time",
+      "min": 0,
+      "max": "4.29 x109",
+      "scale": 1,
+      "unit": "Seconds",
+      "sign": 32
+    },
+    {
+      "offset": 90,
+      "name": "Plant Battery Cycles",
+      "min": 0,
+      "max": 99999,
+      "scale": "",
+      "unit": "",
+      "sign": 32
+    },
+    {
+      "offset": 92,
+      "name": "Plant Battery Charge State",
+      "min": 0,
+      "max": 100,
+      "scale": 0.1,
+      "unit": "%",
+      "sign": 16
+    },
+    {
+      "offset": 94,
+      "name": "Load kWh",
+      "min": 0,
+      "max": "4.29 x109",
+      "scale": 0.1,
+      "unit": "kW hour",
+      "sign": 32
+    },
+    {
+      "offset": 96,
+      "name": "Battery charging kWh",
+      "min": 0,
+      "max": "4.29 x109",
+      "scale": 0.1,
+      "unit": "kW hour",
+      "sign": 32
+    },
+    {
+      "offset": 98,
+      "name": "Battery discharging kWh",
+      "min": 0,
+      "max": "4.29 x109",
+      "scale": 0.1,
+      "unit": "kW hour",
+      "sign": 32
+    },
+    {
+      "offset": 100,
+      "name": "Fuel Efficiency KWh/L (accumulated)",
+      "min": 0,
+      "max": 65535,
+      "scale": 0.01,
+      "unit": "kW hour/L",
+      "sign": 16
+    },
+    {
+      "offset": 101,
+      "name": "Fault Ride Through event count",
+      "min": 0,
+      "max": 65500,
+      "scale": 1,
+      "unit": "Event",
+      "sign": 16
+    },
+    {
+      "offset": 102,
+      "name": "Engine run time for load demand",
+      "min": 0,
+      "max": "4.29 x109",
+      "scale": 1,
+      "unit": "Seconds",
+      "sign": 32
+    }
+  ]

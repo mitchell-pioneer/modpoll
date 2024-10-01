@@ -1,0 +1,1334 @@
+[
+  {
+    "offset": 0,
+    "name": "Oil pressure",
+    "min": 0,
+    "max": 10000,
+    "scale": 1,
+    "unit": "Kpa",
+    "sign": 16
+  },
+  {
+    "offset": 1,
+    "name": "Coolant temperature",
+    "min": -50,
+    "max": 200,
+    "scale": 1,
+    "unit": "Degrees C",
+    "sign": "16 S"
+  },
+  {
+    "offset": 2,
+    "name": "Oil temperature",
+    "min": -50,
+    "max": 200,
+    "scale": 1,
+    "unit": "Degrees C",
+    "sign": "16 S"
+  },
+  {
+    "offset": 3,
+    "name": "Fuel level",
+    "min": 0,
+    "max": 130,
+    "scale": 1,
+    "unit": "%",
+    "sign": 16
+  },
+  {
+    "offset": 4,
+    "name": "Charge alternator voltage",
+    "min": 0,
+    "max": 40,
+    "scale": 0.1,
+    "unit": "V",
+    "sign": 16
+  },
+  {
+    "offset": 5,
+    "name": "Engine Battery voltage",
+    "min": 0,
+    "max": 40,
+    "scale": 0.1,
+    "unit": "V",
+    "sign": 16
+  },
+  {
+    "offset": 6,
+    "name": "Engine speed",
+    "min": 0,
+    "max": 6000,
+    "scale": 1,
+    "unit": "RPM",
+    "sign": 16
+  },
+  {
+    "offset": 7,
+    "name": "Generator frequency",
+    "min": 0,
+    "max": 70,
+    "scale": 0.1,
+    "unit": "Hz",
+    "sign": 16
+  },
+  {
+    "offset": "9-Aug",
+    "name": "Generator L1-N voltage",
+    "min": 0,
+    "max": "18,000",
+    "scale": 0.1,
+    "unit": "V",
+    "sign": 32
+  },
+  {
+    "offset": "11-Oct",
+    "name": "Generator L2-N voltage",
+    "min": 0,
+    "max": "18,000",
+    "scale": 0.1,
+    "unit": "V",
+    "sign": 32
+  },
+  {
+    "offset": "13-Dec",
+    "name": "Generator L3-N voltage",
+    "min": 0,
+    "max": "18,000",
+    "scale": 0.1,
+    "unit": "V",
+    "sign": 32
+  },
+  {
+    "offset": "14-15",
+    "name": "Generator L1-L2 voltage",
+    "min": 0,
+    "max": "30,000",
+    "scale": 0.1,
+    "unit": "V",
+    "sign": 32
+  },
+  {
+    "offset": "16-17",
+    "name": "Generator L2-L3 voltage",
+    "min": 0,
+    "max": "30,000",
+    "scale": 0.1,
+    "unit": "V",
+    "sign": 32
+  },
+  {
+    "offset": "18-19",
+    "name": "Generator L3-L1 voltage",
+    "min": 0,
+    "max": "30,000",
+    "scale": 0.1,
+    "unit": "V",
+    "sign": 32
+  },
+  {
+    "offset": "20-21",
+    "name": "Generator L1 current",
+    "min": 0,
+    "max": "99,999.90",
+    "scale": 0.1,
+    "unit": "A",
+    "sign": 32
+  },
+  {
+    "offset": "22-23",
+    "name": "Generator L2 current",
+    "min": 0,
+    "max": "99,999.90",
+    "scale": 0.1,
+    "unit": "A",
+    "sign": 32
+  },
+  {
+    "offset": "24-25",
+    "name": "Generator L3 current",
+    "min": 0,
+    "max": "99,999.90",
+    "scale": 0.1,
+    "unit": "A",
+    "sign": 32
+  },
+  {
+    "offset": "26-27",
+    "name": "Generator earth current",
+    "min": 0,
+    "max": "99,999.90",
+    "scale": 0.1,
+    "unit": "A",
+    "sign": 32
+  },
+  {
+    "offset": "28-29",
+    "name": "Generator L1 watts",
+    "min": "-99,999,999",
+    "max": "99,999,999",
+    "scale": 1,
+    "unit": "W",
+    "sign": "32 S"
+  },
+  {
+    "offset": "30-31",
+    "name": "Generator L2 watts",
+    "min": "-99,999,999",
+    "max": "99,999,999",
+    "scale": 1,
+    "unit": "W",
+    "sign": "32 S"
+  },
+  {
+    "offset": "32-33",
+    "name": "Generator L3 watts",
+    "min": "-99,999,999",
+    "max": "99,999,999",
+    "scale": 1,
+    "unit": "W",
+    "sign": "32 S"
+  },
+  {
+    "offset": 34,
+    "name": "Generator current lag/lead",
+    "min": -180,
+    "max": 180,
+    "scale": 1,
+    "unit": "degrees",
+    "sign": "16 S"
+  },
+  {
+    "offset": 35,
+    "name": "Mains frequency",
+    "min": 0,
+    "max": 70,
+    "scale": 0.1,
+    "unit": "Hz",
+    "sign": 16
+  },
+  {
+    "offset": "36-37",
+    "name": "Mains L1-N voltage",
+    "min": 0,
+    "max": "18,000",
+    "scale": 0.1,
+    "unit": "V",
+    "sign": 32
+  },
+  {
+    "offset": "38-39",
+    "name": "Mains L2-N voltage",
+    "min": 0,
+    "max": "18,000",
+    "scale": 0.1,
+    "unit": "V",
+    "sign": 32
+  },
+  {
+    "offset": "40-41",
+    "name": "Mains L3-N voltage",
+    "min": 0,
+    "max": "18,000",
+    "scale": 0.1,
+    "unit": "V",
+    "sign": 32
+  },
+  {
+    "offset": "42-43",
+    "name": "Mains L1-L2 voltage",
+    "min": 0,
+    "max": "30,000",
+    "scale": 0.1,
+    "unit": "V",
+    "sign": 32
+  },
+  {
+    "offset": "44-45",
+    "name": "Mains L2-L3 voltage",
+    "min": 0,
+    "max": "30,000",
+    "scale": 0.1,
+    "unit": "V",
+    "sign": 32
+  },
+  {
+    "offset": "46-47",
+    "name": "Mains L3-L1 voltage",
+    "min": 0,
+    "max": "30,000",
+    "scale": 0.1,
+    "unit": "V",
+    "sign": 32
+  },
+  {
+    "offset": 48,
+    "name": "Mains voltage phase lag/lead",
+    "min": -180,
+    "max": 180,
+    "scale": 1,
+    "unit": "degrees",
+    "sign": "16 S"
+  },
+  {
+    "offset": 49,
+    "name": "Generator phase rotation",
+    "min": 0,
+    "max": 3,
+    "scale": "",
+    "unit": "",
+    "sign": 16
+  },
+  {
+    "offset": 50,
+    "name": "Mains phase rotation",
+    "min": 0,
+    "max": 3,
+    "scale": "",
+    "unit": "",
+    "sign": 16
+  },
+  {
+    "offset": 51,
+    "name": "Mains current lag/lead",
+    "min": -180,
+    "max": 180,
+    "scale": 1,
+    "unit": "degrees",
+    "sign": "16 S"
+  },
+  {
+    "offset": "52-53",
+    "name": "Mains L1 current",
+    "min": 0,
+    "max": "99,999.90",
+    "scale": 0.1,
+    "unit": "A",
+    "sign": 32
+  },
+  {
+    "offset": "54-55",
+    "name": "Mains L2 current",
+    "min": 0,
+    "max": "99,999.90",
+    "scale": 0.1,
+    "unit": "A",
+    "sign": 32
+  },
+  {
+    "offset": "56-57",
+    "name": "Mains L3 current",
+    "min": 0,
+    "max": "99,999.90",
+    "scale": 0.1,
+    "unit": "A",
+    "sign": 32
+  },
+  {
+    "offset": "58-59",
+    "name": "Mains earth current",
+    "min": 0,
+    "max": "99,999.90",
+    "scale": 0.1,
+    "unit": "A",
+    "sign": 32
+  },
+  {
+    "offset": "60-61",
+    "name": "Mains L1 watts",
+    "min": "-99,999,999",
+    "max": "99,999,999",
+    "scale": 1,
+    "unit": "W",
+    "sign": "32 S"
+  },
+  {
+    "offset": "62-63",
+    "name": "Mains L2 watts",
+    "min": "-99,999,999",
+    "max": "99,999,999",
+    "scale": 1,
+    "unit": "W",
+    "sign": "32 S"
+  },
+  {
+    "offset": "64-65",
+    "name": "Mains L3 watts",
+    "min": "-99,999,999",
+    "max": "99,999,999",
+    "scale": 1,
+    "unit": "W",
+    "sign": "32 S"
+  },
+  {
+    "offset": 66,
+    "name": "Bus current lag/lead",
+    "min": -180,
+    "max": 180,
+    "scale": 1,
+    "unit": "degrees",
+    "sign": "16 S"
+  },
+  {
+    "offset": 67,
+    "name": "Bus frequency",
+    "min": 0,
+    "max": 70,
+    "scale": 0.1,
+    "unit": "Hz",
+    "sign": 16
+  },
+  {
+    "offset": "68-69",
+    "name": "Bus L1-N voltage",
+    "min": 0,
+    "max": "18,000",
+    "scale": 0.1,
+    "unit": "V",
+    "sign": 32
+  },
+  {
+    "offset": "70-71",
+    "name": "Bus L2-N voltage",
+    "min": 0,
+    "max": "18,000",
+    "scale": 0.1,
+    "unit": "V",
+    "sign": 32
+  },
+  {
+    "offset": "72-73",
+    "name": "Bus L3-N voltage",
+    "min": 0,
+    "max": "18,000",
+    "scale": 0.1,
+    "unit": "V",
+    "sign": 32
+  },
+  {
+    "offset": "74-75",
+    "name": "Bus L1-L2 voltage",
+    "min": 0,
+    "max": "30,000",
+    "scale": 0.1,
+    "unit": "V",
+    "sign": 32
+  },
+  {
+    "offset": "76-77",
+    "name": "Bus L2-L3 voltage",
+    "min": 0,
+    "max": "30,000",
+    "scale": 0.1,
+    "unit": "V",
+    "sign": 32
+  },
+  {
+    "offset": "78-79",
+    "name": "Bus L3-L1 voltage",
+    "min": 0,
+    "max": "30,000",
+    "scale": 0.1,
+    "unit": "V",
+    "sign": 32
+  },
+  {
+    "offset": "80-81",
+    "name": "Bus L1 current",
+    "min": 0,
+    "max": "99,999.90",
+    "scale": 0.1,
+    "unit": "A",
+    "sign": 32
+  },
+  {
+    "offset": "82-83",
+    "name": "Bus L2 current",
+    "min": 0,
+    "max": "99,999.90",
+    "scale": 0.1,
+    "unit": "A",
+    "sign": 32
+  },
+  {
+    "offset": "84-85",
+    "name": "Bus L3 current",
+    "min": 0,
+    "max": "99,999.90",
+    "scale": 0.1,
+    "unit": "A",
+    "sign": 32
+  },
+  {
+    "offset": "86-87",
+    "name": "Bus earth current",
+    "min": 0,
+    "max": "99,999.90",
+    "scale": 0.1,
+    "unit": "A",
+    "sign": 32
+  },
+  {
+    "offset": "88-89",
+    "name": "Bus L1 watts",
+    "min": "-999,999,999",
+    "max": "999,999,999",
+    "scale": 1,
+    "unit": "W",
+    "sign": "32 S"
+  },
+  {
+    "offset": "90-91",
+    "name": "Bus L2 watts",
+    "min": "-999,999,999",
+    "max": "999,999,999",
+    "scale": 1,
+    "unit": "W",
+    "sign": "32 S"
+  },
+  {
+    "offset": "92-93",
+    "name": "Bus L3 watts",
+    "min": "-999,999,999",
+    "max": "999,999,999",
+    "scale": 1,
+    "unit": "W",
+    "sign": "32 S"
+  },
+  {
+    "offset": 94,
+    "name": "Bus phase rotation",
+    "min": 0,
+    "max": 3,
+    "scale": "",
+    "unit": "",
+    "sign": 16
+  },
+  {
+    "offset": 95,
+    "name": "Bus 2 frequency",
+    "min": 0,
+    "max": 70,
+    "scale": 0.1,
+    "unit": "Hz",
+    "sign": 16
+  },
+  {
+    "offset": "96-97",
+    "name": "Bus 2 L1-N voltage",
+    "min": 0,
+    "max": "18,000",
+    "scale": 0.1,
+    "unit": "V",
+    "sign": 32
+  },
+  {
+    "offset": "98-99",
+    "name": "Bus 2 L2-N voltage",
+    "min": 0,
+    "max": "18,000",
+    "scale": 0.1,
+    "unit": "V",
+    "sign": 32
+  },
+  {
+    "offset": "100-101",
+    "name": "Bus 2 L3-N voltage",
+    "min": 0,
+    "max": "18,000",
+    "scale": 0.1,
+    "unit": "V",
+    "sign": 32
+  },
+  {
+    "offset": "102-103",
+    "name": "Bus 2 L1-L2 voltage",
+    "min": 0,
+    "max": "30,000",
+    "scale": 0.1,
+    "unit": "V",
+    "sign": 32
+  },
+  {
+    "offset": "104-105",
+    "name": "Bus 2 L2-L3 voltage",
+    "min": 0,
+    "max": "30,000",
+    "scale": 0.1,
+    "unit": "V",
+    "sign": 32
+  },
+  {
+    "offset": "106-107",
+    "name": "Bus 2 L3-L1 voltage",
+    "min": 0,
+    "max": "30,000",
+    "scale": 0.1,
+    "unit": "V",
+    "sign": 32
+  },
+  {
+    "offset": "108-109",
+    "name": "Bus 2 L1 current",
+    "min": 0,
+    "max": "99,999.90",
+    "scale": 0.1,
+    "unit": "A",
+    "sign": 32
+  },
+  {
+    "offset": "110-111",
+    "name": "Bus 2 L2 current",
+    "min": 0,
+    "max": "99,999.90",
+    "scale": 0.1,
+    "unit": "A",
+    "sign": 32
+  },
+  {
+    "offset": "112-113",
+    "name": "Bus 2 L3 current",
+    "min": 0,
+    "max": "99,999.90",
+    "scale": 0.1,
+    "unit": "A",
+    "sign": 32
+  },
+  {
+    "offset": "114-115",
+    "name": "Bus 2 earth current",
+    "min": 0,
+    "max": "99,999.90",
+    "scale": 0.1,
+    "unit": "A",
+    "sign": 32
+  },
+  {
+    "offset": "116-117",
+    "name": "Bus 2 L1 watts",
+    "min": "-999,999,999",
+    "max": "999,999,999",
+    "scale": 1,
+    "unit": "W",
+    "sign": "32 S"
+  },
+  {
+    "offset": "118-119",
+    "name": "Bus 2 L2 watts",
+    "min": "-999,999,999",
+    "max": "999,999,999",
+    "scale": 1,
+    "unit": "W",
+    "sign": "32 S"
+  },
+  {
+    "offset": "120-121",
+    "name": "Bus 2 L3 watts",
+    "min": "-999,999,999",
+    "max": "999,999,999",
+    "scale": 1,
+    "unit": "W",
+    "sign": "32 S"
+  },
+  {
+    "offset": 122,
+    "name": "Bus 2 phase rotation",
+    "min": 0,
+    "max": 3,
+    "scale": "",
+    "unit": "",
+    "sign": 16
+  },
+  {
+    "offset": 123,
+    "name": "Bus 2 current lag/lead",
+    "min": -180,
+    "max": 180,
+    "scale": 1,
+    "unit": "degrees",
+    "sign": "16 S"
+  },
+  {
+    "offset": 124,
+    "name": "S1 frequency",
+    "min": 0,
+    "max": 70,
+    "scale": 0.1,
+    "unit": "Hz",
+    "sign": 16
+  },
+  {
+    "offset": "125-126",
+    "name": "S1 L1-N voltage",
+    "min": 0,
+    "max": "18,000",
+    "scale": 0.1,
+    "unit": "V",
+    "sign": 32
+  },
+  {
+    "offset": "127-128",
+    "name": "S1 L2-N voltage",
+    "min": 0,
+    "max": "18,000",
+    "scale": 0.1,
+    "unit": "V",
+    "sign": 32
+  },
+  {
+    "offset": "129-130",
+    "name": "S1 L3-N voltage",
+    "min": 0,
+    "max": "18,000",
+    "scale": 0.1,
+    "unit": "V",
+    "sign": 32
+  },
+  {
+    "offset": "131-132",
+    "name": "S1 L1-L2 voltage",
+    "min": 0,
+    "max": "30,000",
+    "scale": 0.1,
+    "unit": "V",
+    "sign": 32
+  },
+  {
+    "offset": "133-134",
+    "name": "S1 L2-L3 voltage",
+    "min": 0,
+    "max": "30,000",
+    "scale": 0.1,
+    "unit": "V",
+    "sign": 32
+  },
+  {
+    "offset": "135-136",
+    "name": "S1 L3-L1 voltage",
+    "min": 0,
+    "max": "30,000",
+    "scale": 0.1,
+    "unit": "V",
+    "sign": 32
+  },
+  {
+    "offset": "137-138",
+    "name": "S1 L1 current",
+    "min": 0,
+    "max": "99,999.90",
+    "scale": 0.1,
+    "unit": "A",
+    "sign": 32
+  },
+  {
+    "offset": "139-140",
+    "name": "S1 L2 current",
+    "min": 0,
+    "max": "99,999.90",
+    "scale": 0.1,
+    "unit": "A",
+    "sign": 32
+  },
+  {
+    "offset": "141-142",
+    "name": "S1 L3 current",
+    "min": 0,
+    "max": "99,999.90",
+    "scale": 0.1,
+    "unit": "A",
+    "sign": 32
+  },
+  {
+    "offset": "143-144",
+    "name": "S1 earth current",
+    "min": 0,
+    "max": "99,999.90",
+    "scale": 0.1,
+    "unit": "A",
+    "sign": 32
+  },
+  {
+    "offset": "145-146",
+    "name": "S1 L1 watts",
+    "min": "-99,999,999",
+    "max": "99,999,999",
+    "scale": 1,
+    "unit": "W",
+    "sign": "32 S"
+  },
+  {
+    "offset": "147-148",
+    "name": "S1 L2 watts",
+    "min": "-99,999,999",
+    "max": "99,999,999",
+    "scale": 1,
+    "unit": "W",
+    "sign": "32 S"
+  },
+  {
+    "offset": "149-150",
+    "name": "S1 L3 watts",
+    "min": "-99,999,999",
+    "max": "99,999,999",
+    "scale": 1,
+    "unit": "W",
+    "sign": "32 S"
+  },
+  {
+    "offset": 151,
+    "name": "S1 current lag/lead",
+    "min": -180,
+    "max": 180,
+    "scale": 1,
+    "unit": "degrees",
+    "sign": "16 S"
+  },
+  {
+    "offset": 152,
+    "name": "S2 frequency",
+    "min": 0,
+    "max": 70,
+    "scale": 0.1,
+    "unit": "Hz",
+    "sign": 16
+  },
+  {
+    "offset": "153-154",
+    "name": "S2 L1-N voltage",
+    "min": 0,
+    "max": "18,000",
+    "scale": 0.1,
+    "unit": "V",
+    "sign": 32
+  },
+  {
+    "offset": "155-156",
+    "name": "S2 L2-N voltage",
+    "min": 0,
+    "max": "18,000",
+    "scale": 0.1,
+    "unit": "V",
+    "sign": 32
+  },
+  {
+    "offset": "157-158",
+    "name": "S2 L3-N voltage",
+    "min": 0,
+    "max": "18,000",
+    "scale": 0.1,
+    "unit": "V",
+    "sign": 32
+  },
+  {
+    "offset": "159-160",
+    "name": "S2 L1-L2 voltage",
+    "min": 0,
+    "max": "30,000",
+    "scale": 0.1,
+    "unit": "V",
+    "sign": 32
+  },
+  {
+    "offset": "161-162",
+    "name": "S2 L2-L3 voltage",
+    "min": 0,
+    "max": "30,000",
+    "scale": 0.1,
+    "unit": "V",
+    "sign": 32
+  },
+  {
+    "offset": "163-164",
+    "name": "S2 L3-L1 voltage",
+    "min": 0,
+    "max": "30,000",
+    "scale": 0.1,
+    "unit": "V",
+    "sign": 32
+  },
+  {
+    "offset": "165-166",
+    "name": "S2 L1 current",
+    "min": 0,
+    "max": "99,999.90",
+    "scale": 0.1,
+    "unit": "A",
+    "sign": 32
+  },
+  {
+    "offset": "167-168",
+    "name": "S2 L2 current",
+    "min": 0,
+    "max": "99,999.90",
+    "scale": 0.1,
+    "unit": "A",
+    "sign": 32
+  },
+  {
+    "offset": "169-170",
+    "name": "S2 L3 current",
+    "min": 0,
+    "max": "99,999.90",
+    "scale": 0.1,
+    "unit": "A",
+    "sign": 32
+  },
+  {
+    "offset": "171-172",
+    "name": "S2 earth current",
+    "min": 0,
+    "max": "99,999.90",
+    "scale": 0.1,
+    "unit": "A",
+    "sign": 32
+  },
+  {
+    "offset": "173-174",
+    "name": "S2 L1 watts",
+    "min": "-99,999,999",
+    "max": "99,999,999",
+    "scale": 1,
+    "unit": "W",
+    "sign": "32 S"
+  },
+  {
+    "offset": "175-176",
+    "name": "S2 L2 watts",
+    "min": "-99,999,999",
+    "max": "99,999,999",
+    "scale": 1,
+    "unit": "W",
+    "sign": "32 S"
+  },
+  {
+    "offset": "177-178",
+    "name": "S2 L3 watts",
+    "min": "-99,999,999",
+    "max": "99,999,999",
+    "scale": 1,
+    "unit": "W",
+    "sign": "32 S"
+  },
+  {
+    "offset": 179,
+    "name": "S2 current lag/lead",
+    "min": -180,
+    "max": 180,
+    "scale": 1,
+    "unit": "degrees",
+    "sign": "16 S"
+  },
+  {
+    "offset": "180-181",
+    "name": "Load L1 current",
+    "min": 0,
+    "max": "99,999.90",
+    "scale": 0.1,
+    "unit": "A",
+    "sign": 32
+  },
+  {
+    "offset": "182-183",
+    "name": "Load L2 current",
+    "min": 0,
+    "max": "99,999.90",
+    "scale": 0.1,
+    "unit": "A",
+    "sign": 32
+  },
+  {
+    "offset": "184-185",
+    "name": "Load L3 current",
+    "min": 0,
+    "max": "99,999.90",
+    "scale": 0.1,
+    "unit": "A",
+    "sign": 32
+  },
+  {
+    "offset": "186-187",
+    "name": "Load L1 watts",
+    "min": "-99,999,999",
+    "max": "99,999,999",
+    "scale": 1,
+    "unit": "W",
+    "sign": "32 S"
+  },
+  {
+    "offset": "188-189",
+    "name": "Load L2 watts",
+    "min": "-99,999,999",
+    "max": "99,999,999",
+    "scale": 1,
+    "unit": "W",
+    "sign": "32 S"
+  },
+  {
+    "offset": "190-191",
+    "name": "Load L3 watts",
+    "min": "-99,999,999",
+    "max": "99,999,999",
+    "scale": 1,
+    "unit": "W",
+    "sign": "32 S"
+  },
+  {
+    "offset": 192,
+    "name": "Load current lag/lead",
+    "min": -180,
+    "max": 180,
+    "scale": 1,
+    "unit": "degrees",
+    "sign": "16 S"
+  },
+  {
+    "offset": 193,
+    "name": "S1 phase rotation",
+    "min": 0,
+    "max": 3,
+    "scale": "",
+    "unit": "",
+    "sign": 16
+  },
+  {
+    "offset": 194,
+    "name": "S2 phase rotation",
+    "min": 0,
+    "max": 3,
+    "scale": "",
+    "unit": "",
+    "sign": 16
+  },
+  {
+    "offset": 195,
+    "name": "Governor output",
+    "min": -100,
+    "max": 100,
+    "scale": 0.1,
+    "unit": "%",
+    "sign": "16S"
+  },
+  {
+    "offset": 196,
+    "name": "AVR output",
+    "min": -100,
+    "max": 100,
+    "scale": 0.1,
+    "unit": "%",
+    "sign": "16S"
+  },
+  {
+    "offset": 197,
+    "name": "DC Plant Battery Charge State",
+    "min": 0,
+    "max": 100,
+    "scale": 0.1,
+    "unit": "%",
+    "sign": 16
+  },
+  {
+    "offset": 198,
+    "name": "DC Plant Battery Discharge State",
+    "min": 0,
+    "max": 100,
+    "scale": 0.1,
+    "unit": "%",
+    "sign": 16
+  },
+  {
+    "offset": 199,
+    "name": "DC Voltage",
+    "min": 0,
+    "max": 75,
+    "scale": 0.1,
+    "unit": "V",
+    "sign": 16
+  },
+  {
+    "offset": "200-201",
+    "name": "DC Shunt 1 Current",
+    "min": "-1,250,000.00",
+    "max": "1,250,000.00",
+    "scale": 0.1,
+    "unit": "A",
+    "sign": "32S"
+  },
+  {
+    "offset": "202-203",
+    "name": "DC Shunt 2 Current",
+    "min": "-1,250,000.00",
+    "max": "1,250,000.00",
+    "scale": 0.1,
+    "unit": "A",
+    "sign": "32S"
+  },
+  {
+    "offset": "204-205",
+    "name": "DC Load Current",
+    "min": "-2,500,000.00",
+    "max": "2,500,000.00",
+    "scale": 0.1,
+    "unit": "A",
+    "sign": "32S"
+  },
+  {
+    "offset": "206-207",
+    "name": "DC Plant Battery Current",
+    "min": "-2,500,000.00",
+    "max": "2,500,000.00",
+    "scale": 0.1,
+    "unit": "A",
+    "sign": "32S"
+  },
+  {
+    "offset": "208-209",
+    "name": "DC Total Current",
+    "min": "-2,500,000.00",
+    "max": "2,500,000.00",
+    "scale": 0.1,
+    "unit": "A",
+    "sign": "32S"
+  },
+  {
+    "offset": "210-211",
+    "name": "DC Plant Battery Cycles",
+    "min": 0,
+    "max": 99999,
+    "scale": "",
+    "unit": "",
+    "sign": 32
+  },
+  {
+    "offset": "212-213",
+    "name": "DC Charger Watts",
+    "min": "-99,999,999",
+    "max": "99,999,999",
+    "scale": 1,
+    "unit": "W",
+    "sign": "32 S"
+  },
+  {
+    "offset": "214-215",
+    "name": "DC Plant Battery Watts",
+    "min": "-99,999,999",
+    "max": "99,999,999",
+    "scale": 1,
+    "unit": "W",
+    "sign": "32 S"
+  },
+  {
+    "offset": "216-217",
+    "name": "DC Load Watts",
+    "min": "-99,999,999",
+    "max": "99,999,999",
+    "scale": 1,
+    "unit": "W",
+    "sign": "32 S"
+  },
+  {
+    "offset": "218-219",
+    "name": "DC Total Watts",
+    "min": "-99,999,999",
+    "max": "99,999,999",
+    "scale": 1,
+    "unit": "W",
+    "sign": "32 S"
+  },
+  {
+    "offset": 220,
+    "name": "DC Charge Mode",
+    "min": 0,
+    "max": 2,
+    "scale": "",
+    "unit": "",
+    "sign": 16
+  },
+  {
+    "offset": 221,
+    "name": "DC Plant Battery temperature",
+    "min": -50,
+    "max": 200,
+    "scale": 1,
+    "unit": "Degrees C",
+    "sign": "16 S"
+  },
+  {
+    "offset": 222,
+    "name": "DC Battery Cycle State",
+    "min": 0,
+    "max": 2,
+    "scale": "",
+    "unit": "",
+    "sign": 16
+  },
+  {
+    "offset": 223,
+    "name": "Mains zero sequence voltage angle",
+    "min": -360,
+    "max": 360,
+    "scale": 0.1,
+    "unit": "Degrees",
+    "sign": "16S"
+  },
+  {
+    "offset": 224,
+    "name": "Mains positive sequence voltage angle",
+    "min": -360,
+    "max": 360,
+    "scale": 0.1,
+    "unit": "Degrees",
+    "sign": "16S"
+  },
+  {
+    "offset": 225,
+    "name": "Mains negative sequence voltage angle",
+    "min": -360,
+    "max": 360,
+    "scale": 0.1,
+    "unit": "Degrees",
+    "sign": "16S"
+  },
+  {
+    "offset": "226-227",
+    "name": "Mains zero sequence voltage magnitude",
+    "min": 0,
+    "max": "30,000",
+    "scale": 0.1,
+    "unit": "V",
+    "sign": 32
+  },
+  {
+    "offset": "228-229",
+    "name": "Mains positive sequence voltage magnitude",
+    "min": 0,
+    "max": "30,000",
+    "scale": 0.1,
+    "unit": "V",
+    "sign": 32
+  },
+  {
+    "offset": "230-231",
+    "name": "Mains negative sequence voltage magnitude",
+    "min": 0,
+    "max": "30,000",
+    "scale": 0.1,
+    "unit": "V",
+    "sign": 32
+  },
+  {
+    "offset": "232-233",
+    "name": "Battery Charger Output Current",
+    "min": 0,
+    "max": "50,000",
+    "scale": 1,
+    "unit": "mA",
+    "sign": "32S"
+  },
+  {
+    "offset": "234-235",
+    "name": "Battery Charger Output Voltage",
+    "min": 0,
+    "max": "100,000",
+    "scale": 1,
+    "unit": "mV",
+    "sign": "32S"
+  },
+  {
+    "offset": "236-237",
+    "name": "Battery Open Circuit Voltage",
+    "min": 0,
+    "max": "100,000",
+    "scale": 1,
+    "unit": "mV",
+    "sign": "32S"
+  },
+  {
+    "offset": "238-239",
+    "name": "Load  L1-N voltage (8661)",
+    "min": 0,
+    "max": "18,000",
+    "scale": 0.1,
+    "unit": "V",
+    "sign": 32
+  },
+  {
+    "offset": "240-241",
+    "name": "Load  L2-N voltage (8661)",
+    "min": 0,
+    "max": "18,000",
+    "scale": 0.1,
+    "unit": "V",
+    "sign": 32
+  },
+  {
+    "offset": "242-243",
+    "name": "Load  L3-N voltage (8661)",
+    "min": 0,
+    "max": "18,000",
+    "scale": 0.1,
+    "unit": "V",
+    "sign": 32
+  },
+  {
+    "offset": "244-245",
+    "name": "Load  L1-L2 voltage (8661)",
+    "min": 0,
+    "max": "30,000",
+    "scale": 0.1,
+    "unit": "V",
+    "sign": 32
+  },
+  {
+    "offset": "246-247",
+    "name": "Load  L2-L3 voltage (8661)",
+    "min": 0,
+    "max": "30,000",
+    "scale": 0.1,
+    "unit": "V",
+    "sign": 32
+  },
+  {
+    "offset": "248-249",
+    "name": "Load  L3-L1 voltage (8661)",
+    "min": 0,
+    "max": "30,000",
+    "scale": 0.1,
+    "unit": "V",
+    "sign": 32
+  },
+  {
+    "offset": 250,
+    "name": "Load frequency",
+    "min": 0,
+    "max": 70,
+    "scale": 0.1,
+    "unit": "Hz",
+    "sign": 16
+  },
+  {
+    "offset": 251,
+    "name": "Load phase rotation",
+    "min": 0,
+    "max": 3,
+    "scale": "",
+    "unit": "",
+    "sign": 16
+  },
+  {
+    "offset": "252-253",
+    "name": "Battery Charger Auxiliary Voltage",
+    "min": 0,
+    "max": "100,000",
+    "scale": 1,
+    "unit": "mV",
+    "sign": "32S"
+  },
+  {
+    "offset": "254-255",
+    "name": "Battery Charger Auxiliary Current",
+    "min": 0,
+    "max": "50,000",
+    "scale": 1,
+    "unit": "mV",
+    "sign": "32S"
+  }
+]

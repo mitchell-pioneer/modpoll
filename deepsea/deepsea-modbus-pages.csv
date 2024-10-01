@@ -1,0 +1,59 @@
+﻿",,",,
+"Page number,Description,Read/write",,
+"0,Communications status information,Read only",,
+"1,Communications configuration,Read/write and",write,only
+"2,Modem configuration,Read/write",,
+"3,Generating set status information,Read only",,
+"4,Basic instrumentation,Read only",,
+"5,Extended instrumentation,Read only",,
+"6,Derived Instrumentation,Read only",,
+"7,Accumulated Instrumentation,Read/write",,
+"8,????,Read only",,
+"9,Total Harmonic Distortion information,Read",only,
+"10,Reserved,",,
+"11,Diagnostic – general,Read only",,
+"12,Diagnostic – digital inputs,Read only",,
+"13,Diagnostic – digital outputs,Read only and",read,write
+"14,Diagnostic – LEDs,Read only and read write",,
+"15,Diagnostic – Reserved,",,
+"16,Control registers,Read only and write only",,
+"17,J1939 active diagnostic trouble codes in d",ecoded,"format,Read only"
+"18,J1939 active diagnostic trouble codes in r",aw for,"mat,Read only"
+"19,Reserved,",,
+"20,Various strings,Read only",,
+"24,Identity strings,Read/write",,
+"26,State machine name strings,Read only",,
+"28,State machine state strings,Read only",,
+"29-31,Reserved,",,
+"32-95,Alarm strings (Old alarm system),Read o",nly,
+"32-36,2131 Expansion module name strings,Read",only,
+"37-40,2133 Expansion module name strings,Read",only,
+"41-43,2152 Expansion module name strings,Read",only,
+"44-48,2131 Expansion module digital alarm str","ings,R",ead only
+"49-58,2131 Expansion module analogue alarm st","rings,",Read only
+"59-66,2133 Expansion module analogue alarm st","rings,",Read only
+"142,ECU Trouble Codes,Read only",,
+"143-149,ECU Trouble Code short description st","ring ,",Read only
+"152,User calibration of expansion module anal",ogue i,"nputs,Read/write"
+"153,Unnamed alarm conditions,Read only",,
+"154,Named Alarm Conditions,Read only",,
+"156,Expansion module enable status,Read only",,
+"158,Expansion module communications status,Re",ad onl,y
+"160,Unnamed input function,Read only",,
+"166-169,User configurable pages,Read only",,
+"170,Unnamed input status,Read only",,
+"171,Unnamed input status continued,Read only",,
+"180,Unnamed output sources & polarities,Read",only,
+"181,Unnamed output sources & polarities conti","nued,R",ead only
+"182,Virtual output sources & polarities,Read",only,
+"183,Configurable output sources & polarities,",Read o,nly
+"184,""Analogue output sources, types and value","s"",Rea",d only
+"190,Unnamed output status,Read only",,
+"191,Virtual output status,Read only",,
+"192,Configurable output status,Read only",,
+"193,Remote control sources,Read/write",,
+"200-239,Unnamed alarm strings,Read only",,
+"240-246,Analogue Input Name Strings,Read only",,
+"250,Misc strings,Read only",,
+"251-255,Reserved,",,
+",,",,

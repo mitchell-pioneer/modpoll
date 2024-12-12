@@ -1,3 +1,8 @@
 --tcp 192.168.2.50
---config contrib/deepsea/sample2.csv
---mqtt-topic-prefix pioneer/modbus/customer/truck/
+--config contrib/deepsea/sample.yaml
+--mqtt-topic-prefix Pioneer/bch/generator/bch1/gen1/
+--mqtt-host devmqtt.eboostmobile.com
+--mqtt-single
+--delay 5
+
+

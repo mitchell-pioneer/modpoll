@@ -1,0 +1,123 @@
+
+
+lrange and hrange should be floats
+val and last_val should
+
+Questions:
+
+1 - Can we remotly enable automode?  page 16 register 8 Write system control keys - 35700
+2 - How to determine not in auto?
+3 - How can we get access to the error codes displayed on the Scada alarms page
+    http://192.168.2.51/?dse=alarms
+
+4- Is the gencom_get.cgi webpage on the scada mimic page documented for public use?
+5 - It appers that many value are disabled. Is it possible that our generator supplyers (winco and Taylor)
+decided to not implement many of them. For example: The engine can shutdown due to low oil level,
+but the oil pressure is avaiable on the taylor but not the winco. Same for coolant temperture.
+
+
+
+5) These are the Alarms that bluepillar provides.  How can we find them with modbus
+Common Alarm
+Emergency Stop
+High Battery Volts
+High Engine Temp
+Low Battery Volts
+Low Coolant Temp
+Oil Pressure Low
+Overcrank
+Overspeed
+Pre High Engine Temp
+Pre Low Oil Pressure
+Running
+Shutdown Alarm
+Supplying Load
+Warning Alarm
+
+
+onChangeReset will determine how many second between mantitory pushes of non changed values
+
+cascade values from device to poll
+
+
++-------------------------+------+---------+-------+
+|           name          | unit | address | value |
++-------------------------+------+---------+-------+
+|       CoolantTemp       | DegC |   1025  | 32767 |
+|       OilPressure       | kpa  |   1024  | 65535 |
+|      OilTemperature     | DegC |   1026  | 32767 |
+
+|        Fuellevel        |  %   |   1027  |   -1  |
+| ChargeAlternatorVoltage |  V   |   1028  |  122  |
+|   EngineBatteryVoltage  |  V   |   1029  |  13.7 |
+|       EngineSpeed       | Flag |   1030  | 361.8 |
+|    GeneratorFrequency   |  Hz  |   1031  |  60.3 |
+|  GeneratorL1-L2voltage! | Flag |   1038  |  236  |
+|  GeneratorL2-L3voltage! | Flag |   1040  |  -0.1 |
+|  GeneratorL3-L1voltage! | Flag |   1042  |  -0.1 |
+|    GeneratorL1current   | Flag |   1044  |  3.6  |
+|    GeneratorL2current   | Flag |   1046  |   0   |
+|    GeneratorL3current   | Flag |   1048  |  -0.1 |
++-------------------------+------+---------+-------+
+
++----------------------+---------+---------+-----------+
+|         name         |   unit  | address |   value   |
++----------------------+---------+---------+-----------+
+|   Engine_run_time    | seconds |   1798  |  393.654  |
+| Generator_KVAr_hours | seconds |   1806  | 0.0101389 |
++----------------------+---------+---------+-----------+
+
+7 * 256 = 1792
+mains kva hours = 22
+1792 + 22 =1814
+
+154 * 256 = 39,424
+
+extended - engine state
+Page 5
+
+5 *  256 = 1280
+1280 + 128 = 1,408
+
+6 * 256 = 1536
+
+1280 + 70 = 1350
+
+2024-11-23 17:39:25,322 | D | modpoll.ModbusControl | Publ
+
+Missing from both
+Coolant Temp  0.0
+Oil Pressure   -0.1
+
+Correct
+Battery Voltage  13.7
+Engine Hours  393.7
+Volts AB   236.9
+Frequency   59.2
+Amps A  18.2
+Amps B  15.1
+RPM    3552.0
+kWh    557.9  = Generator_KVAr_hours
+
+Missing
+kVAR   -0.1
+kW    3.9
+
+Not in Auto   0.0
+Power Factor   1.0
+
+Q: 10.7 Page 5 – Extended Instrumentation
+Does not appear to be working
+Interested in  '128 Engine operating state'
+
+Q: Where do i find Running and Supplying load -
+
+Q: on the gencom pages - are the possible events the same that are found in other locations?
+If its there were not guarentted it will work for this generator?
+
+
+
+Question for bp
+What is common alarm - is it a common alarm for any of the other settings
+
+

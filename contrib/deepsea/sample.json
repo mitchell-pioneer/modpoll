@@ -1,0 +1,36 @@
+{
+  "device": {
+    "name": "MSChargeControler",
+    "id": 1
+  },
+  "poll": {
+    "function_code": "holding_register",
+    "page": "dsPage!Basic instrumentation!",
+    "interval": 60,
+    "endian": "BE_BE"
+  },
+  "references": [
+    {
+      "name": "dsElement!Coolant temperature!",
+      "address": 16,
+      "data_type": "float16",
+      "access": "r",
+      "unit": "xxxx",
+      "scale": 1.0,
+      "high_range": 0.1,
+      "low_range": 0.1,
+      "transformation": "mytrans"
+    },
+    {
+      "name": "dsElement!Coolant temperature2!",
+      "address": 16,
+      "data_type": "float16",
+      "access": "r",
+      "unit": "xxxx",
+      "scale": 1.0,
+      "high_range": 0.1,
+      "low_range": 0.1,
+      "transformation": "mytrans"
+    }
+  ]
+}

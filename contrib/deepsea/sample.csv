@@ -1,4 +1,12 @@
 device,MSChargeControler,1,,
-poll,holding_register,dsPage!Basic instrumentation!,0,BE_BE
-ref,dsElement!Engine Battery voltage!,16,float16,r,,0.1,0.1
-ref,dsElement!Engine Battery voltage!,16,float16,r,,0.1,0.1
+poll,holding_register,39424,60,BE_BE
+ref,count                 ,39424      ,int16,r,Deg,1
+ref,EmergencyStop         ,39424+1    ,u16N3,r,Deg
+ref,LowOil                ,39424+1    ,u16N2,r,Deg
+ref,HighCool              ,39424+1    ,u16N1,r,Deg
+ref,LowCool               ,39424+1    ,u16N0,r,Deg
+ref,aa                    ,39424+9   ,u16N0,r,n0,         ,0.1,0.1
+ref,bb                    ,39424+9   ,u16N1,r,N1,         ,0.1,0.1
+ref,cc                    ,39424+9   ,u16N2,r,N2,         ,0.1,0.1
+ref,dd                    ,39424+9   ,u16N3,r,N3,         ,0.1,0.1
+ref,15                    ,39441     ,int16,r,int,         ,0.1,0.1

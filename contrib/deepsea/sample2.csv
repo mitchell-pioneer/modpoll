@@ -15,8 +15,8 @@ ref,Engine Speed,1030,uint16,r,,1,0.1,0.2
 ref,Gen Frequency,1031,uint16,r,,1,0.1,0.2
 poll,holding_register,1792,10,BE_BE
 ref,LocalTime,1792,uint32,r,,1,0.1,0.2
-poll,holding_register,2048,10,BE_BE
-ref,emergencyStop,2048,uint16,r,,1,0.1,0.2
+poll,holding_register,39424,10,BE_BE
+ref,emergencyStop,39425,uint16,r,,1,0.1,0.2
 #
 #
 #poll,holding_register,1280,15,BE_BE

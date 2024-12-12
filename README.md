@@ -1,11 +1,8 @@
-# modpoll - A New Command-line Tool for Modbus and MQTT
+# modpoll2 - A Command-line Tool for Modbus and MQTT
 
 [![pipeline status](https://gitlab.com/helloysd/modpoll/badges/master/pipeline.svg)](https://gitlab.com/helloysd/modpoll/-/commits/master)
 [![License](https://img.shields.io/pypi/l/modpoll)](https://gitlab.com/helloysd/modpoll/-/blob/master/LICENSE)
 [![Downloads](https://static.pepy.tech/badge/modpoll/week)](https://pepy.tech/project/modpoll)
-
-> Learn more about *modpoll* usage at [documentation](https://helloysd.gitlab.io/modpoll) site.
-
 
 ## Motivation
 
@@ -39,43 +36,14 @@ In fact, *modpoll* helps to bridge between the traditional field-bus world and t
 
 ## Installation
 
-This program tested on python 3.8+, the package is available in the Python Package Index, users can easily install it using `pip` or `pipx`.
 
-### Using PIP
-
-Python3 is supported by most popular platforms, e.g. Linux/macOS/Windows, on which you can install *modpoll* using `pip` tool,
+This program tested on python 3.8+ 
 
 ```bash
 pip install modpoll
 ```
 
-Optionally, pyserial library can be installed for Modbus-RTU communication,
-
-```bash
-pip install 'modpoll[serial]'
-```
-
-Upgrade the tool via the following command,
-
-```bash
-pip install -U modpoll
-```
-
 ### On Windows
-
-It is recommended to use `pipx` for installing *modpoll* on Windows, refer to [here](https://pypa.github.io/pipx/installation/) for more information about `pipx`.
-
-Once `pipx` installed, you can run the following command in a Command Prompt terminal.
-
-```PowerShell
-pipx install modpoll
-```
-
-Upgrade the tool via the following command,
-
-```PowerShell
-pipx upgrade modpoll
-```
 
 ## Quickstart
 
@@ -99,168 +67,9 @@ modpoll \
 
 The reason we can magically poll data from the online device *modsim* is because we have already provided the [Modbus configure file](https://raw.githubusercontent.com/gavinying/modpoll/master/examples/modsim.csv) for *modsim* device as following,
 
-```CSV
-device,modsim001,1,,
-poll,coil,0,16,BE_BE
-ref,coil01-08,0,bool8,rw
-ref,coil09-16,1,bool8,rw
-poll,discrete_input,10000,16,BE_BE
-ref,di01-08,10000,bool8,rw
-ref,di09-16,10001,bool8,rw
-poll,input_register,30000,20,BE_BE
-ref,input_reg01,30000,uint16,rw
-ref,input_reg02,30001,uint16,rw
-ref,input_reg03,30002,uint16,rw
-ref,input_reg04,30003,uint16,rw
-ref,input_reg05,30004,int16,rw
-ref,input_reg06,30005,int16,rw
-ref,input_reg07,30006,int16,rw
-ref,input_reg08,30007,int16,rw
-ref,input_reg09,30008,uint32,rw
-ref,input_reg10,30010,uint32,rw
-ref,input_reg11,30012,int32,rw
-ref,input_reg12,30014,int32,rw
-ref,input_reg13,30016,float32,rw
-ref,input_reg14,30018,float32,rw
-poll,holding_register,40000,20,BE_BE
-ref,holding_reg01,40000,uint16,rw
-ref,holding_reg02,40001,uint16,rw
-ref,holding_reg03,40002,uint16,rw
-ref,holding_reg04,40003,uint16,rw
-ref,holding_reg05,40004,int16,rw
-ref,holding_reg06,40005,int16,rw
-ref,holding_reg07,40006,int16,rw
-ref,holding_reg08,40007,int16,rw
-ref,holding_reg09,40008,uint32,rw
-ref,holding_reg10,40010,uint32,rw
-ref,holding_reg11,40012,int32,rw
-ref,holding_reg12,40014,int32,rw
-ref,holding_reg13,40016,float32,rw
-ref,holding_reg14,40018,float32,rw
-```
-
-This configuration tells *modpoll* to do the following for each poll,
-
-- Read `16` coils from the address starting from `0` and parse the response as two 8-bits boolean values;
-- Read `16` discrete inputs from the address starting from `10000` and parse the response as two 8-bits boolean values;
-- Read `20` input registers from the address starting from `30000` and parse data accordingly;
-- Read `20` holding registers from the address starting from `40000` and parse data accordingly;
-
-In practical, you usually need to customize a Modbus configuration file for your own device before running *modpoll* tool, which defines the optimal polling patterns and register mappings according to device vendor's documents.
-
-You can also take a look at [contrib](https://github.com/gavinying/modpoll/tree/master/contrib) folder, which collects a few types of device configuration shared by contributors.
-
 The configuration can be either a local file or a remote public URL resource.
 
 > *Refer to the [documentation](https://helloysd.gitlab.io/modpoll/configure.html) site for more details.*
-
-### Poll local device (modsim)
-
-If you are blocked by company firewall for online device or prefer a local test, you can launch your own device simulator by running *modsim* locally,
-
-```bash
-docker run --rm -p 5020:5020 helloysd/modsim
-```
-
-It will create a virtual Modbus TCP device running at `localhost:5020`, and you can open a new terminal, poll the virtual device using *modpoll* tool,
-
-```bash
-modpoll \
-  --tcp localhost \
-  --tcp-port 5020 \
-  --config https://raw.githubusercontent.com/gavinying/modpoll/master/examples/modsim.csv
-```
-
-> Use `sudo` before the docker command if you want to use the standard port `502`.
-
-```bash
-sudo docker run --rm -p 502:5020 helloysd/modsim
-```
-
-In a new terminal,
-
-```
-modpoll \
-  --tcp localhost \
-  --config https://raw.githubusercontent.com/gavinying/modpoll/master/examples/modsim.csv
-```
-
-### Publish data to MQTT broker
-
-This is a useful function of this new *modpoll* tool, which provides a simple way to publish collected modbus data to MQTT broker, so users can view data from a smart phone via a MQTT client.
-
-The following example uses a public MQTT broker `mqtt.eclipseprojects.io` for test purpose. You can also set up your own MQTT broker locally using [mosquitto](https://mosquitto.org/download/).
-
-```bash
-modpoll \
-  --tcp modsim.topmaker.net \
-  --mqtt-host mqtt.eclipseprojects.io \
-  --config https://raw.githubusercontent.com/gavinying/modpoll/master/examples/modsim.csv
-```
-
-With successful data polling and publishing, you can subscribe the topic `modpoll/modsim` on the same MQTT broker `mqtt.eclipseprojects.io` to view the collected data.
-
-> The MQTT topic uses `<mqtt_topic_prefix>/<deviceid>` pattern, <mqtt_topic_prefix> is provided by `--mqtt-topic-prefix` argument, the default value is `modpoll/`  and <deviceid> is provided by the Modbus configure file.
-
-
-<p align="center">
-  <img src="docs/assets/screencast-modpoll-mqtt.gif">
-</p>
-
-
-### Write registers via MQTT publish
-
-The *modpoll* tool will subscribe to the topic `<mqtt_topic_prefix>/<deviceid>/set` once it successfully connected to MQTT broker, user can write device register(s) via MQTT publish,
-
-- To write a single holding register (address at `40001`)
-
-  ```json
-  {
-    "object_type": "holding_register",
-    "address": 40001,
-    "value": 12
-  }
-  ```
-
-- To write multiple holding registers (address starting from `40001`)
-
-  ```json
-  {
-    "object_type": "holding_register",
-    "address": 40001,
-    "value": [12, 13, 14, 15]
-  }
-  ```
-
-
-## Run with docker
-
-A docker image has been provided for user to directly run the program without local installation,
-
-  ```bash
-  docker run --rm helloysd/modpoll
-  ```
-
-It shows the version of the program by default.
-
-Similar to the above *modsim* test, we can poll data with `docker run`, in order to avoid printing out received data, the argument `--daemon` or `-d` is recommended to use with docker.
-
-  ```bash
-  docker run --rm helloysd/modpoll \
-    modpoll -d \
-      --tcp modsim.topmaker.net \
-      --config https://raw.githubusercontent.com/gavinying/modpoll/master/examples/modsim.csv
-  ```
-
-If you want to load a local configure file, you need to mount a local folder onto container volume,
-for example, if the child folder `examples` contains the config file `modsim.csv`, we can use it via the following command,
-
-  ```bash
-  docker run --rm -v $(pwd)/examples:/app/examples helloysd/modpoll \
-    modpoll -d \
-      --tcp modsim.topmaker.net \
-      --config /app/examples/modsim.csv
-  ```
 
 
 ## Basic Usage
@@ -302,9 +111,157 @@ for example, if the child folder `examples` contains the config file `modsim.csv
     --config examples/modsim.csv
   ```
 
+## Configuation 
+Modpoll is configured using a yaml file.  The file has three section:
+- device
+- poll
+- elements
 
-> *Refer to the [documentation](https://helloysd.gitlab.io/modpoll) site for more details about the configuration and examples.*
+### Device 
+This section contains yaml elements for the system as a whole. 
 
+    name: "BcHydro"
+    customer: bchydro
+    truck: bch1
+    versionNumber: "1.0"
+    device_id: 1
+    osCmd: ""
+    enabled: true
+    mqttHost: "devmqtt.eboostmobile.com"
+    ipAddress: "192.168.2.50"
+    modbusTimeout: 3
+    modbusPort: 502
+    loopDelay: 1  #in seconds
+    modbusPrint: False
+    deepDebug: False
+    deepModbusPrint: True
+    onChangeReset: 60
+    neverEnd: True
+
+### Poll 
+This section is contained in an array inside the Device section. It controls the polling actions of the configuraiton file.
+
+    poll:
+      - name: DeepSeaValues
+        modRegType: holding_register
+        modStartPage: "39424"
+        modPageSize: "60"
+
+        loopDelay: 5   #in seconds
+        endian: "BE_BE"
+        mqttOnChange: False
+        mqttQueue: "Pioneer/{CNAME}/{PNAME}/generator"
+        mqttSingle: False
+        enabled: True
+
+### Elements 
+This section is contained in an array inside the Poll section. It controls the individual modbus registers that are read.
+
+    elements:
+      - { name: "Engine run time", address: "dse!Engine run time!",                 dtype: "uint32",   unit: "seconds", scale: "{}/3600" }
+      - { name: "Generator positive KW hours", address: "dse!Generator positive KW hours!",       dtype: "uint32",   unit: "seconds", scale: "{} * 0.1" }
+      - { name: "Generator KVA hours", address: "dse!Generator KVA hours!",       dtype: "uint32",   unit: "seconds", scale: "{} * 0.1" }
+      - { name: "Generator KVAr hours", address: "dse!Generator KVAr hours!",       dtype: "uint32",   unit: "seconds", scale: "{} * 0.1" }
+
+### Yaml file details 
+
+#### Device fields 
+    name: AppName     
+    The name of the system.  This is used as the first part of the subsitutions in the mqtt topic.  
+
+    customer: 'The Customer'
+    The customer of the system.  This is used as the second part of the subsitutions in the mqtt topic
+  
+    truck: bch1 
+    The product of the customer.  This is used as the third part of the subsitutions in the mqtt topic
+
+    versionNumber: "1.0"  
+    The version number of the app, that will be printed in the title. 
+    Optional:  It will default to '1.0' if field is excluded  
+
+    device_id: 1
+    The device_id  of the app.  
+    Optional:  It will default to 'noDevId' if field is excluded  
+
+    osCmd: ""
+    Not used at this time
+
+    enabled: true
+    Exclude this device and all poll sections from processing.
+    Optional:  It will default to 'True' if field is excluded  
+
+    mqttHost: "devmqtt.eboostmobile.com"
+    The URI of the MQTT Server 
+    Manditory field
+
+    ipAddress: "192.168.2.50"
+    The ip address of the modbus controler to be monitored
+    Manditory field 
+
+    modbusTimeout: 3
+    How many modbus timeouts can be accepted. This is simply passed to the pymodpoll library
+    Optional:  It will default to '5' if field is excluded
+
+    modbusPort: 502
+    The modbus IP port used to contact this server. 
+    Optional:  It will default to '502' if field is excluded
+
+    loopDelay: 1  #in seconds
+    The number of seconds that the the 'Device' section will force the polling loop to delay
+    Optional:  It will default to '5' if field is excluded
+
+    modbusPrint: False
+    If enabled each poll section below will include a table in the logfile showing the value of each register 
+    Optional:  It will default to 'False' if field is excluded
+
+    deepDebug: False
+    If enabled detailed logging about actions contained within the processing of this section. 
+    This includes the modbus data conversion  
+    Optional:  It will default to 'False' if field is excluded
+
+    deepModbusPrint: True
+    If enabled more detailed logging about actions contained within the processing of this section. 
+    This includes the modbus data conversion  
+    Optional:  It will default to 'False' if field is excluded
+
+    onChangeReset: 60
+    When MQTT publish is run, it will determine if this modbus register is different from the last time the register was read.
+    If a field does not change for a long time, it might appear that the field is never processed.
+    This field controls how often this table of last values is cleared out. 
+    Its in sections 
+    Optional:  It will default to '0' if field is excluded
+
+    neverEnd: True
+    If errors are encountered during the procssing of this configuration, error might be enountered.
+    The value of this field determins if the program exists or just prints the error and reinitialzied 
+    the system and trys again.
+
+#### Poll fields
+    poll:
+      - name: DeepSeaValues
+        modRegType: holding_register
+        modStartPage: "39424"
+        modPageSize: "60"
+
+        loopDelay: 5   #in seconds
+        endian: "BE_BE"
+        mqttOnChange: False
+        mqttQueue: "Pioneer/{CNAME}/{PNAME}/generator"
+        mqttSingle: False
+        enabled: True
+
+
+#### Element fields 
+
+        elements:
+          - { name: "EmergencyStop",  address: "39424 + 1",   dtype: "u16n3",   unit: "Flag",   <<: *mapFlags }
+          - { name: "LowOil",         address: "39424 + 1" ,  dtype: "u16n2",   unit: "Flag",   <<: *mapFlags }
+
+### Generator specific fields
+        modStartPage: dsp!Accumulated Instrumentation!
+        elements:
+          - { name: "Engine run time", address: "dse!Engine run time!",                 dtype: "uint32",   unit: "seconds", scale: "{}/3600" }
+          - { name: "Generator positive KW hours", address: "dse!Generator positive KW hours!",       dtype: "uint32",   unit: "seconds", scale: "{} * 0.1" }
 
 ## Credits
 

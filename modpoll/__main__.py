@@ -1,3 +1,10 @@
-from .main import app
+from modpoll.Main import Main
 
-app()
+if __name__ == "__main__":
+    while(True):
+        try:
+            m = Main()
+            m.run()
+        except AssertionError as e:
+            print(f"Assertion error",e)
+

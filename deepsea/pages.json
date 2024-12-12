@@ -2,27 +2,36 @@
   {
     "Page": 0,
     "Desc": "Communications status information",
-    "Rw": "Read only"
+    "Rw": "Read only",
+    "MaxLen": 60
   },
   {
     "Page": 1,
     "Desc": "Communications configuration",
-    "Rw": "Read/write and\twrite\tonly"
+    "Rw": "Read/write and\twrite\tonly",
+    "MaxLen": 60
+
   },
   {
     "Page": 2,
     "Desc": "Modem configuration",
-    "Rw": "Read/write"
+    "Rw": "Read/write",
+    "MaxLen": 60
+
   },
   {
     "Page": 3,
     "Desc": "Generating set status information",
-    "Rw": "Read only"
+    "Rw": "Read only",
+    "MaxLen": 60
+
   },
   {
     "Page": 4,
     "Desc": "Basic instrumentation",
-    "Rw": "Read only"
+    "Rw": "Read only",
+    "MaxLen": 60
+
   },
   {
     "Page": 5,

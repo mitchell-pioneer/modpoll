@@ -1,0 +1,568 @@
+[
+    {
+        "offset": 0,
+        "Name": "Number of named alarms",
+        "Minimum value": 30,
+        "Maximum value": 256,
+        "Bits/Sign": "16"
+    },
+    {
+        "offset": 1,
+        "Name": "Emergency stop",
+        "Minimum value": 0,
+        "Maximum value": 15,
+        "Bits/Sign": "13/16-16/16"
+    },
+    {
+        "offset": 1,
+        "Name": "Low oil pressure",
+        "Minimum value": 0,
+        "Maximum value": 15,
+        "Bits/Sign": "9/16-12/16"
+    },
+    {
+        "offset": 1,
+        "Name": "High coolant temperature",
+        "Minimum value": 0,
+        "Maximum value": 15,
+        "Bits/Sign": "5/16-8/16"
+    },
+    {
+        "offset": 1,
+        "Name": "Low coolant temperature",
+        "Minimum value": 0,
+        "Maximum value": 15,
+        "Bits/Sign": "1/16-4/16"
+    },
+    {
+        "offset": 2,
+        "Name": "Under speed",
+        "Minimum value": 0,
+        "Maximum value": 15,
+        "Bits/Sign": "13/16-16/16"
+    },
+    {
+        "offset": 2,
+        "Name": "Over speed",
+        "Minimum value": 0,
+        "Maximum value": 15,
+        "Bits/Sign": "9/16-12/16"
+    },
+    {
+        "offset": 2,
+        "Name": "Generator Under frequency",
+        "Minimum value": 0,
+        "Maximum value": 15,
+        "Bits/Sign": "5/16-8/16"
+    },
+    {
+        "offset": 2,
+        "Name": "Generator Over frequency",
+        "Minimum value": 0,
+        "Maximum value": 15,
+        "Bits/Sign": "1/16-4/16"
+    },
+    {
+        "offset": 3,
+        "Name": "Generator low voltage",
+        "Minimum value": 0,
+        "Maximum value": 15,
+        "Bits/Sign": "13/16-16/16"
+    },
+    {
+        "offset": 3,
+        "Name": "Generator high voltage",
+        "Minimum value": 0,
+        "Maximum value": 15,
+        "Bits/Sign": "9/16-12/16"
+    },
+    {
+        "offset": 3,
+        "Name": "Battery low voltage",
+        "Minimum value": 0,
+        "Maximum value": 15,
+        "Bits/Sign": "5/16-8/16"
+    },
+    {
+        "offset": 3,
+        "Name": "Battery high voltage",
+        "Minimum value": 0,
+        "Maximum value": 15,
+        "Bits/Sign": "1/16-4/16"
+    },
+    {
+        "offset": 4,
+        "Name": "Charge alternator failure",
+        "Minimum value": 0,
+        "Maximum value": 15,
+        "Bits/Sign": "13/16-16/16"
+    },
+    {
+        "offset": 4,
+        "Name": "Fail to start",
+        "Minimum value": 0,
+        "Maximum value": 15,
+        "Bits/Sign": "9/16-12/16"
+    },
+    {
+        "offset": 4,
+        "Name": "Fail to stop",
+        "Minimum value": 0,
+        "Maximum value": 15,
+        "Bits/Sign": "5/16-8/16"
+    },
+    {
+        "offset": 4,
+        "Name": "Generator fail to close",
+        "Minimum value": 0,
+        "Maximum value": 15,
+        "Bits/Sign": "1/16-4/16"
+    },
+    {
+        "offset": 5,
+        "Name": "Mains fail to close",
+        "Minimum value": 0,
+        "Maximum value": 15,
+        "Bits/Sign": "13/16-16/16"
+    },
+    {
+        "offset": 5,
+        "Name": "Oil pressure sender fault",
+        "Minimum value": 0,
+        "Maximum value": 15,
+        "Bits/Sign": "9/16-12/16"
+    },
+    {
+        "offset": 5,
+        "Name": "Loss of magnetic pick up",
+        "Minimum value": 0,
+        "Maximum value": 15,
+        "Bits/Sign": "5/16-8/16"
+    },
+    {
+        "offset": 5,
+        "Name": "Magnetic pick up open circuit",
+        "Minimum value": 0,
+        "Maximum value": 15,
+        "Bits/Sign": "1/16-4/16"
+    },
+    {
+        "offset": 6,
+        "Name": "Generator high current",
+        "Minimum value": 0,
+        "Maximum value": 15,
+        "Bits/Sign": "13/16-16/16"
+    },
+    {
+        "offset": 6,
+        "Name": "Calibration lost",
+        "Minimum value": 0,
+        "Maximum value": 15,
+        "Bits/Sign": "9/16-12/16"
+    },
+    {
+        "offset": 6,
+        "Name": "Low fuel level",
+        "Minimum value": 0,
+        "Maximum value": 15,
+        "Bits/Sign": "5/16-8/16"
+    },
+    {
+        "offset": 6,
+        "Name": "CAN ECU Warning",
+        "Minimum value": 0,
+        "Maximum value": 15,
+        "Bits/Sign": "1/16-4/16"
+    },
+    {
+        "offset": 7,
+        "Name": "CAN ECU Shutdown",
+        "Minimum value": 0,
+        "Maximum value": 15,
+        "Bits/Sign": "13/16-16/16"
+    },
+    {
+        "offset": 7,
+        "Name": "CAN ECU Data fail",
+        "Minimum value": 0,
+        "Maximum value": 15,
+        "Bits/Sign": "9/16-12/16"
+    },
+    {
+        "offset": 7,
+        "Name": "Low oil level switch",
+        "Minimum value": 0,
+        "Maximum value": 15,
+        "Bits/Sign": "5/16-8/16"
+    },
+    {
+        "offset": 7,
+        "Name": "High temperature switch",
+        "Minimum value": 0,
+        "Maximum value": 15,
+        "Bits/Sign": "1/16-4/16"
+    },
+    {
+        "offset": 8,
+        "Name": "Low fuel level switch",
+        "Minimum value": 0,
+        "Maximum value": 15,
+        "Bits/Sign": "13/16-16/16"
+    },
+    {
+        "offset": 8,
+        "Name": "Expansion unit watchdog alarm",
+        "Minimum value": 0,
+        "Maximum value": 15,
+        "Bits/Sign": "9/16-12/16"
+    },
+    {
+        "offset": 8,
+        "Name": "kW overload alarm",
+        "Minimum value": 0,
+        "Maximum value": 15,
+        "Bits/Sign": "5/16-8/16"
+    },
+    {
+        "offset": 8,
+        "Name": "Negative phase sequence current alarm",
+        "Minimum value": 0,
+        "Maximum value": 15,
+        "Bits/Sign": "1/16-4/16"
+    },
+    {
+        "offset": 9,
+        "Name": "Earth fault trip alarm",
+        "Minimum value": 0,
+        "Maximum value": 15,
+        "Bits/Sign": "13/16-16/16"
+    },
+    {
+        "offset": 9,
+        "Name": "Generator phase rotation alarm",
+        "Minimum value": 0,
+        "Maximum value": 15,
+        "Bits/Sign": "9/16-12/16"
+    },
+    {
+        "offset": 9,
+        "Name": "Auto Voltage Sense Fail",
+        "Minimum value": 0,
+        "Maximum value": 15,
+        "Bits/Sign": "5/16-8/16"
+    },
+    {
+        "offset": 9,
+        "Name": "Maintenance alarm",
+        "Minimum value": 0,
+        "Maximum value": 15,
+        "Bits/Sign": "1/16-4/16"
+    },
+    {
+        "offset": 10,
+        "Name": "Loading frequency alarm",
+        "Minimum value": 0,
+        "Maximum value": 15,
+        "Bits/Sign": "13/16-16/16"
+    },
+    {
+        "offset": 10,
+        "Name": "Loading voltage alarm",
+        "Minimum value": 0,
+        "Maximum value": 15,
+        "Bits/Sign": "9/16-12/16"
+    },
+    {
+        "offset": 10,
+        "Name": "Fuel usage running",
+        "Minimum value": 0,
+        "Maximum value": 15,
+        "Bits/Sign": "5/16-8/16"
+    },
+    {
+        "offset": 10,
+        "Name": "Fuel usage stopped",
+        "Minimum value": 0,
+        "Maximum value": 15,
+        "Bits/Sign": "1/16-4/16"
+    },
+    {
+        "offset": 11,
+        "Name": "Protections disabled",
+        "Minimum value": 0,
+        "Maximum value": 15,
+        "Bits/Sign": "13/16-16/16"
+    },
+    {
+        "offset": 11,
+        "Name": "Protections blocked",
+        "Minimum value": 0,
+        "Maximum value": 15,
+        "Bits/Sign": "9/16-12/16"
+    },
+    {
+        "offset": 11,
+        "Name": "Generator Short Circuit",
+        "Minimum value": 0,
+        "Maximum value": 15,
+        "Bits/Sign": "5/16-8/16"
+    },
+    {
+        "offset": 11,
+        "Name": "Mains High Current",
+        "Minimum value": 0,
+        "Maximum value": 15,
+        "Bits/Sign": "1/16-4/16"
+    },
+    {
+        "offset": 12,
+        "Name": "Mains Earth Fault",
+        "Minimum value": 0,
+        "Maximum value": 15,
+        "Bits/Sign": "13/16-16/16"
+    },
+    {
+        "offset": 12,
+        "Name": "Mains Short Circuit",
+        "Minimum value": 0,
+        "Maximum value": 15,
+        "Bits/Sign": "9/16-12/16"
+    },
+    {
+        "offset": 12,
+        "Name": "ECU protect",
+        "Minimum value": 0,
+        "Maximum value": 15,
+        "Bits/Sign": "5/16-8/16"
+    },
+    {
+        "offset": 12,
+        "Name": "ECU Malfunction",
+        "Minimum value": 0,
+        "Maximum value": 15,
+        "Bits/Sign": "1/16-4/16"
+    },
+    {
+        "offset": 13,
+        "Name": "ECU Information",
+        "Minimum value": 0,
+        "Maximum value": 15,
+        "Bits/Sign": "13/16-16/16"
+    },
+    {
+        "offset": 13,
+        "Name": "ECU Shutdown",
+        "Minimum value": 0,
+        "Maximum value": 15,
+        "Bits/Sign": "9/16-12/16"
+    },
+    {
+        "offset": 13,
+        "Name": "ECU Warning",
+        "Minimum value": 0,
+        "Maximum value": 15,
+        "Bits/Sign": "5/16-8/16"
+    },
+    {
+        "offset": 13,
+        "Name": "ECU Electrical Trip",
+        "Minimum value": 0,
+        "Maximum value": 15,
+        "Bits/Sign": "1/16-4/16"
+    },
+    {
+        "offset": 14,
+        "Name": "ECU After treatment",
+        "Minimum value": 0,
+        "Maximum value": 15,
+        "Bits/Sign": "13/16-16/16"
+    },
+    {
+        "offset": 14,
+        "Name": "ECU Water In Fuel",
+        "Minimum value": 0,
+        "Maximum value": 15,
+        "Bits/Sign": "9/16-12/16"
+    },
+    {
+        "offset": 14,
+        "Name": "Generator Reverse Power",
+        "Minimum value": 0,
+        "Maximum value": 15,
+        "Bits/Sign": "5/16-8/16"
+    },
+    {
+        "offset": 14,
+        "Name": "Generator Positive VAr",
+        "Minimum value": 0,
+        "Maximum value": 15,
+        "Bits/Sign": "1/16-4/16"
+    },
+    {
+        "offset": 15,
+        "Name": "Generator Negative VAr",
+        "Minimum value": 0,
+        "Maximum value": 15,
+        "Bits/Sign": "13/16-16/16"
+    },
+    {
+        "offset": 15,
+        "Name": "LCD Heater Low Voltage",
+        "Minimum value": 0,
+        "Maximum value": 15,
+        "Bits/Sign": "9/16-12/16"
+    },
+    {
+        "offset": 15,
+        "Name": "LCD Heater High Voltage",
+        "Minimum value": 0,
+        "Maximum value": 15,
+        "Bits/Sign": "5/16-8/16"
+    },
+    {
+        "offset": 15,
+        "Name": "DEF Level Low",
+        "Minimum value": 0,
+        "Maximum value": 15,
+        "Bits/Sign": "1/16-4/16"
+    },
+    {
+        "offset": 16,
+        "Name": "SCR Inducement",
+        "Minimum value": 0,
+        "Maximum value": 15,
+        "Bits/Sign": "13/16-16/16"
+    },
+    {
+        "offset": 16,
+        "Name": "MSC Old version",
+        "Minimum value": 0,
+        "Maximum value": 15,
+        "Bits/Sign": "9/16-12/16"
+    },
+    {
+        "offset": 16,
+        "Name": "MSC ID alarm",
+        "Minimum value": 0,
+        "Maximum value": 15,
+        "Bits/Sign": "5/16-8/16"
+    },
+    {
+        "offset": 16,
+        "Name": "MSC failure",
+        "Minimum value": 0,
+        "Maximum value": 15,
+        "Bits/Sign": "1/16-4/16"
+    },
+    {
+        "offset": 17,
+        "Name": "MSC priority Error",
+        "Minimum value": 0,
+        "Maximum value": 15,
+        "Bits/Sign": "13/16-16/16"
+    },
+    {
+        "offset": 17,
+        "Name": "Fuel Sender open circuit",
+        "Minimum value": 0,
+        "Maximum value": 15,
+        "Bits/Sign": "9/16-12/16"
+    },
+    {
+        "offset": 17,
+        "Name": "Over speed runaway",
+        "Minimum value": 0,
+        "Maximum value": 15,
+        "Bits/Sign": "5/16-8/16"
+    },
+    {
+        "offset": 17,
+        "Name": "Over frequency run away",
+        "Minimum value": 0,
+        "Maximum value": 15,
+        "Bits/Sign": "1/16-4/16"
+    },
+    {
+        "offset": 18,
+        "Name": "Coolant sensor open circuit",
+        "Minimum value": 0,
+        "Maximum value": 15,
+        "Bits/Sign": "13/16-16/16"
+    },
+    {
+        "offset": 18,
+        "Name": "Remote display link lost",
+        "Minimum value": 0,
+        "Maximum value": 15,
+        "Bits/Sign": "9/16-12/16"
+    },
+    {
+        "offset": 18,
+        "Name": "Fuel tank bund level",
+        "Minimum value": 0,
+        "Maximum value": 15,
+        "Bits/Sign": "5/16-8/16"
+    },
+    {
+        "offset": 18,
+        "Name": "Charge air temperature",
+        "Minimum value": 0,
+        "Maximum value": 15,
+        "Bits/Sign": "1/16-4/16"
+    },
+    {
+        "offset": 19,
+        "Name": "Fuel level high",
+        "Minimum value": 0,
+        "Maximum value": 15,
+        "Bits/Sign": "13/16-16/16"
+    },
+    {
+        "offset": 19,
+        "Name": "Gen breaker failed to open (v5.0+)",
+        "Minimum value": 0,
+        "Maximum value": 15,
+        "Bits/Sign": "9/16-12/16"
+    },
+    {
+        "offset": 19,
+        "Name": "Mains breaker failed to open (v5.0+) – 7x20 only",
+        "Minimum value": 0,
+        "Maximum value": 15,
+        "Bits/Sign": "5/16-8/16"
+    },
+    {
+        "offset": 19,
+        "Name": "Fail to synchronise (v5.0+) – 7x20 only",
+        "Minimum value": 0,
+        "Maximum value": 15,
+        "Bits/Sign": "1/16-4/16"
+    },
+    {
+        "offset": "20-64",
+        "Name": "AVR Data Fail (v5.0+)",
+        "Minimum value": 0,
+        "Maximum value": 15,
+        "Bits/Sign": "13/16-16/16"
+    },
+    {
+        "offset": "20-64",
+        "Name": "AVR DM1 Red Stop Lamp (v5.0+)",
+        "Minimum value": 0,
+        "Maximum value": 15,
+        "Bits/Sign": "9/16-12/16"
+    },
+    {
+        "offset": "20-64",
+        "Name": "Escape Mode (v5.0+)",
+        "Minimum value": 0,
+        "Maximum value": 15,
+        "Bits/Sign": "5/16-8/16"
+    },
+    {
+        "offset": "20-64",
+        "Name": "Coolant high temp electrical trip (v5.0+)",
+        "Minimum value": 0,
+        "Maximum value": 15
+    }
+]

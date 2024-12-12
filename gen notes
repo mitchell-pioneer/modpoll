@@ -1,0 +1,158 @@
+On page Desrriptoins of each function, page 24,  it says that there is a limit to 125 registers
+but
+
+Wer
+
+
+Generaral status page 3
+The shutdown flag on a control unit indicates that one or more of the alarm codes has been set to ‘shutdown alarm’, it will clear
+automatically when no alarm codes are set to shutdown alarm. A system control function is used to clear shutdown alarms. In some
+situations it may not be possible to set one of the alarm codes to indicate the type of shutdown alarm because
+ the type is not known,
+
+Registser 774 =
+Register 6 Control unit not configured No Yes 16/16
+Unimplemented 0 0 15/16
+Control unit failure No Yes 14/16
+Shutdown alarm active No Yes 13/16
+Electrical trip No Yes 12/16
+Warning alarm active No Yes 11/16
+Telemetry alarm flag Not active Active 10/16
+Satellite telemetry alarm flag Not active Active 9/16
+No font file No Yes 8/16
+Controlled shutdown alarm active No Yes 7/16
+
+
+in this case only the shutdown flag will be set and the client should consider it an undefined shutdown alarm.
+Pull yaml from a URL
+Reparse yaml every X
+
+Dictionary Maps int to string
+Dictionary Maps int to NotUsed
+
+
+
+
+When looking at bch5 gen 3
++--------------------------------------+------+---------+-------+
+|                 name                 | unit | address | value |
++--------------------------------------+------+---------+-------+
+| Battery_voltage_____________________ | Deg  |   1029  |  138  |
+| dsElement!Engine_Battery_voltage!___ |  V   |   1029  |  138  |
+| dsElement!Fuel_level!_______________ |  %   |   1027  |  3600 | xx
+| dsElement!Coolant_temperature!______ | DegC |   1025  |  600  | xx
+| dsElement!Oil_pressure!_____________ | psi  |   1024  |   0   | xx -0.14
+| dsElement!Engine_speed!_____________ | RPM  |   1030  |  1179 | rpm shows 3594
+| dsElement!Generator_frequency!______ |  Hz  |   1031  |   0   | 59.91
+|  dsElement!Generator_L1-L2_voltage!  |  V   |   1038  | 236.7 |
+|  dsElement!Generator_L2-L3_voltage!  |  V   |   1040  |  -0.1 |
+|  dsElement!Generator_L3-L1_voltage!  |  V   |   1042  |  -0.1 |
+|   dsElement!Generator_L1_current!    |  A   |   1044  |  4.2  |
+|   dsElement!Generator_L2_current!    |  A   |   1046  |   0   |
+|   dsElement!Generator_L3_current!    |  A   |   1048  |  -0.1 |
++--------------------------------------+------+---------+-------+
+
+
+when looking at bch5 gen 0
+
++--------------------------------------+------+---------+-------+
+|                 name                 | unit | address | value |
++--------------------------------------+------+---------+-------+
+| Battery_voltage_____________________ | Deg  |   1029  |  129  |
+| dsElement!Engine_Battery_voltage!___ |  V   |   1029  |  129  |
+| dsElement!Fuel_level!_______________ |  %   |   1027  |   -5  |  nothing there
+| dsElement!Coolant_temperature!______ | DegC |   1025  |   0   |
+| dsElement!Oil_pressure!_____________ | psi  |   1024  |   0   |
+| dsElement!Engine_speed!_____________ | RPM  |   1030  |   0   |
+| dsElement!Generator_frequency!______ |  Hz  |   1031  |   0   |
+|  dsElement!Generator_L1-L2_voltage!  |  V   |   1038  |   0   |
+|  dsElement!Generator_L2-L3_voltage!  |  V   |   1040  |   0   |
+|  dsElement!Generator_L3-L1_voltage!  |  V   |   1042  |   0   |
+|   dsElement!Generator_L1_current!    |  A   |   1044  |   0   |
+|   dsElement!Generator_L2_current!    |  A   |   1046  |   0   |
+|   dsElement!Generator_L3_current!    |  A   |   1048  |   0   |
++--------------------------------------+------+---------+-------+
+
+
+
++---------------------------------------+------+---------+-------+
+|                  name                 | unit | address | value |
++---------------------------------------+------+---------+-------+
+| dsElement!Engine_Battery_voltage!____ |  V   |   1029  |  138  |  y
+| dsElement!Charge_alternator_voltage!_ |  V   |   1028  |  3600 |
+| dsElement!Engine_speed!______________ |  V   |   1030  |  600  |
+|  dsElement!Fuel_level!_______________ |  %   |   1027  |   0   |y
+|  dsElement!Coolant_temperature!______ | DegC |   1025  |  1175 | should be 0
+|  dsElement!Oil_pressure!_____________ | psi  |   1024  |   0   | should be -0.14
+|  dsElement!Generator_frequency!______ |  Hz  |   1031  |  1181 | 59/91
+|   dsElement!Generator_L1-L2_voltage!  |  V   |   1038  | 236.1 |y
+|   dsElement!Generator_L2-L3_voltage!  |  V   |   1040  |  -0.1 |y
+|   dsElement!Generator_L3-L1_voltage!  |  V   |   1042  |  -0.1 |y
+|    dsElement!Generator_L1_current!    |  A   |   1044  |  4.4  |y
+|    dsElement!Generator_L2_current!    |  A   |   1046  |   0   |y
+|    dsElement!Generator_L3_current!    |  A   |   1048  |  -0.1 |y
++---------------------------------------+------+---------+-------+
+Done.
+
+
+ize:60... SUCCESS
+===== references from device: MSChargeControler =====
++---------------------------------------+------+---------+-------+
+|                  name                 | unit | address | value |
++---------------------------------------+------+---------+-------+
+| dsElement!Engine_Battery_voltage!____ |  V   |   1029  |  138  |
+| dsElement!Charge_alternator_voltage!_ |  V   |   1028  |  3534 | this is engine speed
+| dsElement!Engine_speed!______________ |  V   |   1030  |  589  | this is engine frequency
+|  dsElement!Fuel_level!_______________ |  %   |   1027  |   0   |
+|  dsElement!Coolant_temperature!______ | DegC |   1025  |  1196 | this is power factor
+|  dsElement!Oil_pressure!_____________ | psi  |   1024  |   0   |
+|  dsElement!Generator_frequency!______ |  Hz  |   1031  |  1197 |
+|   dsElement!Generator_L1-L2_voltage!  |  V   |   1038  | 239.4 |
+|   dsElement!Generator_L2-L3_voltage!  |  V   |   1040  |  -0.1 |
+|   dsElement!Generator_L3-L1_voltage!  |  V   |   1042  |  -0.1 |
+|    dsElement!Generator_L1_current!    |  A   |   1044  |  18.3 |
+|    dsElement!Generator_L2_current!    |  A   |   1046  |  15.2 |
+|    dsElement!Generator_L3_current!    |  A   |   1048  |  -0.1 |
++---------------------------------------+------+---------+-------+
+Done.
+
+
++---------------------------------------+------+---------+-------+
+|                  name                 | unit | address | value |
++---------------------------------------+------+---------+-------+
+|  Battery_voltage_____________________ | Deg  |   1029  |  138  |
+| dsElement!Engine_Battery_voltage!____ |  V   |   1029  |  138  |
+| dsElement!Charge_alternator_voltage!_ |  V   |   1028  |  3534 |
+| dsElement!Engine_speed!______________ |  V   |   1030  |  589  |
+|  dsElement!Fuel_level!_______________ |  %   |   1027  |   0   |
+|  dsElement!Coolant_temperature!______ | DegC |   1025  |  1193 |
+|  dsElement!Oil_pressure!_____________ | psi  |   1024  |   0   |
+|  dsElement!Generator_frequency!______ |  Hz  |   1031  |  1199 |
+|   dsElement!Generator_L1-L2_voltage!  |  V   |   1038  | 238.9 |
+|   dsElement!Generator_L2-L3_voltage!  |  V   |   1040  |  -0.1 |
+|   dsElement!Generator_L3-L1_voltage!  |  V   |   1042  |  -0.1 |
+|    dsElement!Generator_L1_current!    |  A   |   1044  |  18.3 |
+|    dsElement!Generator_L2_current!    |  A   |   1046  |  15.1 |
+|    dsElement!Generator_L3_current!    |  A   |   1048  |  -0.1 |
+
+
+
+|                  name                 | unit | address | value |
++---------------------------------------+------+---------+-------+
+|  Battery_voltage_____________________ | Deg  |   1029  |  138  |
+|  dsElement!Oil_pressure!_____________ | DegC |   1024  |   -1  |
+|  dsElement!Generator_frequency!______ |  Hz  |   1031  |  598  |
+|  dsElement!Coolant_temperature!______ | DegC |   1025  |   0   |
+|  dsElement!Oil_temperature!__________ | DegC |   1026  |  1168 |
+|  dsElement!Fuel_level!_______________ |  %   |   1027  |   0   |
+| dsElement!Charge_alternator_voltage!_ |  V   |   1028  |  1174 |
+| dsElement!Engine_Battery_voltage!____ |  V   |   1029  |   -1  |
+| dsElement!Engine_speed!______________ |  V   |   1030  | 65535 |
+|   dsElement!Generator_L1-L2_voltage!  |  V   |   1038  | 234.5 |
+|   dsElement!Generator_L2-L3_voltage!  |  V   |   1040  |  -0.1 |
+|   dsElement!Generator_L3-L1_voltage!  |  V   |   1042  |  -0.1 |
+|    dsElement!Generator_L1_current!    |  A   |   1044  |  3.7  |
+|    dsElement!Generator_L2_current!    |  A   |   1046  |   0   |
+|    dsElement!Generator_L3_current!    |  A   |   1048  |  -0.1 |
++---------------------------------------+------+---------+-------+
+Done.

@@ -1,0 +1,189 @@
+valueMapError: &valueMapError
+  # Translates DeepSea Nibble values to words
+  valueMap:
+    0: Disabled
+    1: NotActive
+    2: WarningAlarm
+    3: ShutdownAlarm
+    4: ElectricalTrip
+    5: ControledShutdownAlarm
+    8: InactiveIndNs
+    9: inactiveInd
+    10: ActiveInd
+    15: Unimplemented
+
+ControlModeMap: &ControlModeMap
+  # Translates DeepSea Nibble values to words
+  valueMap:
+   0: 'Stop mode'
+   1: 'Auto mode'
+   2: 'Manual mode'
+   3: 'Test on load mode'
+   4: 'Auto with manual restore'
+   5: 'User configuration'
+
+mapFlags: &mapFlags                          # Create an anchor named 'env-common' with the values that follo  rw: r
+  scale:
+  <<: *valueMapError
+
+range10percent: &range10percent                          # Create an anchor named 'env-common' with the values that follo
+  rw: r
+  scale:
+  lowR: 0.1
+  highR: 0.1
+  <<: *valueMapError
+
+device:
+    name: "BcHydro"
+    customer: bchydro
+    truck: bch1
+    versionNumber: "1.0"
+    device_id: 1
+    osCmd: ""
+    enabled: True
+    mqttHost: "devmqtt.eboostmobile.com"
+    ipAddress: "192.168.2.51"
+    modbusTimeout: 3
+    modbusPort: 502
+    loopDelay: 1  #in seconds
+    modbusDebug: False
+    deepDebug: False
+    deepModbusPrint: True
+    onChangeReset: 60
+    neverEnd: True
+
+    poll:
+      - name: DeepSeaValues
+        modRegType: holding_register
+        modStartPage: "39424"
+        modPageSize: "60"
+
+        loopDelay: 5   #in seconds
+        mqttOnChange: False
+        mqttQueue: "Pioneer/{CNAME}/{PNAME}/{GNAME}"
+        mqttSingle: False
+        enabled: True
+
+        elements:
+          - { name: "EmergencyStop",  address: "39424 + 1",   dtype: "u16n3",   unit: "Flag",   <<: *mapFlags }
+          - { name: "LowOil",         address: "39424 + 1" ,  dtype: "u16n2",   unit: "Flag",   <<: *mapFlags }
+          - { name: "HighCool",       address: "39424 + 1",   dtype: "u16n1",   unit: "Flag",   <<: *mapFlags }
+          - { name: "LowCool",        address: "39424 + 1",   dtype: "u16n0",   unit: "Flag",   <<: *mapFlags }
+          - { name: "Underspeed",         address: "39424 + 2",   dtype: "u16n3",   unit: "Flag",   <<: *mapFlags }
+          - { name: "overspeed",          address: "39424 + 2",   dtype: "u16n2",   unit: "Flag",   <<: *mapFlags }
+          - { name: "GenUnderFreq",       address: "39424 + 2",   dtype: "u16n1",   unit: "Flag",   <<: *mapFlags }
+          - { name: "GenOverFreq",        address: "39424 + 2",   dtype: "u16n0",   unit: "Flag",   <<: *mapFlags }
+          - { name: "GenLowVolt",         address: "39424 + 3",   dtype: "u16n3",   unit: "Flag",   <<: *mapFlags }
+          - { name: "GenHighVolt",        address: "39424 + 3",  dtype: "u16n2",   unit: "Flag",   <<: *mapFlags }
+          - { name: "BatteryLowVolt",     address: "39424 + 3",   dtype: "u16n1",   unit: "Flag",   <<: *mapFlags }
+          - { name: "BatteryHighVolt",    address: "39424 + 3",   dtype: "u16n0",   unit: "Flag",   <<: *mapFlags }
+          - { name: "ChargeAltFailed",    address: "39424 + 4",   dtype: "u16n3",   unit: "Flag",   <<: *mapFlags }
+          - { name: "FailedToStart",      address: "39424 + 4",  dtype: "u16n2",   unit: "Flag",   <<: *mapFlags }
+          - { name: "FailedToStop",       address: "39424 + 4",   dtype: "u16n1",   unit: "Flag",   <<: *mapFlags }
+          - { name: "GenFailToClose",      address: "39424 + 4",   dtype: "u16n0",   unit: "Flag",   <<: *mapFlags }
+
+      - name: DeepSeaAccumulatedStats
+        modRegType: holding_register
+        modStartPage: dsp!Accumulated Instrumentation!
+        modPageSize: "20"
+        loopDelay: 0   #in seconds
+        mqttOnChange: False
+        mqttQueue: "Pioneer/{CNAME}/{PNAME}/{GNAME}"
+        mqttSingle: False
+        enabled: True
+
+        elements:
+          - { name: "Engine run time", address: "dse!Engine run time!",                 dtype: "uint32",   unit: "seconds", scale: "{}/3600" }
+          - { name: "Generator positive KW hours", address: "dse!Generator positive KW hours!",       dtype: "uint32",   unit: "seconds", scale: "{} * 0.1" }
+          - { name: "Generator KVA hours", address: "dse!Generator KVA hours!",         dtype: "uint32",   unit: "seconds", scale: "{} * 0.1" }
+          - { name: "Generator KVAr hours", address: "dse!Generator KVAr hours!",       dtype: "uint32",   unit: "seconds", scale: "{} * 0.1" }
+          - { name: "Number of starts", address: "dse!Number of starts!",               dtype: "uint32",   unit: "count" }
+
+      - name: DeepSeaEvents
+        modRegType: holding_register
+        modStartPage: dsp!Basic instrumentation!
+        modPageSize: "60"
+
+        loopDelay: 0  #in seconds
+        mqttOnChange: False
+        mqttQueue: "Pioneer/{CNAME}/{PNAME}/{GNAME}"
+        mqttSingle: False
+        enabled: True
+
+        elements:
+          - { name: "GenSupplyLoad",              address: "dse!Generator L1 current!",       dtype: "uint32",   unit: "Bool",    scale: "{} > 2" }
+          - { name: "GenRunning",                 address: "dse!Generator L1-L2 voltage!",    dtype: "uint32",   unit: "Bool",    scale: "{} > 2" }
+          - { name: "ChargeAlternatorVoltage",    address: "dse!Charge alternator voltage",   dtype: "uint16",   unit: "V",       scale: "{} * 0.1"}
+          - { name: "EngineBatteryVoltage",       address: "dse!Engine Battery voltage!",     dtype: "uint16",   unit: "V",       scale: "{} * 0.1" }
+          - { name: "EngineSpeed",                address: "dse!Engine speed!",               dtype: "uint16",   unit: "Flag",    scale: ""         }
+          - { name: "GeneratorFrequency",         address: "dse!Generator frequency!",        dtype: "uint16",   unit: "Hz",      scale: "{} * 0.1" }
+          - { name: "GeneratorL1-L2voltage!",     address: "dse!Generator L1-L2 voltage!",    dtype: "uint32",   unit: "Flag",    scale: "{} * 0.1" }
+          - { name: "GeneratorL2-L3voltage!",     address: "dse!Generator L2-L3 voltage!",    dtype: "uint32",   unit: "Flag",    scale: "{} * 0.1"}
+          - { name: "GeneratorL3-L1voltage!",     address: "dse!Generator L3-L1 voltage!",    dtype: "uint32",   unit: "Flag",    scale: "{} * 0.1" }
+          - { name: "GeneratorL1current",         address: "dse!Generator L1 current!",       dtype: "uint32",   unit: "Flag",    scale: "{} * 0.1" }
+          - { name: "GeneratorL2current",         address: "dse!Generator L2 current!",       dtype: "uint32",   unit: "Flag",    scale: "{} * 0.1" }
+          - { name: "GeneratorL3current",         address: "dse!Generator L3 current!",       dtype: "uint32",   unit: "Flag",    scale: "{} * 0.1" }
+          - { name: "OilPressure",                address: "dse!Oil pressure!",               dtype: "uint16",   unit: "kpa",   <<: *range10percent }
+          - { name: "OilTemperature",             address: "dse!Oil temperature!",            dtype: "int16",    unit: "DegC",   <<: *range10percent }
+          - { name: "CoolantTemp",                address: "dse!Coolant temperature!",        dtype: "int16",   unit: "DegC",   <<: *range10percent }
+
+
+      - name: custom_modbus_values
+        modRegType: holding_register
+        modStartPage: "44038"
+        modPageSize: "10"
+
+        loopDelay: 0  #in seconds
+        mqttOnChange: False
+        mqttQueue: "Pioneer/{CNAME}/{PNAME}/{GNAME}"
+        mqttSingle: False
+        enabled: True
+
+        elements:
+          - { name: "OutSideTemp",                address: "44038",       dtype: "int16",   unit: "Fahrenheit",     }
+          - { name: "InSideTemp",                 address: "44039",       dtype: "int16",   unit: "Fahrenheit",     }
+
+      - name: bitvalues
+        modRegType: holding_register
+        modStartPage: "256*3"
+        modPageSize: "10"
+
+        loopDelay: 0  #in seconds
+        mqttOnChange: False
+        mqttQueue: "Pioneer/{CNAME}/{PNAME}/{GNAME}"
+        mqttSingle: False
+        enabled: True
+
+        elements:
+          - { name: "ShutdownAlarm",              address: "(256*3) + 6", dtype: "b13-16",   unit: "bool",     }
+          - { name: "WarningAlarm",               address: "(256*3) + 6", dtype: "b11-16",   unit: "bool",     }
+          - { name: "ElectricalTrip",             address: "(256*3) + 6", dtype: "b12-16",   unit: "bool",     }
+          - { name: "GenMode",                    address: "(256*3) + 4", dtype: "uint16",   unit: "bool", <<: *ControlModeMap    }
+
+      - name: digitalInputs
+        modRegType: holding_register
+        modStartPage: "(256*12)+17"
+        modPageSize: "2"
+        loopDelay: 0  #in seconds
+        mqttOnChange: False
+        mqttQueue: "Pioneer/{CNAME}/{PNAME}/{GNAME}"
+        mqttSingle: False
+        enabled: True
+
+        elements:
+          - { name: "DigitalInput1",              address: "(256*12)+17", dtype: "b16-16",   unit: "bool",     }
+          - { name: "DigitalInput2",              address: "(256*12)+17", dtype: "b15-16",   unit: "bool",     }
+          - { name: "DigitalInput3",              address: "(256*12)+17", dtype: "b14-16",   unit: "bool",     }
+          - { name: "DigitalInput4",              address: "(256*12)+17", dtype: "b13-16",   unit: "bool",     }
+          - { name: "DigitalInput5",              address: "(256*12)+17", dtype: "b12-16",   unit: "bool", }
+          - { name: "DigitalInput6",              address: "(256*12)+17", dtype: "b11-16",   unit: "bool", }
+          - { name: "DigitalInput7",              address: "(256*12)+17", dtype: "b10-16",   unit: "bool", }
+          - { name: "DigitalInput8",              address: "(256*12)+17", dtype: "b9-16",   unit: "bool", }
+          - { name: "DigitalInput9",              address: "(256*12)+17", dtype: "b8-16",   unit: "bool",     }
+          - { name: "DigitalInput10",              address: "(256*12)+17", dtype: "b7-16",   unit: "bool",     }
+          - { name: "DigitalInput11",              address: "(256*12)+17", dtype: "b6-16",   unit: "bool",     }
+          - { name: "DigitalInput12",              address: "(256*12)+17", dtype: "b5-16",   unit: "bool",     }
+          - { name: "DigitalInput13",              address: "(256*12)+17", dtype: "b4-16",   unit: "bool", }
+          - { name: "DigitalInput14",              address: "(256*12)+17", dtype: "b3-16",   unit: "bool", }
+          - { name: "DigitalInput15",              address: "(256*12)+17", dtype: "b2-16",   unit: "bool", }
+          - { name: "DigitalInput16",              address: "(256*12)+17", dtype: "b1-16",   unit: "bool", }

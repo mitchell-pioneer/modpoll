@@ -1,0 +1,52 @@
+[
+    {
+        "type": "device",
+        "name": "Device1",
+        "id": 1,
+        "ipaddress": "192.168.1.10"
+    },
+    {
+        "type": "poll",
+        "function_code": "holding_register",
+        "start_address": "100",
+        "size": "20",
+        "endian": "big"
+    },
+    {
+        "type": "ref",
+        "name": "Temperature",
+        "address": "101",
+        "dtype": "int16",
+        "rw": "r",
+        "unit": "Celsius",
+        "scale": "1.0",
+        "hrange": "100.0",
+        "lrange": "0.0",
+        "trans": "linear"
+    },
+
+
+    {
+        "type": "device",
+        "name": "Device2",
+        "id": 2
+    },
+    {
+        "type": "poll",
+        "function_code": "input_register",
+        "start_address": "200",
+        "size": "10",
+        "endian": "little"
+    },
+    {
+        "type": "ref",
+        "name": "Pressure",
+        "address": "201",
+        "dtype": "float16",
+        "rw": "r",
+        "unit": "Pascal",
+        "scale": "0.1",
+        "hrange": "200.0",
+        "lrange": "0.0"
+    }
+]

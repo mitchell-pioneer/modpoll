@@ -20,7 +20,7 @@ but the oil pressure is avaiable on the taylor but not the winco. Same for coola
 5) These are the Alarms that bluepillar provides.  How can we find them with modbus
 Common Alarm
 Emergency Stop
-High Battery Volts
+High Battery V8lts
 High Engine Temp
 Low Battery Volts
 Low Coolant Temp
@@ -121,3 +121,99 @@ Question for bp
 What is common alarm - is it a common alarm for any of the other settings
 
 
+
+
+
+        parser.add_argument(
+            "--tcp", help="Act as a Modbus TCP master, connecting to host TCP"
+        )
+        parser.add_argument(
+            "--udp", help="Act as a Modbus UDP master, connecting to host UDP"
+        )
+        parser.add_argument("--rtu", help="pyserial URL (or port name) for RTU serial port")
+        parser.add_argument(
+            "--rtu-baud",
+            type=int,
+            default=9600,
+            help="Baud rate for serial port. Defaults to 9600",
+        )
+        parser.add_argument(
+            "--rtu-parity",
+            choices=["none", "odd", "even"],
+            default="none",
+            help="Parity for serial port. Defaults to none",
+        )
+        parser.add_argument(
+            "--mqtt-qos",
+            choices=[0, 1, 2],
+            default=0,
+            help="MQTT QoS value. Defaults to 0",
+        )
+        parser.add_argument(
+            "--mqtt-user", default=None, help="Username for authentication (optional)"
+        )
+        parser.add_argument(
+            "--mqtt-pass", default=None, help="Password for authentication (optional)"
+        )
+        parser.add_argument("--mqtt-use-tls", action="store_true", help="Use TLS")
+        parser.add_argument(
+            "--mqtt-insecure",
+            action="store_true",
+            help="Use TLS without providing certificates",
+        )
+        parser.add_argument("--mqtt-cacerts", default=None, help="Path to ca keychain")
+        parser.add_argument(
+            "--mqtt-tls-version",
+            choices=["tlsv1.2", "tlsv1.1", "tlsv1"],
+            default="tlsv1.2",
+            help="TLS protocol version, can be one of tlsv1.2 tlsv1.1 or tlsv1",
+        )
+        parser.add_argument(
+            "--mqtt-single",
+            action="store_true",
+            help="Publish each value in a single topic. If not specified, groups all values in one topic.",
+        )
+        parser.add_argument(
+            "--diagnostics-rate",
+            type=float,
+            default=0,
+            help="Time in seconds as publishing period for each device diagnostics",
+        )
+        parser.add_argument(
+            "--autoremove",
+            action="store_true",
+            help="Automatically remove poller if modbus communication has failed 3 times.",
+        )
+        parser.add_argument(
+            "--loglevel",
+            choices=["DEBUG", "INFO", "WARNING", "ERROR", "CRITICAL"],
+            default="INFO",
+            help="Set log level, Defaults to INFO",
+        )
+        parser.add_argument(
+            "--timestamp", action="store_true", help="Add timestamp to the result"
+        )
+        parser.add_argument(
+            "--delay",
+            type=int,
+            default=0,
+            help="Time to delay sending first request in seconds after connecting. Default to 0",
+        )
+        parser.add_argument(
+            "--framer",
+            default="default",
+            choices=["default", "ascii", "binary", "rtu", "socket"],
+            help="The type of framer for modbus message. Use default framer if not specified.",
+        )
+        parser.add_argument(
+            "--mqtt-onchange",
+            action="store_true",
+            help="Publish to MQTT when values change"
+        )
+        parser.add_argument(
+            "--runEnv",
+            type=open,
+            action=LoadFromFile,
+            help="Use and .env file for commandline options"
+        )
+        return parser

@@ -57,10 +57,23 @@ device:
     onChangeReset: 120
     neverEnd: True
 
+
+    # modbusMode (tcp,udp,RS232,RS485 )
+    # modbusSerialSpeed - 9600
+    # modbusSerialParity - None | odd | event
+
+  # mqttUserName
+    # mqttPassword
+    # mqttUseTls
+    # modbusFramer
+
+    # commandline
+    # -config = file | url
+
     poll:
       - name: DeepSeaValues
         modRegType: holding_register
-        modStartPage: "39424"
+        modStartPage: "154 * 256"
         modPageSize: "60"
 
         loopDelay: 0   #in seconds
@@ -70,22 +83,22 @@ device:
         enabled: True
 
         elements:
-          - { name: "EmergencyStop",  address: "39424 + 1",   dtype: "u16n3",   unit: "Flag",   <<: *mapFlags }
-          - { name: "LowOil",         address: "39424 + 1" ,  dtype: "u16n2",   unit: "Flag",   <<: *mapFlags }
-          - { name: "HighCool",       address: "39424 + 1",   dtype: "u16n1",   unit: "Flag",   <<: *mapFlags }
-          - { name: "LowCool",        address: "39424 + 1",   dtype: "u16n0",   unit: "Flag",   <<: *mapFlags }
-          - { name: "Underspeed",         address: "39424 + 2",   dtype: "u16n3",   unit: "Flag",   <<: *mapFlags }
-          - { name: "overspeed",          address: "39424 + 2",   dtype: "u16n2",   unit: "Flag",   <<: *mapFlags }
-          - { name: "GenUnderFreq",       address: "39424 + 2",   dtype: "u16n1",   unit: "Flag",   <<: *mapFlags }
-          - { name: "GenOverFreq",        address: "39424 + 2",   dtype: "u16n0",   unit: "Flag",   <<: *mapFlags }
-          - { name: "GenLowVolt",         address: "39424 + 3",   dtype: "u16n3",   unit: "Flag",   <<: *mapFlags }
-          - { name: "GenHighVolt",        address: "39424 + 3",  dtype: "u16n2",   unit: "Flag",   <<: *mapFlags }
-          - { name: "BatteryLowVolt",     address: "39424 + 3",   dtype: "u16n1",   unit: "Flag",   <<: *mapFlags }
-          - { name: "BatteryHighVolt",    address: "39424 + 3",   dtype: "u16n0",   unit: "Flag",   <<: *mapFlags }
-          - { name: "ChargeAltFailed",    address: "39424 + 4",   dtype: "u16n3",   unit: "Flag",   <<: *mapFlags }
-          - { name: "FailedToStart",      address: "39424 + 4",  dtype: "u16n2",   unit: "Flag",   <<: *mapFlags }
-          - { name: "FailedToStop",       address: "39424 + 4",   dtype: "u16n1",   unit: "Flag",   <<: *mapFlags }
-          - { name: "GenFailToClose",      address: "39424 + 4",   dtype: "u16n0",   unit: "Flag",   <<: *mapFlags }
+          - { name: "EmergencyStop",  address: "(154*256) + 1",   dtype: "u16n3",   unit: "Flag",   <<: *mapFlags }
+          - { name: "LowOil",         address: "(154*256)+ 1" ,  dtype: "u16n2",   unit: "Flag",   <<: *mapFlags }
+          - { name: "HighCool",       address: "(154*256) + 1",   dtype: "u16n1",   unit: "Flag",   <<: *mapFlags }
+          - { name: "LowCool",        address: "(154*256) + 1",   dtype: "u16n0",   unit: "Flag",   <<: *mapFlags }
+          - { name: "Underspeed",         address: "(154*256) + 2",   dtype: "u16n3",   unit: "Flag",   <<: *mapFlags }
+          - { name: "overspeed",          address: "(154*256) + 2",   dtype: "u16n2",   unit: "Flag",   <<: *mapFlags }
+          - { name: "GenUnderFreq",       address: "(154*256) + 2",   dtype: "u16n1",   unit: "Flag",   <<: *mapFlags }
+          - { name: "GenOverFreq",        address: "(154*256) + 2",   dtype: "u16n0",   unit: "Flag",   <<: *mapFlags }
+          - { name: "GenLowVolt",         address: "(154*256) + 3",   dtype: "u16n3",   unit: "Flag",   <<: *mapFlags }
+          - { name: "GenHighVolt",        address: "(154*256) + 3",  dtype: "u16n2",   unit: "Flag",   <<: *mapFlags }
+          - { name: "BatteryLowVolt",     address: "(154*256) + 3",   dtype: "u16n1",   unit: "Flag",   <<: *mapFlags }
+          - { name: "BatteryHighVolt",    address: "(154*256) + 3",   dtype: "u16n0",   unit: "Flag",   <<: *mapFlags }
+          - { name: "ChargeAltFailed",    address: "(154*256) + 4",   dtype: "u16n3",   unit: "Flag",   <<: *mapFlags }
+          - { name: "FailedToStart",      address: "(154*256) + 4",  dtype: "u16n2",   unit: "Flag",   <<: *mapFlags }
+          - { name: "FailedToStop",       address: "(154*256) + 4",   dtype: "u16n1",   unit: "Flag",   <<: *mapFlags }
+          - { name: "GenFailToClose",      address: "(154*256) + 4",   dtype: "u16n0",   unit: "Flag",   <<: *mapFlags }
 
       - name: DeepSeaAccumulatedStats
         modRegType: holding_register

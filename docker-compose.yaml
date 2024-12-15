@@ -1,0 +1,15 @@
+version: '3'
+services:
+  fractal:
+    container_name: ModPoll
+    image: "338449120570.dkr.ecr.us-east-1.amazonaws.com/modpoll:latest"
+    restart: unless-stopped
+    privileged: true
+    environment:
+      - PUID=0
+      - PGID=0
+    volumes:
+      - /tmp:/tmp
+      - /config:/opt/config
+
+

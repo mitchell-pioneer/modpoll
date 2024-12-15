@@ -83,7 +83,8 @@ class Element:
             return False
         return True
 
-
+    def setLastVal(self,v):
+        self.last_val = v
     def scaleValue(self, v):
         # calculate val using eval method
         # set last val
@@ -94,10 +95,10 @@ class Element:
         elif isinstance(self.scale, float):
             if isinstance(v,int):
                 # scale is a float and v is an int so cast float back to int
-                v = int(v * self.scale)
+                v = round(int(v * self.scale),2)
             else:
                 # v was already a float
-                v = v * self.scale
+                v = round(v * self.scale,2)
         elif isinstance(self.scale, str):
             # we can use more complex scaling e.g.  {}/3600 or {} * 0.1
             if self.scale.find("{") == -1:
@@ -113,7 +114,7 @@ class Element:
             if isinstance(v, int):
                 v = int(v)
 
-        self.last_val = self.val
+#        self.last_val = self.val
         self.val = v
 
     # def update_value2(self, v):

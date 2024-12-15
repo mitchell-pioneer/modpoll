@@ -53,7 +53,7 @@ class Poller:
         self.endian : str = pollTree.get('endian', 'BE_BE')
         self.customer : str = pollTree.get('customer', 'customer')
         self.truck : str = pollTree.get('truck', 'truck')
-        self.mqttQueue : str = pollTree.get('mqttQueue','')
+        self.mqttQueue : str = pollTree.get('mqttQueue',None)
         self.mqttTopicSingle : bool = pollTree.get('mqttTopicSingle',False)
         self.mqttOnChange : bool = pollTree.get('mqttOnChange',False)
         self.enabled : bool = pollTree.get('enabled', False)
@@ -195,16 +195,12 @@ class Poller:
                             self.log.error("not found")
 
             # update the diff
-            self.device.saveLastValueForDiffCalc(element)
+#            self.device.saveLastValueForDiffCalc(element)  # done in modbus control
             self.update_statistics(True)
 
             if(element.condition != ""):
                 self.device.execCondition.processEvent(element.condition,rr,element.argument)
 
-            # self.log.info(
-            #     f"Reading device:{self.device.name}, FuncCode:{self.fc}, "
-            #     f"Start_address:{self.baseAddress}, Size:{self.size}... SUCCESS"
-            # )
             return True
         except ConnectionException as ex:
             self.log.debug(f"ConnectionException:{ex}")

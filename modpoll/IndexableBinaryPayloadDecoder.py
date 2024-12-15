@@ -14,7 +14,7 @@ __all__ = [
     "ModReadSigned",
     "ModReadLength",
 ]
-
+import logging
 from array import array
 from typing import Any
 
@@ -25,14 +25,13 @@ import numpy as np
 
 from pymodbus.constants import Endian
 from pymodbus.exceptions import ParameterException
-from pymodbus.logging import logging
 from pymodbus.utilities import (
     pack_bitstring,
     unpack_bitstring,
 )
 deepdebug = False
-log = logging.getLogger(__name__)
-log.setLevel(logging.DEBUG)
+
+
 
 class ModReadLength(Enum):
     BITS8 = 1
@@ -47,6 +46,8 @@ class ModReadSigned(Enum):
 
 WC = {"b": 1, "h": 2, "e": 2, "i": 4, "l": 4, "q": 8, "f": 4, "d": 8}
 
+log = logging.getLogger(__name__)
+log.setLevel(logging.DEBUG)
 
 class IndexableBinaryPayloadBuilder:
     """A utility that helps build payload messages to be written with the various modbus messages.
@@ -77,8 +78,7 @@ class IndexableBinaryPayloadBuilder:
         self._byteorder = byteorder
         self._wordorder = wordorder
         self._repack = repack
-        self.log = logging.getLogger(__name__)
-        self.log.setLevel(logging.DEBUG)
+        self.log = log
         self.deepdebug = deepdebug
 
     def _pack_words(self, fstring: str, value) -> bytes:
@@ -394,48 +394,27 @@ class IndexableBinaryPayloadDecoder:
                     match dataLen:
                         case ModReadLength.BITS8:
                             if(dataSigned == ModReadSigned.Signed):
-                                up = self.decode_8bit_int()
+                                up = round(self.decode_8bit_int(),2)
                             else:
-                                up = self.decode_8bit_uint()
-                            # fstring = self._byteorder + "b" if dataSigned == ModReadSigned.Signed else "B"
-                            # handle = self.payload[address: address + 1]
-                            # up = unpack(fstring, handle)[0]
+                                up = round(self.decode_8bit_uint(),2)
 
                         case ModReadLength.BITS16 :
                             if(dataSigned == ModReadSigned.Signed):
-                                up = self.decode_16bit_int()
+                                up = round(self.decode_16bit_int(),2)
                             else:
-                                up = self.decode_16bit_uint()
-
-                        #     fstring = self._byteorder + "h" if dataSigned == ModReadSigned.Signed else "H"
-                        #     handle = self.payload[addrInWords: addrInWords  + ModReadLength.BITS16.value]
-                        #     if dataSigned == ModReadSigned.Unsigned:
-                        #         up = unpack(self._byteorder + 'H', handle)[0]
-                        #     else:
-                        #         up = unpack(self._byteorder + 'h', handle)[0]
+                                up = round(self.decode_16bit_uint(),2)
 
                         case ModReadLength.BITS32:
                             if (dataSigned == ModReadSigned.Signed):
-                                up = self.decode_32bit_int()
+                                up = round(self.decode_32bit_int(),2)
                             else:
-                                up = self.decode_32bit_uint()
-
-
-                        # fstring =  "!I" if dataSigned == ModReadSigned.Signed else "!i"
-                            # handle = self.payload[addrInWords: addrInWords + ModReadLength.BITS32.value]
-                            # handle = self._unpack_words(handle)
-                            # up = unpack( fstring, handle)[0]
+                                up = round(self.decode_32bit_uint(),2)
 
                         case ModReadLength.BITS64:
                             if (dataSigned == ModReadSigned.Signed):
-                                up = self.decode_64bit_int()
+                                up = round(self.decode_64bit_int(),2)
                             else:
-                                up = self.decode_64bit_uint()
-
-                        # fstring = "!Q" if dataSigned == ModReadSigned.Signed else "!q"
-                            # handle = self.payload[addrInWords: addrInWords + ModReadLength.BITS64.value]
-                            # handle = self._unpack_words(handle)
-                            # up =  unpack(fstring, handle)[0]
+                                up = round(self.decode_64bit_uint(),2)
                         case _:
                             self.log.error(f"Unknown variable type Len={dataLen} signed={dataSigned}")
                     return up
@@ -456,7 +435,7 @@ class IndexableBinaryPayloadDecoder:
                             return
 
                     handle = self._unpack_words(handle)
-                    up = unpack(fstring, handle)[0]
+                    up = round(unpack(fstring, handle)[0],2)
                     return up
 
             except Exception as e:

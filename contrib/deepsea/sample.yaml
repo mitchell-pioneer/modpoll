@@ -27,11 +27,16 @@ mapFlags: &mapFlags                          # Create an anchor named 'env-commo
   <<: *valueMapError
 
 range10percent: &range10percent                          # Create an anchor named 'env-common' with the values that follo
-  rw: r
-  scale:
   lowR: 0.1
   highR: 0.1
-  <<: *valueMapError
+
+range1: &range1                          # Create an anchor named 'env-common' with the values that follo
+  lowR: 1.0
+  highR: 2.0
+
+range1Int: &range1Int                          # Create an anchor named 'env-common' with the values that follo
+  lowR: 1
+  highR: 1
 
 device:
     name: "BcHydro"
@@ -42,14 +47,14 @@ device:
     osCmd: ""
     enabled: True
     mqttHost: "devmqtt.eboostmobile.com"
-    ipAddress: "192.168.2.51"
+    ipAddress: "192.168.2.50"
     modbusTimeout: 3
     modbusPort: 502
-    loopDelay: 1  #in seconds
+    loopDelay: 5  #in seconds
     modbusDebug: False
     deepDebug: False
-    deepModbusPrint: True
-    onChangeReset: 60
+    modbusPrint: True
+    onChangeReset: 120
     neverEnd: True
 
     poll:
@@ -58,7 +63,7 @@ device:
         modStartPage: "39424"
         modPageSize: "60"
 
-        loopDelay: 5   #in seconds
+        loopDelay: 0   #in seconds
         mqttOnChange: False
         mqttQueue: "Pioneer/{CNAME}/{PNAME}/{GNAME}"
         mqttSingle: False
@@ -87,17 +92,17 @@ device:
         modStartPage: dsp!Accumulated Instrumentation!
         modPageSize: "20"
         loopDelay: 0   #in seconds
-        mqttOnChange: False
+        mqttOnChange: True
         mqttQueue: "Pioneer/{CNAME}/{PNAME}/{GNAME}"
         mqttSingle: False
         enabled: True
 
         elements:
-          - { name: "Engine run time", address: "dse!Engine run time!",                 dtype: "uint32",   unit: "seconds", scale: "{}/3600" }
-          - { name: "Generator positive KW hours", address: "dse!Generator positive KW hours!",       dtype: "uint32",   unit: "seconds", scale: "{} * 0.1" }
-          - { name: "Generator KVA hours", address: "dse!Generator KVA hours!",         dtype: "uint32",   unit: "seconds", scale: "{} * 0.1" }
-          - { name: "Generator KVAr hours", address: "dse!Generator KVAr hours!",       dtype: "uint32",   unit: "seconds", scale: "{} * 0.1" }
-          - { name: "Number of starts", address: "dse!Number of starts!",               dtype: "uint32",   unit: "count" }
+          - { name: "Engine run time", address: "dse!Engine run time!",                 dtype: "uint32",   unit: "seconds", scale: "{} /60", <<: *range10percent }
+          - { name: "Generator positive KW hours", address: "dse!Generator positive KW hours!",       dtype: "uint32",   unit: "seconds", scale: "{} * 0.1" , <<: *range10percent}
+          - { name: "Generator KVA hours", address: "dse!Generator KVA hours!",         dtype: "uint32",   unit: "seconds", scale: "{} * 0.1" , <<: *range10percent}
+          - { name: "Generator KVAr hours", address: "dse!Generator KVAr hours!",       dtype: "uint32",   unit: "seconds", scale: "{} * 0.1" , <<: *range10percent}
+          - { name: "Number of starts", address: "dse!Number of starts!",               dtype: "uint32",   unit: "count", <<: *range1Int }
 
       - name: DeepSeaEvents
         modRegType: holding_register
@@ -108,7 +113,7 @@ device:
         mqttOnChange: False
         mqttQueue: "Pioneer/{CNAME}/{PNAME}/{GNAME}"
         mqttSingle: False
-        enabled: True
+        enabled: False
 
         elements:
           - { name: "GenSupplyLoad",              address: "dse!Generator L1 current!",       dtype: "uint32",   unit: "Bool",    scale: "{} > 2" }
@@ -134,7 +139,7 @@ device:
         modPageSize: "10"
 
         loopDelay: 0  #in seconds
-        mqttOnChange: False
+        mqttOnChange: True
         mqttQueue: "Pioneer/{CNAME}/{PNAME}/{GNAME}"
         mqttSingle: False
         enabled: True
@@ -148,11 +153,11 @@ device:
         modStartPage: "256*3"
         modPageSize: "10"
 
-        loopDelay: 0  #in seconds
-        mqttOnChange: False
+        loopDelay: 3  #in seconds
+        mqttOnChange: True
         mqttQueue: "Pioneer/{CNAME}/{PNAME}/{GNAME}"
         mqttSingle: False
-        enabled: True
+        enabled: False
 
         elements:
           - { name: "ShutdownAlarm",              address: "(256*3) + 6", dtype: "b13-16",   unit: "bool",     }
@@ -168,7 +173,7 @@ device:
         mqttOnChange: False
         mqttQueue: "Pioneer/{CNAME}/{PNAME}/{GNAME}"
         mqttSingle: False
-        enabled: True
+        enabled: False
 
         elements:
           - { name: "DigitalInput1",              address: "(256*12)+17", dtype: "b16-16",   unit: "bool",     }

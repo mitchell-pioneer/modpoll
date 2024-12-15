@@ -1,8 +1,11 @@
+import copy
 import datetime,json,logging,re,signal,sys,threading,argparse,time
 from datetime import timezone,datetime
 from modpoll.Device import Device
+from modpoll.Element import Element
 from modpoll.ModbusControl import ModbusControl
 from modpoll.MqttControl import MqttControl
+from modpoll.RepeatingTimer import RepeatingTimer
 from modpoll.YamlParser import YamlParser
 
 event_exit = threading.Event()
@@ -35,14 +38,14 @@ class Main:
 
             self.yparser = YamlParser(self.cmdLineArgs)
             assert self.yparser ,"YamlParser was not created"
+            self.device = self.yparser.deviceList[0]
 
-            self.mqttControl = MqttControl()
+            self.mqttControl = MqttControl(self.device)
             assert self.mqttControl,"MqttControl was not created"
 
             self.modbus = ModbusControl(self.cmdLineArgs,self.yparser,self.mqttControl)
             assert self.modbus,"modbus was not created"
 
-            self.device = self.modbus.deviceList[0]
 
             if (self.device.mqttHost):
                 self.log.info(f"Setup MQTT connection to {args.mqtt_host}")
@@ -60,7 +63,7 @@ class Main:
             # create timer so we can reset all last_val's in Elements.
             # This will force the pol.mqttOnChange to republish all values on a schedule
             if(self.device.onChangeReset > 0 and self.device.enabled):
-                changeResetTimer = threading.Timer(self.device.onChangeReset, self.onChangeResetCallback)
+                changeResetTimer = RepeatingTimer(self.device.onChangeReset, self.onChangeResetCallback)
                 changeResetTimer.start()
 
             try:
@@ -80,7 +83,9 @@ class Main:
                         self.modbus.modbus_publish()
                         self.WaitForInboundMqttMsg(args)
                     self.modbus.modbus_close()
+                    time.sleep(self.device.loopDelay)
                 if (self.mqttControl.enabled): self.mqttControl.mqttc_close()
+
 
             except AssertionError as e:
                 print(f"Assertion error", e)
@@ -89,14 +94,21 @@ class Main:
 
 
     def onChangeResetCallback(self):
+
+        self.log.debug("onChangeResetCallback")
         # rest all last_val so next poll everything will apepar as new
         for dev in self.yparser.deviceList:
             if (dev.deepDebug): self.log.debug("Reseting all last val's")
             if(dev.enabled):
                 for pol in self.device.pollList:
                     if(pol.enabled):
-                        for ele in pol.readableElements:
-                            ele.last_val = -9999
+                        for i, ele in enumerate(pol.readableElements):
+                            if(isinstance(ele.last_val,float)):
+                                ele.last_val = -9999.00
+                            if(isinstance(ele.last_val,int)):
+                                ele.last_val = -9999
+                            if (isinstance(ele.last_val, str)):
+                                ele.last_val = "NA"
 
     def WaitForInboundMqttMsg(self, args):
         # Check if receive mqtt request

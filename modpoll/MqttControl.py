@@ -7,7 +7,7 @@ log = logging.getLogger(__name__)
 log.setLevel(logging.INFO)
 args = None
 mqttc = None
-mqtt_initial_connection_made = False
+#mqtt_initial_connection_made = False
 rx_queue = Queue(maxsize=1000)
 
 
@@ -19,40 +19,42 @@ class MqttMsg:
 
 class MqttControl:
 
-    def __init__(self):
+    def __init__(self,device):
         self.log = log
         self.enabled = False
+        self.device = device
 
     def _on_connect(self,client, userdata, flags, rc, properties=None):
         if rc == 0:
-            self.log.info("Modbus Connection successful")
+            if(self.device.deepDebug): self.log.info("MQTT Connection successful")
             # Subscribing in on_connect() means that if we lose the connection and
             # reconnect then subscriptions will be renewed.
             qos = userdata.get("qos", 0)  # Default to QoS 0 if not provided
+            if(self.device.deepDebug): self.log.info(f"MQTT subscription to {args.mqtt_topic_prefix}")
             client.subscribe(f"{args.mqtt_topic_prefix}+/set", qos)
         elif rc == 1:
-            self.log.warning("Modbus Connection refused - incorrect protocol version")
+            self.log.warning("MQTT Connection refused - incorrect protocol version")
         elif rc == 2:
-            self.log.warning("Modbus Connection refused - invalid client identifier")
+            self.log.warning("MQTT Connection refused - invalid client identifier")
         elif rc == 3:
-            self.log.warning("Modbus Connection refused - server unavailable")
+            self.log.warning("MQTT Connection refused - server unavailable")
         elif rc == 4:
-            self.log.warning("Modbus Connection refused - bad username or password")
+            self.log.warning("MQTT Connection refused - bad username or password")
         elif rc == 5:
-            self.log.warning("Modbus Connection refused - not authorised")
+            self.log.warning("MQTT Connection refused - not authorised")
         else:
-            self.log.warning("Modbus Unknown error")
+            self.log.warning("MQTT Unknown error")
 
 
     def on_disconnect(self,client, userdata, rc):
-        self.log.info(f"disconnected. rc={rc}.")
+        if(self.device.deepDebug): self.log.info(f"disconnected. rc={rc}.")
 
 
     def on_message(self,client, userdata, msg):
         if msg.retain == 0:
-            self.log.info(f"Receive message ({msg.topic}): {msg.payload}")
+            if(self.device.deepDebug): self.log.info(f"Receive message ({msg.topic}): {msg.payload}")
         else:
-            self.log.info(f"Receive retained message ({msg.topic}): {msg.payload}")
+            if(self.device.deepDebug): self.log.info(f"Receive retained message ({msg.topic}): {msg.payload}")
         obj = msg.topic, msg.payload
         try:
             rx_queue.put(obj, block=False)
@@ -65,11 +67,7 @@ class MqttControl:
 
 
     def on_subscribe(self,client, userdata, mid, granted_qos):
-        self.log.debug("Subscribed.")
-
-
-    def _on_log(self,client, userdata, level, string):
-        self.log.debug(f"{level} | {string}")
+        if(self.device.deepDebug): self.log.debug("Subscribed.")
 
 
     def mqttc_setup(self,config):
@@ -135,13 +133,10 @@ class MqttControl:
             # start loop - let paho manage connection
             mqttc.loop_start()
 
-            global mqtt_initial_connection_made
-            mqtt_initial_connection_made = True
             return True
 
         except Exception as ex:
             self.log.error(f"mqtt connection error: {ex}")
-            # raise ex
             return False
 
 

@@ -24,7 +24,7 @@ class Device:
         self.modbusPort :int = deviceTree.get("modbusPort", "502")
         self.modbusDebug :bool= deviceTree.get("modbusDebug", False)
         self.deepDebug :bool= deviceTree.get("deepDebug", False)
-        self.deepModbusPrint :bool = deviceTree.get("deepModbusPrint", False)
+        self.modbusPrint :bool = deviceTree.get("modbusPrint", False)
         self.onChangeReset :int = deviceTree.get("onChangeReset", 0)
         self.neverEnd :int = deviceTree.get("neverEnd", False)
 
